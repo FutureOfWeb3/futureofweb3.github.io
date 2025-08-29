@@ -80,7 +80,7 @@ body {
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
 	}
 	img {
-		border: 20px solid #1e79bb;
+		border: 20px solid #FFB369;
 		border-radius: 50%;
 		margin-top: 8%;
 		margin-bottom: -15% !important;
@@ -89,7 +89,7 @@ body {
 	.name {
 		text-align: center;
 		font-size: 2.8em;
-		color: #1e79bb;
+		color: #e1a10a;
 		margin-top: 15%;
 		margin-bottom: auto;
 		text-transform: capitalize;
@@ -104,7 +104,7 @@ body {
 	.subtitle {
 		text-align: center;
 		font-size: 1.8em;
-		color: #1e79bb;
+		color: #e1a10a;
 		font-weight: bold;
 	}
 	.icons {
@@ -120,7 +120,7 @@ body {
 		color: white;
 		font-size: 1.5em;
 		display: block;
-		background-color: #1e79bb;
+		background-color: #e1a10a;
 		padding: 10px;
 		margin-left: 7%;
 		margin-right: 7%;
@@ -155,7 +155,7 @@ body {
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
 	}
 	img {
-		border: 15px solid #1e79bb;
+		border: 15px solid #FFB369;
 		margin-bottom: -20% !important;
 		border-radius: 50%;
 		width: 33%;
@@ -174,7 +174,7 @@ body {
 	.subtitle {
 		text-align: center;
 		font-size: 1.5em;
-		color: #1e79bb;
+		color: #FFB369;
 		font-weight: bold;
 	}
 	.icons {
@@ -190,7 +190,7 @@ body {
 		color: white;
 		font-size: 0.8em;
 		display: block;
-		background-color: #1e79bb;
+		background-color: #FFB369;
 		padding: 10px;
 		margin-left: 7%;
 		margin-right: 7%;
@@ -227,7 +227,7 @@ body {
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
 	}
 	img {
-		border: 15px solid #1e79bb;
+		border: 15px solid #FFB369;
 		margin-bottom: -15% !important;
 		border-radius: 50%;
 		width: 25%;
@@ -246,7 +246,7 @@ body {
 	.subtitle {
 		text-align: center;
 		font-size: 2.2em;
-		color: #1e79bb;
+		color: #FFB369;
 		font-weight: bold;
 	}
 	.icons {
@@ -262,7 +262,7 @@ body {
 		color: white;
 		font-size: 1.5em;
 		display: block;
-		background-color: #1e79bb;
+		background-color: #e1a10a;
 		padding: 10px;
 		margin-left: 7%;
 		margin-right: 7%;
@@ -300,7 +300,7 @@ body {
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
 	}
 	img {
-		border: 15px solid #1e79bb;
+		border: 15px solid #FFB369;
 		margin-bottom: -18% !important;
 		border-radius: 50%;
 		width: 30%;
@@ -317,7 +317,7 @@ body {
 	.subtitle {
 		text-align: center;
 		font-size: 2.3em;
-		color: #1e79bb;
+		color: #FFB369;
 		font-weight: bold;
 	}
 	.icons {
@@ -333,7 +333,7 @@ body {
 		color: white;
 		font-size: 1.8em;
 		display: block;
-		background-color: #1e79bb;
+		background-color: #FFB369;
 		padding: 10px;
 		margin-left: 7%;
 		margin-right: 7%;
