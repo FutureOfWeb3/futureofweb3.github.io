@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Payment - Tico's Auto Repair</title>
+    <link rel="shortcut icon" href="https://i.imgur.com/duY29qp.png" type="image/x-icon">
+    <link rel="icon" href="https://i.imgur.com/duY29qp.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Tico's Auto Repair Color Scheme */
+        :root {
+            --light-orange: #FFB366;
+            --dark-orange: #FF8C00;
+            --black: #1a1a1a;
+            --silver: #C0C0C0;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .payment-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #2a2a2a;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            border: 2px solid var(--dark-orange);
+        }
+
+        .payment-header {
+            background: linear-gradient(135deg, var(--black) 0%, #333333 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .payment-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--dark-orange) 0%, var(--light-orange) 50%, var(--dark-orange) 100%);
+        }
+
+        .payment-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .payment-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: var(--silver);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: rgba(255,140,0,0.15);
+            color: var(--light-orange);
+            border: none;
+            padding: 12px 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,140,0,0.3);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .back-button:hover {
+            background: rgba(255,140,0,0.25);
+            transform: translateY(-2px);
+            color: var(--light-orange);
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(255,140,0,0.2);
+        }
+
+        .back-button i {
+            font-size: 1.1rem;
+        }
+
+        .payment-content {
+            padding: 40px;
+            background: #2a2a2a;
+        }
+
+        .course-summary {
+            background: linear-gradient(135deg, #333333 0%, #404040 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            border: 2px solid var(--dark-orange);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .course-summary h2 {
+            color: var(--silver);
+            margin-bottom: 15px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .course-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-orange);
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .course-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            color: var(--silver);
+            font-weight: 500;
+        }
+
+        .feature-item i {
+            color: var(--dark-orange);
+            font-size: 1.2rem;
+        }
+
+        .payment-methods {
+            margin-top: 40px;
+        }
+
+        .payment-methods h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: var(--silver);
+            font-weight: 700;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .payment-method {
+            background: #333333;
+            border: 2px solid #404040;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .payment-method:hover {
+            border-color: var(--dark-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255,140,0,0.2);
+        }
+
+        .payment-method.active {
+            border-color: var(--dark-orange);
+            background: linear-gradient(135deg, var(--dark-orange) 0%, var(--light-orange) 100%);
+            color: var(--black);
+            box-shadow: 0 15px 40px rgba(255,140,0,0.3);
+        }
+
+        .payment-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .payment-method h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--silver);
+        }
+
+        .payment-method.active h4 {
+            color: var(--black);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .payment-container {
+                margin: 10px auto;
+            }
+            .payment-header {
+                padding: 20px;
+                position: relative;
+            }
+            .payment-header h1 {
+                font-size: 2rem;
+            }
+            .back-button {
+                position: static;
+                margin-bottom: 20px;
+                display: inline-flex;
+            }
+            .payment-content {
+                padding: 20px;
+            }
+            .course-summary {
+                padding: 20px;
+            }
+            .course-price {
+                font-size: 2.5rem;
+            }
+            .payment-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .payment-method {
+                padding: 20px;
+            }
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .payment-header h1 {
+                font-size: 1.8rem;
+            }
+            .course-price {
+                font-size: 2rem;
+            }
+            .payment-icon {
+                font-size: 2.5rem;
+            }
+        }
+
+        .payment-method p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+            color: var(--silver);
+        }
+
+        .payment-method.active p {
+            color: var(--black);
+        }
+
+        .payment-tag {
+            background: linear-gradient(135deg, var(--dark-orange) 0%, var(--light-orange) 100%);
+            color: var(--black);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .payment-method.active .payment-tag {
+            background: linear-gradient(135deg, var(--light-orange) 0%, var(--dark-orange) 100%);
+            color: var(--black);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #333333 0%, #404040 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: center;
+            border: 2px solid var(--dark-orange);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .contact-info h4 {
+            color: var(--silver);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .contact-info p {
+            color: var(--silver);
+            font-weight: 500;
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            background: #404040;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--dark-orange);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .contact-item h5 {
+            color: var(--silver);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: var(--silver);
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        .security-notice {
+            background: linear-gradient(135deg, var(--black) 0%, #333333 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+            border: 2px solid var(--dark-orange);
+            box-shadow: 0 10px 30px rgba(255,140,0,0.2);
+        }
+
+        .security-notice i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+            color: var(--dark-orange);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .payment-header {
+                padding: 20px;
+                position: relative;
+            }
+
+            .payment-header h1 {
+                font-size: 2rem;
+            }
+
+            .back-button {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .payment-content {
+                padding: 20px;
+            }
+
+            .course-summary {
+                padding: 20px;
+            }
+
+            .course-price {
+                font-size: 2.5rem;
+            }
+
+            .payment-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .payment-method {
+                padding: 20px;
+            }
+
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .payment-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .course-price {
+                font-size: 2rem;
+            }
+
+            .payment-icon {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-header">
+            <a href="services.html" class="back-button">
+                <i class="fa fa-arrow-left"></i>
+                Back
+            </a>
+            <h1>Secure Payment</h1>
+            <p>Complete your auto repair service payment</p>
+        </div>
+
+        <div class="payment-content">
+            <!-- Service Summary -->
+            <div class="course-summary">
+                <h2>Auto Repair Service</h2>
+                <div class="course-price">$85.00</div>
+                <p>Mobile Oil Change & Basic Maintenance</p>
+
+                <div class="course-features">
+                    <div class="feature-item">
+                        <i class="fa fa-wrench"></i>
+                        <span>Complete Oil Change</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa fa-filter"></i>
+                        <span>Oil Filter Replacement</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa fa-car"></i>
+                        <span>Vehicle Inspection</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa fa-home"></i>
+                        <span>Mobile Service</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="payment-methods">
+                <h3>Choose Your Payment Method</h3>
+                
+                <div class="payment-grid">
+                    <!-- CashApp -->
+                    <div class="payment-method" onclick="selectPayment('cashapp')">
+                        <span class="payment-icon">💸</span>
+                        <h4>CashApp</h4>
+                        <p>Quick & Easy Mobile Payment</p>
+                        <div class="payment-tag">Instant</div>
+                    </div>
+
+                    <!-- Zelle -->
+                    <div class="payment-method" onclick="selectPayment('zelle')">
+                        <span class="payment-icon">🏦</span>
+                        <h4>Zelle</h4>
+                        <p>Bank-to-Bank Transfer</p>
+                        <div class="payment-tag">Secure</div>
+                    </div>
+
+                    <!-- Venmo -->
+                    <div class="payment-method" onclick="selectPayment('venmo')">
+                        <span class="payment-icon">📱</span>
+                        <h4>Venmo</h4>
+                        <p>Social Payment Platform</p>
+                        <div class="payment-tag">Popular</div>
+                    </div>
+
+                    <!-- PayPal -->
+                    <div class="payment-method" onclick="selectPayment('paypal')">
+                        <span class="payment-icon">🅿️</span>
+                        <h4>PayPal</h4>
+                        <p>Global Payment Solution</p>
+                        <div class="payment-tag">Worldwide</div>
+                    </div>
+
+                    <!-- Credit/Debit Card -->
+                    <div class="payment-method" onclick="selectPayment('card')">
+                        <span class="payment-icon">💳</span>
+                        <h4>Credit/Debit Card</h4>
+                        <p>Visa, MasterCard, Amex</p>
+                        <div class="payment-tag">Most Popular</div>
+                    </div>
+
+                    <!-- Bank Transfer -->
+                    <div class="payment-method" onclick="selectPayment('bank')">
+                        <span class="payment-icon">🏛️</span>
+                        <h4>Bank Transfer</h4>
+                        <p>Direct Wire Transfer</p>
+                        <div class="payment-tag">Traditional</div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h4>Payment Instructions</h4>
+                    <p>After selecting your preferred payment method, please contact me to complete your service:</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h5><i class="fa fa-phone"></i> Phone</h5>
+                            <p>(555) 123-4567</p>
+                            <p>Call or text for immediate assistance</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h5><i class="fa fa-envelope"></i> Email</h5>
+                            <p>ticoautorepair@email.com</p>
+                            <p>Include your name and payment method</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h5><i class="fa fa-clock-o"></i> Service Schedule</h5>
+                            <p>Usually same day</p>
+                            <p>Mon-Sat 8AM-6PM (Mobile service available)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Notice -->
+                <div class="security-notice">
+                    <i class="fa fa-shield"></i>
+                    <h4>Secure & Safe</h4>
+                    <p>All payments are processed securely. We never store your payment information and all transactions are encrypted with bank-level security.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectPayment(method) {
+            // Remove active class from all payment methods
+            document.querySelectorAll('.payment-method').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Add active class to selected method
+            event.currentTarget.classList.add('active');
+            
+            // Show confirmation message
+            const methodNames = {
+                'cashapp': 'CashApp',
+                'zelle': 'Zelle',
+                'venmo': 'Venmo',
+                'paypal': 'PayPal',
+                'card': 'Credit/Debit Card',
+                'bank': 'Bank Transfer'
+            };
+
+            // Create and show notification
+            showNotification(`${methodNames[method]} selected! Please contact me at (555) 123-4567 or ticoautorepair@email.com to complete your auto repair service payment.`);
+            
+            // Scroll to contact info
+            setTimeout(() => {
+                document.querySelector('.contact-info').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }, 500);
+        }
+        
+        function showNotification(message) {
+            // Remove existing notification if any
+            const existingNotif = document.querySelector('.payment-notification');
+            if (existingNotif) {
+                existingNotif.remove();
+            }
+            
+            // Create notification
+            const notification = document.createElement('div');
+            notification.className = 'payment-notification';
+            notification.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+                    color: white;
+                    padding: 15px 25px;
+                    border-radius: 10px;
+                    box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3);
+                    z-index: 1000;
+                    font-weight: 600;
+                    max-width: 300px;
+                    animation: slideIn 0.3s ease;
+                ">
+                    <i class="fa fa-check-circle" style="margin-right: 10px;"></i>
+                    ${message}
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+        
+        // Add CSS animation for notification
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Add touch feedback for mobile
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('touchstart', function() {
+                this.style.transform = 'translateY(-2px) scale(0.98)';
+            });
+            
+            method.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

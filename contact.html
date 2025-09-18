@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Tico's Auto Repair for mobile mechanic services. Call, text, or email for same-day auto repair at your location.">
+    <meta name="keywords" content="contact mobile mechanic, auto repair quote, emergency car service, Tico's Auto Repair contact">
+    <meta name="author" content="Tico's Auto Repair">
+    <title>Contact Us - Tico's Auto Repair | Get Your Quote Today</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Professional orange, black, and silver color palette */
+        :root {
+            --light-orange: #FFB366;
+            --dark-orange: #FF8C00;
+            --black: #1a1a1a;
+            --silver: #C0C0C0;
+        }
+
+        .btn-primary {
+            background-color: var(--dark-orange);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #E67300;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+        }
+
+        .text-orange-light { color: var(--light-orange); }
+        .text-orange-dark { color: var(--dark-orange); }
+        .bg-orange-light { background-color: var(--light-orange); }
+        .bg-orange-dark { background-color: var(--dark-orange); }
+        .border-orange-dark { border-color: var(--dark-orange); }
+
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--light-orange);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Mobile Navigation Menu */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--light-orange);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--black);
+                flex-direction: column;
+                padding: 20px 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            }
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 10px 20px;
+                display: block;
+            }
+            .brand-section {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+
+        .animate-slide-up {
+            animation: slideUp 1s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Contact Form Styles */
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e5e5;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+            background-color: white;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--dark-orange);
+        }
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e5e5;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+            background-color: white;
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--dark-orange);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Header Section -->
+    <header class="bg-black text-white sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center brand-section">
+                <div class="flex items-center space-x-3">
+                    <img src="https://thumbs2.imgbox.com/28/4c/eGKM7r9N_t.png" alt="Tico's Auto Repair Logo" class="h-12 w-auto">
+                    <div class="text-2xl font-bold text-orange-light">Tico's Auto Repair</div>
+                </div>
+
+                <div class="nav-menu">
+                    <!-- Desktop Navigation -->
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html" class="text-orange-light">Contact</a></li>
+                    </ul>
+
+                    <!-- Desktop CTA Button -->
+                    <button class="btn-primary font-semibold py-2 px-4 rounded-lg shadow-md ml-6 hidden md:block">
+                        <a href="payment.html">Book Now</a>
+                    </button>
+
+                    <!-- Hamburger Menu Button -->
+                    <div class="hamburger md:hidden" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-black to-gray-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center animate-slide-up">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-orange-light">Get in Touch</h1>
+                <p class="text-xl text-silver max-w-3xl mx-auto leading-relaxed">Ready to experience hassle-free auto repair? Contact me today for a quote or to schedule your mobile service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="animate-slide-up">
+                    <h3 class="text-2xl font-semibold mb-6 text-black">Let's Talk About Your Car</h3>
+                    <div class="space-y-6">
+                        <!-- Quick Contact Options -->
+                        <div class="bg-orange-light bg-opacity-10 p-6 rounded-lg border-l-4 border-orange-dark">
+                            <h4 class="font-semibold text-black mb-3">Fastest Response</h4>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-phone-alt mr-3 text-orange-dark text-lg"></i>
+                                <span><strong>Call/Text:</strong> <a href="tel:5551234567" class="text-orange-dark font-semibold">(555) 123-4567</a></span>
+                            </div>
+                            <p class="text-sm text-gray-600">Available 8AM-6PM Mon-Sat, Emergency calls 24/7</p>
+                        </div>
+
+                        <!-- Contact Details -->
+                        <div class="space-y-4">
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-envelope mr-3 text-orange-dark text-lg"></i>
+                                <span><strong>Email:</strong> <a href="mailto:ticoautorepair@email.com" class="text-orange-dark">ticoautorepair@email.com</a></span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-map-marker-alt mr-3 text-orange-dark text-lg"></i>
+                                <span><strong>Service Area:</strong> [Your City] and surrounding areas (25-mile radius)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-clock mr-3 text-orange-dark text-lg"></i>
+                                <span><strong>Hours:</strong> Mon-Sat 8AM-6PM (Mobile service available)</span>
+                            </div>
+                            <div class="flex items-center text-gray-700">
+                                <i class="fas fa-calendar-check mr-3 text-orange-dark text-lg"></i>
+                                <span><strong>Response Time:</strong> Usually same day!</span>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="pt-6">
+                            <h4 class="font-semibold text-black mb-3">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://facebook.com" target="_blank" class="text-orange-dark hover:text-black transition duration-300">
+                                    <i class="fab fa-facebook-f text-2xl"></i>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="text-orange-dark hover:text-black transition duration-300">
+                                    <i class="fab fa-instagram text-2xl"></i>
+                                </a>
+                                <a href="https://twitter.com" target="_blank" class="text-orange-dark hover:text-black transition duration-300">
+                                    <i class="fab fa-twitter text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="animate-slide-up">
+                    <div class="bg-silver bg-opacity-50 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-6 text-black">Send Me a Message</h3>
+                        <form action="#" method="POST" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Your Name *</label>
+                                    <input type="text" name="name" required class="form-input" placeholder="Enter your full name">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Phone Number *</label>
+                                    <input type="tel" name="phone" required class="form-input" placeholder="(555) 123-4567">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" name="email" class="form-input" placeholder="your.email@example.com">
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Service Type</label>
+                                    <select name="service_type" class="form-input">
+                                        <option value="">Select a service</option>
+                                        <option value="mobile_repair">Mobile Repair (At your location)</option>
+                                        <option value="shop_repair">Shop Repair (At my workshop)</option>
+                                        <option value="emergency">Emergency Service</option>
+                                        <option value="quote">Just need a quote</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Vehicle Year</label>
+                                    <input type="text" name="vehicle_year" class="form-input" placeholder="e.g., 2018">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Vehicle Make</label>
+                                    <input type="text" name="vehicle_make" class="form-input" placeholder="e.g., Honda">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Vehicle Model</label>
+                                    <input type="text" name="vehicle_model" class="form-input" placeholder="e.g., Civic">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">What's the problem? *</label>
+                                <textarea name="problem_description" required class="form-textarea" placeholder="Describe what's happening with your car, any symptoms you've noticed, or what service you need..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Preferred Contact Method</label>
+                                <div class="flex space-x-6">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="contact_method" value="call" class="mr-2">
+                                        <span>Call me</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="contact_method" value="text" class="mr-2">
+                                        <span>Text me</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="contact_method" value="email" class="mr-2">
+                                        <span>Email me</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-primary font-semibold py-3 px-8 rounded-lg w-full">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Service Section -->
+    <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="animate-slide-up">
+                <i class="fas fa-exclamation-triangle text-6xl mb-6"></i>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Emergency Service Available</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">Car won't start? Stuck on the road? Don't panic! I prioritize emergency situations and will do my best to help you out quickly.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:5551234567" class="bg-white text-red-600 font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition duration-300">
+                        <i class="fas fa-phone mr-2"></i>Emergency Call: (555) 123-4567
+                    </a>
+                    <a href="sms:5551234567" class="bg-yellow-500 text-black font-bold py-4 px-8 rounded-lg hover:bg-yellow-400 transition duration-300">
+                        <i class="fas fa-sms mr-2"></i>Emergency Text
+                    </a>
+                </div>
+                <p class="mt-6 text-sm opacity-80">Available 24/7 for true emergencies. Additional emergency service fees may apply after regular hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center mb-4">
+                    <img src="https://thumbs2.imgbox.com/28/4c/eGKM7r9N_t.png" alt="Tico's Auto Repair Logo" class="h-12 w-auto mr-3">
+                    <div class="text-2xl font-bold text-orange-light">Tico's Auto Repair</div>
+                </div>
+                <p class="text-silver mb-6 max-w-2xl mx-auto">Your trusted mobile mechanic serving [Your City]. I bring professional auto repair right to your driveway - no shop visits required!</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-6">
+                    <a href="tel:5551234567" class="btn-primary font-semibold py-3 px-6 rounded-lg">Call Now: (555) 123-4567</a>
+                    <a href="mailto:ticoautorepair@email.com" class="bg-silver text-black font-semibold py-3 px-6 rounded-lg hover:bg-white transition duration-300">Email Me</a>
+                </div>
+                <p class="text-xs text-silver">Licensed & Insured • Same Day Service Available • Honest Pricing Guaranteed</p>
+            </div>
+            <div class="border-t border-silver pt-6 text-center">
+                <p class="text-silver">&copy; 2025 Tico's Auto Repair. All rights reserved.</p>
+                <p class="mt-2 text-silver">Built with <i class="fas fa-heart text-orange-light"></i> for car owners who value convenience and honesty.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        // Hamburger Menu Toggle Function
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const hamburger = document.querySelector('.hamburger');
+                const navLinks = document.querySelector('.nav-links');
+
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (!navMenu.contains(e.target) && navLinks.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
