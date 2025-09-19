@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Generator</title>
+    <style>
+        .icon {
+            width: 192px;
+            height: 192px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 20px;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        
+        .icon-512 {
+            width: 512px;
+            height: 512px;
+            border-radius: 90px;
+            font-size: 220px;
+        }
+        
+        .grid {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 4px;
+            opacity: 0.3;
+        }
+        
+        .grid div {
+            background: white;
+            border-radius: 4px;
+        }
+        
+        .symbol {
+            z-index: 2;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>192x192 Icon</h2>
+        <canvas id="canvas192" width="192" height="192"></canvas>
+        
+        <h2>512x512 Icon</h2>
+        <canvas id="canvas512" width="512" height="512"></canvas>
+    </div>
+
+    <script>
+        function createIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            // Draw rounded rectangle background
+            const radius = size * 0.18;
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, radius);
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            
+            // Draw grid pattern (subtle)
+            ctx.globalAlpha = 0.2;
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = size * 0.01;
+            
+            const gridSize = size * 0.6;
+            const gridStart = (size - gridSize) / 2;
+            const cellSize = gridSize / 3;
+            
+            for (let i = 1; i < 3; i++) {
+                // Vertical lines
+                ctx.beginPath();
+                ctx.moveTo(gridStart + i * cellSize, gridStart);
+                ctx.lineTo(gridStart + i * cellSize, gridStart + gridSize);
+                ctx.stroke();
+                
+                // Horizontal lines
+                ctx.beginPath();
+                ctx.moveTo(gridStart, gridStart + i * cellSize);
+                ctx.lineTo(gridStart + gridSize, gridStart + i * cellSize);
+                ctx.stroke();
+            }
+            
+            // Draw X and O symbols
+            ctx.globalAlpha = 0.8;
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size * 0.15}px sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // X in top-left
+            ctx.fillText('X', gridStart + cellSize * 0.5, gridStart + cellSize * 0.5);
+            
+            // O in center
+            ctx.fillText('O', gridStart + cellSize * 1.5, gridStart + cellSize * 1.5);
+            
+            // X in bottom-right
+            ctx.fillText('X', gridStart + cellSize * 2.5, gridStart + cellSize * 2.5);
+            
+            // Download the image
+            setTimeout(() => {
+                const link = document.createElement('a');
+                link.download = `icon-${size}.png`;
+                link.href = canvas.toDataURL();
+                link.click();
+            }, 100);
+        }
+        
+        // Add roundRect polyfill for older browsers
+        if (!CanvasRenderingContext2D.prototype.roundRect) {
+            CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
+                if (w < 2 * r) r = w / 2;
+                if (h < 2 * r) r = h / 2;
+                this.beginPath();
+                this.moveTo(x + r, y);
+                this.arcTo(x + w, y, x + w, y + h, r);
+                this.arcTo(x + w, y + h, x, y + h, r);
+                this.arcTo(x, y + h, x, y, r);
+                this.arcTo(x, y, x + w, y, r);
+                this.closePath();
+                return this;
+            };
+        }
+        
+        // Generate icons
+        createIcon('canvas192', 192);
+        createIcon('canvas512', 512);
+    </script>
+</body>
+</html>
