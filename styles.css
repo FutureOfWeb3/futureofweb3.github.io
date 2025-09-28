@@ -7,7 +7,7 @@
 
 html {
     height: 100%;
-    background: url('https://images2.imgbox.com/d3/fa/GJ0KYno2_o.png') !important;
+    background: url('https://i.imgur.com/LwbpzHS.png') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
@@ -16,7 +16,7 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('https://images2.imgbox.com/d3/fa/GJ0KYno2_o.png') !important;
+    background: url('https://i.imgur.com/LwbpzHS.png') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
@@ -35,7 +35,7 @@ body {
         height: 100% !important;
         min-height: 100vh !important;
         min-height: -webkit-fill-available !important;
-        background: url('https://images2.imgbox.com/d3/fa/GJ0KYno2_o.png') !important;
+        background: url('https://i.imgur.com/LwbpzHS.png') !important;
         background-size: cover !important;
         background-position: center !important;
         background-attachment: scroll !important;
@@ -43,7 +43,7 @@ body {
     }
     
     body {
-        background: url('https://images2.imgbox.com/d3/fa/GJ0KYno2_o.png') !important;
+        background: url('https://i.imgur.com/LwbpzHS.png') !important;
         background-size: cover !important;
         background-position: center !important;
         background-attachment: scroll !important;
@@ -55,7 +55,7 @@ body {
     
     /* Add background to container as backup */
     .container {
-        background: url('https://images2.imgbox.com/d3/fa/GJ0KYno2_o.png') !important;
+        background: url('https://i.imgur.com/LwbpzHS.png') !important;
         background-size: cover !important;
         background-position: center !important;
         background-attachment: scroll !important;
