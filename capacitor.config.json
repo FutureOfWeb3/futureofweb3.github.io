@@ -1,0 +1,26 @@
+{
+  "appId": "com.ninjatech.qrhelper",
+  "appName": "NinjaTech QR Helper",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "backgroundColor": "#000000",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP"
+    },
+    "Camera": {
+      "permissions": [
+        "camera",
+        "photos"
+      ]
+    }
+  },
+  "android": {
+    "buildOptions": {
+      "releaseType": "AAB"
+    },
+    "path": "android"
+  }
+}
