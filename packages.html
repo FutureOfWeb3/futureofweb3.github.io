@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Packages | Lashed Out | Save More with Monthly Plans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Main Brand Colors */
+            --primary: #6366f1; /* Sophisticated Indigo Blue */
+            --secondary: #ec4899; /* Elegant Rose Pink */
+            --tertiary: #10b981; /* Fresh Emerald Green */
+            
+            /* Supporting Colors */
+            --dark: #1e293b; /* Deep Slate */
+            --light: #f8fafc; /* Cool White */
+            --accent: #a855f7; /* Lavender Purple */
+            --soft-blue: #e0e7ff; /* Light Blue Background */
+            --soft-pink: #fce7f3; /* Light Pink Background */
+            --soft-green: #d1fae5; /* Light Green Background */
+            
+            /* Gradient Combinations */
+            --gradient-primary: linear-gradient(135deg, #6366f1, #8b5cf6);
+            --gradient-secondary: linear-gradient(135deg, #ec4899, #f472b6);
+            --gradient-tertiary: linear-gradient(135deg, #10b981, #34d399);
+            --gradient-hero: linear-gradient(135deg, #6366f1, #ec4899, #10b981);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+        }
+        
+        .btn.btn-secondary {
+            background: var(--gradient-tertiary);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn.btn-secondary:hover {
+            background: var(--gradient-primary);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 60vh;
+            background: var(--gradient-secondary), url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .page-header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            padding: 100px 0;
+            background: var(--soft-pink);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(236, 72, 153, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-card.featured {
+            transform: scale(1.05);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.2);
+        }
+        
+        .package-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: 20px;
+            left: -30px;
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 8px 40px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(-45deg);
+        }
+        
+        .package-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-secondary);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.2);
+            border-color: var(--secondary);
+        }
+        
+        .package-card:hover::after {
+            left: 0;
+            opacity: 0.03;
+        }
+        
+        .package-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .package-card .price {
+            font-size: 2.5rem;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .package-card .savings {
+            color: var(--tertiary);
+            font-weight: 600;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .package-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .package-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--tertiary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+            background: var(--soft-blue);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 36px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: var(--soft-blue);
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(99, 102, 241, 0.1);
+        }
+        
+        .faq-question h4 {
+            color: var(--primary);
+            margin: 0;
+        }
+        
+        .faq-answer {
+            padding: 25px;
+            background: white;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .page-header-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .package-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><i class="fas fa-gem"></i> Lashed Out</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="btn">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container page-header-content">
+            <h1>Membership Packages</h1>
+            <p>Save more with our exclusive monthly membership plans designed for regular beauty maintenance.</p>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Choose Your Perfect Plan</h2>
+                <p>Our membership programs offer incredible value and convenience for maintaining your gorgeous look.</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3>Essential Care</h3>
+                    <div class="price">$89<span style="font-size: 1rem; color: var(--dark);">/month</span></div>
+                    <div class="savings">Save $35 per month!</div>
+                    <ul class="package-features">
+                        <li>1 Classic Lash Fill per month</li>
+                        <li>1 Precision Brow Shape per month</li>
+                        <li>10% off all additional services</li>
+                        <li>Priority booking privileges</li>
+                        <li>Free aftercare products kit</li>
+                        <li>Complimentary brow touch-ups</li>
+                        <li>Flexible scheduling options</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Join Essential</a>
+                </div>
+                
+                <div class="package-card featured">
+                    <h3>Premium Care</h3>
+                    <div class="price">$149<span style="font-size: 1rem; color: var(--dark);">/month</span></div>
+                    <div class="savings">Save $65 per month!</div>
+                    <ul class="package-features">
+                        <li>2 Lash Fills per month (any style)</li>
+                        <li>1 Brow shape & tint per month</li>
+                        <li>1 Facial waxing service per month</li>
+                        <li>15% off all additional services</li>
+                        <li>Priority booking & same-day availability</li>
+                        <li>Quarterly lash lift or dermaplaning</li>
+                        <li>Exclusive member-only events</li>
+                        <li>Free product samples & upgrades</li>
+                    </ul>
+                    <a href="contact.html" class="btn">Join Premium</a>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Elite VIP Care</h3>
+                    <div class="price">$229<span style="font-size: 1rem; color: var(--dark);">/month</span></div>
+                    <div class="savings">Save $95 per month!</div>
+                    <ul class="package-features">
+                        <li>Unlimited lash fills & maintenance</li>
+                        <li>Unlimited brow services</li>
+                        <li>2 Facial treatments per month</li>
+                        <li>20% off all additional services</li>
+                        <li>24/7 priority booking access</li>
+                        <li>Monthly signature facial treatment</li>
+                        <li>Quarterly advanced treatments</li>
+                        <li>Exclusive VIP beauty consultations</li>
+                        <li>Free take-home product gifts</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary">Join Elite VIP</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Membership Benefits</h2>
+                <p>Enjoy exclusive perks and savings designed specifically for our valued members.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Significant Savings</h3>
+                    <p>Save 25-40% compared to individual service pricing with our membership plans. The more you visit, the more you save!</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Priority Booking</h3>
+                    <p>Get first access to appointment slots and enjoy flexible scheduling with same-day availability for premium members.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Exclusive Perks</h3>
+                    <p>Receive complimentary upgrades, free products, and access to member-only events and new service previews.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Personalized Care</h3>
+                    <p>Enjoy personalized beauty consultations and customized treatment plans designed specifically for your needs.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Easy Management</h3>
+                    <p>Manage your membership, book appointments, and track your benefits through our convenient online portal.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Quality Guarantee</h3>
+                    <p>100% satisfaction guaranteed with every service. We're committed to exceeding your expectations every visit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our membership programs.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do membership payments work?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Memberships are billed monthly on the same date you sign up. You can pay by credit card, and we offer automatic billing for convenience. Cancel anytime with 30 days notice.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What happens if I miss a month?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Unused services roll over for up to 2 months, giving you flexibility in your schedule. After that, unused services expire, but your membership benefits continue.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I upgrade or downgrade my membership?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! You can upgrade at any time and the changes take effect immediately. Downgrades take effect at your next billing cycle to ensure you get full value.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Are there any contracts or commitments?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No long-term contracts! Our memberships are month-to-month. We're confident you'll love the value and convenience of being a member.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I share my membership with friends or family?</h4>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Memberships are individual and non-transferable. However, we offer referral rewards and family discounts for multiple memberships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Lashed Out</h3>
+                    <p>Professional esthetician services by Haylee Saylor - Licensed & Insured. Exclusive membership benefits and exceptional value.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Membership Plans</h3>
+                    <ul>
+                        <li><a href="packages.html">Essential Care - $89/month</a></li>
+                        <li><a href="packages.html">Premium Care - $149/month</a></li>
+                        <li><a href="packages.html">Elite VIP Care - $229/month</a></li>
+                        <li><a href="contact.html">Custom Plans Available</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Start Your Membership</h3>
+                    <p>Ready to save more and look amazing? Contact us to start your membership today.</p>
+                    <a href="contact.html" class="btn" style="margin-top: 15px;">Join Now</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Lashed Out. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question i').classList.replace('fa-minus', 'fa-plus');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    this.querySelector('i').classList.replace('fa-plus', 'fa-minus');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
