@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RipPoke - Pokemon TCG Store</title>
+    <meta name="description" content="RipPoke - Your ultimate Pokemon TCG destination. Explore our singles, booster packs, sealed products and more!">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Accessibility Skip Links -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <a href="#navigation" class="skip-link">Skip to navigation</a>
+    </div>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-slider">
+            <div class="announcement-item active">
+                <i class="fas fa-shipping-fast"></i>
+                Tracked Shipping To The USA From $5!
+            </div>
+            <div class="announcement-item">
+                <i class="fas fa-coins"></i>
+                🤑 Earn Reward Points On Every Purchase!
+            </div>
+            <div class="announcement-item">
+                <i class="fas fa-tags"></i>
+                🏷️ Price Match Inquiries!
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Left Side -->
+            <div class="header-left">
+            </div>
+
+            <!-- Center Logo -->
+            <div class="header-center">
+                <a href="#" class="logo">
+                    <h1>RipPoke</h1>
+                    <span class="tagline">Pokemon TCG Store</span>
+                </a>
+            </div>
+
+            <!-- Right Side -->
+            <div class="header-right">
+                <div class="header-actions">
+                    <div class="currency-selector">
+                        <i class="fas fa-globe"></i>
+                        <select name="currency" id="currency">
+                            <option value="USD">US (USD $)</option>
+                            <option value="EUR">EU (EUR €)</option>
+                            <option value="GBP">UK (GBP £)</option>
+                        </select>
+                    </div>
+                    <a href="#" class="wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span>Wishlist</span>
+                    </a>
+                    <a href="#" class="account-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Account</span>
+                    </a>
+                    <a href="#" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation" id="navigation">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="booster-packs.html" class="nav-link">Booster Packs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sealed-packs.html" class="nav-link">Sealed Packs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Welcome to RipPoke</h1>
+            </div>
+        </section>
+
+        <!-- Navigation Cards -->
+        <section class="nav-cards">
+            <div class="container">
+                <div class="nav-cards-grid">
+                    <!-- Booster Packs Card -->
+                    <a href="booster-packs.html" class="nav-card" data-accent="blue">
+                        <div class="nav-card-icon">
+                            <img src="https://thecardvault.co.uk/cdn/shop/files/Pokemon_Mega-Evolution_Booster-Box.png?height=720&v=1757730274" alt="Pokemon Booster Box" class="booster-box-image">
+                            <!-- Alternative option: <img src="https://thumbs2.imgbox.com/35/1f/Vxbk9kcq_t.png" alt="Pokemon Booster Box" class="booster-box-image"> -->
+                        </div>
+                        <div class="nav-card-accent"></div>
+                    </a>
+
+                    <!-- Sealed Packs Card -->
+                    <a href="sealed-packs.html" class="nav-card" data-accent="purple">
+                        <div class="nav-card-icon">
+                            <img src="https://thecardvault.co.uk/cdn/shop/files/P9505_2024-06-14T08_38_43.328Z.png?height=720&v=1757717309" alt="Sealed Pokemon Products" class="sealed-packs-image">
+                        </div>
+                        <div class="nav-card-accent"></div>
+                    </a>
+
+                    <!-- About Card -->
+                    <a href="about.html" class="nav-card" data-accent="green">
+                        <div class="nav-card-icon">
+                            <img src="https://images2.imgbox.com/8a/74/KgaGPlNv_o.png" alt="About Us" class="about-image">
+                        </div>
+                        <div class="nav-card-accent"></div>
+                    </a>
+
+                    <!-- Cart Card -->
+                    <a href="#" class="nav-card cart-btn" data-accent="orange">
+                        <div class="nav-card-icon">
+                            <img src="https://images2.imgbox.com/08/1d/RX7M3DSz_o.png" alt="Shopping Cart" class="cart-image">
+                        </div>
+                        <div class="nav-card-accent"></div>
+                    </a>
+
+                    <!-- Contact Card -->
+                    <a href="contact.html" class="nav-card" data-accent="red">
+                        <div class="nav-card-icon">
+                            <img src="https://thumbs2.imgbox.com/87/c9/R3ebvy1A_t.png" alt="Support" class="support-image">
+                        </div>
+                        <div class="nav-card-accent"></div>
+                    </a>
+                    
+                    <!-- In-Person Payment Card -->
+                    <a href="in-person-payment.html" class="nav-card" data-accent="gold">
+                        <div class="nav-card-icon">
+                            <img src="https://images2.imgbox.com/56/aa/mkuPptdl_o.png" alt="In-Person Payment" class="payment-image">
+                        </div>
+                        <div class="nav-card-accent"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Card Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Notice -->
+    <div class="cookie-notice" id="cookie-notice">
+        <div class="cookie-content">
+            <p>Our shop uses cookies. By clicking on Accept you are agreeing to our terms of service and <a href="#">privacy policy</a>.</p>
+            <div class="cookie-actions">
+                <button class="cookie-btn decline">Decline</button>
+                <button class="cookie-btn accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
