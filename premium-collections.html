@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Collections - RipPoke TCG Store</title>
+    <meta name="description" content="Discover exclusive premium Pokemon TCG collections including Blooming Waters and Prismatic Evolutions Lucario boxes at RipPoke.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <span>🔥 Exclusive Premium Collections - Limited Stock Available! 🔥</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Left Side -->
+            <div class="header-left">
+            </div>
+
+            <!-- Center Logo -->
+            <div class="header-center">
+                <a href="index.html" class="logo">
+                    <img src="https://thumbs2.imgbox.com/65/42/Xrpu9NyQ_t.png" alt="RipPoke Logo" class="logo-img">
+                    <div class="logo-text-container">
+                        <h1>RipPoke</h1>
+                        <span class="tagline">Pokemon TCG Store</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Right Side -->
+            <div class="header-right">
+                <div class="header-actions">
+                    <div class="currency-selector">
+                        <i class="fas fa-globe"></i>
+                        <select name="currency" id="currency">
+                            <option value="USD">US (USD $)</option>
+                            <option value="EUR">EU (EUR €)</option>
+                            <option value="GBP">UK (GBP £)</option>
+                        </select>
+                    </div>
+                    <a href="#" class="wishlist-btn" id="wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </a>
+                    <a href="#" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation" id="navigation">
+        <div class="nav-container">
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu-btn" id="hamburger-menu-btn" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="booster-packs.html" class="nav-link">Booster Packs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="elite-trainer-boxes.html" class="nav-link">Elite Trainer Boxes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="premium-collections.html" class="nav-link active">Premium Collections</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sealed-packs.html" class="nav-link">Live Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Premium Collections</h1>
+                <p>Exclusive limited edition Pokemon TCG premium sets featuring special foil treatments, collectible figures, and unique artwork you can't find anywhere else!</p>
+            </div>
+        </section>
+
+
+        <!-- Premium Collections Grid -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-grid">
+                    <!-- Blooming Waters Premium Collection -->
+                    <div class="product-card" data-category="blooming-waters">
+                        <div class="product-image">
+                            <img src="https://thumbs2.imgbox.com/58/e2/aW9t1YJm_t.png" alt="Blooming Waters Premium Collection">
+                            <div class="product-badge">Premium Collection</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Blooming Waters Premium Collection</h3>
+                            <p class="product-subtitle">Special Collection</p>
+                            <p class="product-description">Exclusive premium collection featuring beautiful water-type Pokemon with special foil treatments and bonus items.</p>
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-box"></i> 6 Booster Packs</li>
+                                    <li><i class="fas fa-gem"></i> Premium Foil Cards</li>
+                                    <li><i class="fas fa-gift"></i> Exclusive Accessories</li>
+                                    <li><i class="fas fa-star"></i> Collectible Items</li>
+                                </ul>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$89.99</span>
+                                <span class="compare-price">$99.99</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" 
+                                        data-name="Blooming Waters Premium Collection"
+                                        data-price="89.99"
+                                        data-image="https://thumbs2.imgbox.com/58/e2/aW9t1YJm_t.png">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Add to Cart
+                                </button>
+                                <button class="wishlist-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prismatic Evolutions Lucario Premium Collection -->
+                    <div class="product-card" data-category="prismatic-evolutions">
+                        <div class="product-image">
+                            <img src="https://thumbs2.imgbox.com/9f/7e/JrsbKyXe_t.png" alt="Prismatic Evolutions Lucario Premium Collection">
+                            <div class="product-badge">Premium Collection</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Prismatic Evolutions Lucario Premium Collection</h3>
+                            <p class="product-subtitle">Special Collection</p>
+                            <p class="product-description">Exclusive Lucario-themed premium collection from Prismatic Evolutions with holographic cards and collectible figures.</p>
+                            <div class="product-features">
+                                <ul>
+                                    <li><i class="fas fa-box"></i> 8 Booster Packs</li>
+                                    <li><i class="fas fa-trophy"></i> Lucario Figure</li>
+                                    <li><i class="fas fa-sparkles"></i> Holographic Cards</li>
+                                    <li><i class="fas fa-star"></i> Exclusive Artwork</li>
+                                </ul>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$129.99</span>
+                                <span class="compare-price">$149.99</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="add-to-cart-btn" 
+                                        data-name="Prismatic Evolutions Lucario Premium Collection"
+                                        data-price="129.99"
+                                        data-image="https://thumbs2.imgbox.com/9f/7e/JrsbKyXe_t.png">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Add to Cart
+                                </button>
+                                <button class="wishlist-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>RipPoke</h3>
+                    <p>Your trusted source for premium Pokemon TCG collections and exclusive cards.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.whatnot.com/s/UVqSopip" target="_blank"><i class="fas fa-video"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="booster-packs.html">Booster Packs</a></li>
+                        <li><a href="elite-trainer-boxes.html">Elite Trainer Boxes</a></li>
+                        <li><a href="premium-collections.html">Premium Collections</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for premium collection alerts and exclusive deals!</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RipPoke. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
