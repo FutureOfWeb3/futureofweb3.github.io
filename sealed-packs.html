@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Whatnot Sales - RipPoke Pokemon TCG Store</title>
+    <meta name="description" content="Join our live Whatnot sales! Exclusive deals, live breaks, and real-time auctions for Pokemon TCG products.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Accessibility Skip Links -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <a href="#navigation" class="skip-link">Skip to navigation</a>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <div class="announcement-item active">
+                <i class="fas fa-video"></i>
+                <span>🔴 Join our live Whatnot sales for exclusive deals & pack breaks!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Left Side -->
+            <div class="header-left">
+            </div>
+
+            <!-- Center Logo -->
+            <div class="header-center">
+                <a href="index.html" class="logo">
+                    <img src="https://thumbs2.imgbox.com/15/34/cuaCjuUA_t.png" alt="RipPoke Logo" class="logo-img">
+                    <div class="logo-text-container">
+                        <h1>RipPoke</h1>
+                        <span class="tagline">Pokemon TCG Store</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Right Side -->
+            <div class="header-right">
+                <div class="header-actions">
+                    <div class="currency-selector">
+                        <i class="fas fa-globe"></i>
+                        <select name="currency" id="currency">
+                            <option value="USD">US (USD $)</option>
+                            <option value="EUR">EU (EUR €)</option>
+                            <option value="GBP">UK (GBP £)</option>
+                        </select>
+                    </div>
+                    <a href="#" class="wishlist-btn" id="wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </a>
+                    <a href="#" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation" id="navigation">
+        <div class="nav-container">
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu-btn" id="hamburger-menu-btn" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="booster-packs.html" class="nav-link">Booster Packs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="elite-trainer-boxes.html" class="nav-link">Elite Trainer Boxes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="premium-collections.html" class="nav-link">Premium Collections</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sealed-packs.html" class="nav-link active">Live Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Live Whatnot Sales</h1>
+                <p>Join our exclusive live sales on Whatnot! Watch live pack breaks, bid on rare cards, and snag amazing deals in real-time!</p>
+            </div>
+        </section>
+
+        <!-- Live Stream Section -->
+        <section class="live-stream-section">
+            <div class="container">
+                <div class="live-stream-container">
+                    <div class="stream-status">
+                        <div class="status-indicator offline" id="stream-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Currently Offline</span>
+                        </div>
+                        <div class="next-stream">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Next Stream: Check back soon!</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stream-embed" id="stream-embed">
+                        <div class="stream-placeholder">
+                            <div class="placeholder-content">
+                                <div class="profile-preview-container">
+                                    <img src="https://thumbs2.imgbox.com/1e/49/7grJJz8I_t.png" alt="RipPoke Whatnot Profile" class="profile-preview-image">
+                                </div>
+                                <h3>Stream is Offline</h3>
+                                <p>Check out our Whatnot profile and follow for live alerts!</p>
+                                <a href="https://www.whatnot.com/s/UVqSopip" target="_blank" rel="noopener noreferrer" class="btn-follow-whatnot" id="follow-whatnot-btn">
+                                    <i class="fas fa-heart"></i> Follow on Whatnot
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Sales -->
+        <section class="upcoming-sales">
+            <div class="container">
+                <h2>Upcoming Live Sales</h2>
+                <div class="sales-grid">
+                    <div class="sale-card">
+                        <div class="sale-header">
+                            <div class="sale-date">
+                                <span class="day">TBA</span>
+                                <span class="time">Evening</span>
+                            </div>
+                            <div class="sale-type">
+                                <span class="type-badge pack-break">Pack Break</span>
+                            </div>
+                        </div>
+                        <div class="sale-content">
+                            <h3>Prismatic Evolutions Case Break</h3>
+                            <p>Live opening of a full case! Watch as we pull amazing cards and distribute to lucky participants.</p>
+                            <div class="sale-features">
+                                <span><i class="fas fa-users"></i> Multi-participant</span>
+                                <span><i class="fas fa-dice"></i> Random teams</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sale-card">
+                        <div class="sale-header">
+                            <div class="sale-date">
+                                <span class="day">TBA</span>
+                                <span class="time">Weekend</span>
+                            </div>
+                            <div class="sale-type">
+                                <span class="type-badge auction">Auction</span>
+                            </div>
+                        </div>
+                        <div class="sale-content">
+                            <h3>Rare Singles Auction</h3>
+                            <p>Bid on graded cards, vintage singles, and hard-to-find cards in our live auction format.</p>
+                            <div class="sale-features">
+                                <span><i class="fas fa-gavel"></i> Live bidding</span>
+                                <span><i class="fas fa-certificate"></i> Graded cards</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sale-card">
+                        <div class="sale-header">
+                            <div class="sale-date">
+                                <span class="day">TBA</span>
+                                <span class="time">Various</span>
+                            </div>
+                            <div class="sale-type">
+                                <span class="type-badge flash-sale">Flash Sale</span>
+                            </div>
+                        </div>
+                        <div class="sale-content">
+                            <h3>Mystery Box Flash Sales</h3>
+                            <p>Quick sales with mystery boxes, surprise deals, and limited-time offers you won't want to miss!</p>
+                            <div class="sale-features">
+                                <span><i class="fas fa-bolt"></i> Limited time</span>
+                                <span><i class="fas fa-gift"></i> Mystery items</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Whatnot -->
+        <section class="why-whatnot">
+            <div class="container">
+                <div class="why-whatnot-content">
+                    <div class="why-text">
+                        <h2>Why Shop Our Whatnot Sales?</h2>
+                        <div class="benefits-list">
+                            <div class="benefit">
+                                <i class="fas fa-eye"></i>
+                                <div>
+                                    <h4>Watch Live Openings</h4>
+                                    <p>See every pack opened in real-time with full transparency</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <i class="fas fa-dollar-sign"></i>
+                                <div>
+                                    <h4>Exclusive Deals</h4>
+                                    <p>Get amazing prices only available during live sales</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <i class="fas fa-shipping-fast"></i>
+                                <div>
+                                    <h4>Fast Shipping</h4>
+                                    <p>Cards ship out quickly after each live sale ends</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <i class="fas fa-comments"></i>
+                                <div>
+                                    <h4>Interactive Experience</h4>
+                                    <p>Chat with other collectors and join the community</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-visual">
+                        <div class="whatnot-mockup">
+                            <div class="mockup-header">
+                                <span class="live-indicator">🔴 LIVE</span>
+                                <span class="viewer-count">127 viewers</span>
+                            </div>
+                            <div class="mockup-content">
+                                <i class="fas fa-play-circle"></i>
+                                <p>Live Pack Opening</p>
+                            </div>
+                            <div class="mockup-chat">
+                                <div class="chat-message">Amazing pull! 🔥</div>
+                                <div class="chat-message">How much for that card?</div>
+                                <div class="chat-message">Going live daily! ⚡</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2>Never Miss a Live Sale!</h2>
+                    <p>Follow us on Whatnot to get notified when we go live with exclusive deals and pack breaks!</p>
+                    <div class="cta-actions">
+                        <a href="https://www.whatnot.com/s/UVqSopip" target="_blank" rel="noopener noreferrer" class="btn-primary" id="whatnot-follow-main">
+                            <i class="fas fa-heart"></i> Follow on Whatnot
+                        </a>
+                        <a href="#" class="btn-secondary" id="notification-signup">
+                            <i class="fas fa-bell"></i> Get Notifications
+                        </a>
+                    </div>
+                    <div class="social-proof">
+                        <div class="proof-item">
+                            <i class="fas fa-users"></i>
+                            <span>500+ Followers</span>
+                        </div>
+                        <div class="proof-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.9★ Rating</span>
+                        </div>
+                        <div class="proof-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Same Day Ship</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section-center">
+                    <div class="footer-buttons">
+                        <a href="mailto:support@rippoke.com" class="email-btn">
+                            <i class="fas fa-envelope"></i> Email Us
+                        </a>
+                        <div class="social-links">
+                            <a href="#" class="social-btn"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Card Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Notice -->
+    <div class="cookie-notice" id="cookie-notice">
+        <div class="cookie-content">
+            <p>We use cookies to improve your browsing experience and analyze site traffic. By continuing to use this site, you consent to our use of cookies.</p>
+            <div class="cookie-actions">
+                <button class="cookie-btn accept" onclick="acceptCookies()">Accept All</button>
+                <button class="cookie-btn decline" onclick="declineCookies()">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div id="wishlist-modal" class="wishlist-modal">
+        <div class="wishlist-modal-overlay"></div>
+        <div class="wishlist-modal-content">
+            <div class="wishlist-modal-header">
+                <button class="wishlist-modal-close" id="wishlist-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2><i class="fas fa-heart"></i> My Wishlist</h2>
+                <p class="wishlist-subtitle">Your favorited Pokemon cards</p>
+            </div>
+            <div class="wishlist-modal-body" id="wishlist-items">
+                <div class="empty-wishlist" id="empty-wishlist">
+                    <div class="empty-wishlist-icon">
+                        <i class="far fa-heart"></i>
+                    </div>
+                    <h3>Your wishlist is empty</h3>
+                    <p>Add some Pokemon cards to your wishlist to see them here!</p>
+                    <button class="btn-browse-cards" onclick="closeWishlistModal()">
+                        <i class="fas fa-search"></i> Browse Cards
+                    </button>
+                </div>
+            </div>
+            <div class="wishlist-modal-footer" id="wishlist-footer" style="display: none;">
+                <button class="btn-add-all-to-cart" id="add-all-to-cart-btn">
+                    <i class="fas fa-shopping-cart"></i> Add All to Cart
+                </button>
+                <button class="btn-clear-wishlist" id="clear-wishlist-btn">
+                    <i class="fas fa-trash"></i> Clear Wishlist
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Person Payment - RipPoke Pokemon TCG Store</title>
+    <meta name="description" content="Visit our physical location for in-person Pokemon TCG purchases and payments. Cash, card, and trade-ins accepted.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Accessibility Skip Links -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <a href="#navigation" class="skip-link">Skip to navigation</a>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <div class="announcement-item active">
+                <i class="fas fa-store"></i>
+                <span>🏪 Now Open for In-Person Purchases!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Left Side -->
+            <div class="header-left">
+            </div>
+
+            <!-- Center Logo -->
+            <div class="header-center">
+                <a href="index.html" class="logo">
+                    <img src="https://thumbs2.imgbox.com/15/34/cuaCjuUA_t.png" alt="RipPoke Logo" class="logo-img">
+                    <div class="logo-text-container">
+                        <h1>RipPoke</h1>
+                        <span class="tagline">Pokemon TCG Store</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Right Side -->
+            <div class="header-right">
+                <div class="header-actions">
+                    <div class="currency-selector">
+                        <i class="fas fa-globe"></i>
+                        <select name="currency" id="currency">
+                            <option value="USD">US (USD $)</option>
+                            <option value="EUR">EU (EUR €)</option>
+                            <option value="GBP">UK (GBP £)</option>
+                        </select>
+                    </div>
+                    <a href="#" class="wishlist-btn" id="wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </a>
+                    <a href="#" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation" id="navigation">
+        <div class="nav-container">
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu-btn" id="hamburger-menu-btn" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="booster-packs.html" class="nav-link">Booster Packs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="elite-trainer-boxes.html" class="nav-link">Elite Trainer Boxes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="premium-collections.html" class="nav-link">Premium Collections</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sealed-packs.html" class="nav-link">Live Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="in-person-payment.html" class="nav-link active">In-Person</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>In-Person Payments</h1>
+                <p>Visit our physical location for Pokemon TCG purchases, trades, and expert guidance</p>
+            </div>
+        </section>
+
+        <!-- Store Location Section -->
+        <section class="store-location">
+            <div class="container">
+                <div class="location-grid">
+                    <div class="location-info">
+                        <h2><i class="fas fa-map-marker-alt"></i> Store Location</h2>
+                        <div class="address">
+                            <p><strong>RipPoke TCG Store</strong></p>
+                            <p>123 Pokemon Center Drive</p>
+                            <p>Pallet Town, PT 12345</p>
+                            <p>United States</p>
+                        </div>
+                        
+                        <div class="store-hours">
+                            <h3><i class="fas fa-clock"></i> Store Hours</h3>
+                            <ul>
+                                <li><strong>Monday - Friday:</strong> 10:00 AM - 8:00 PM</li>
+                                <li><strong>Saturday:</strong> 9:00 AM - 9:00 PM</li>
+                                <li><strong>Sunday:</strong> 11:00 AM - 6:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="payment-methods">
+                        <h2><i class="fas fa-credit-card"></i> Accepted Payments</h2>
+                        <div class="payment-grid">
+                            <div class="payment-method">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <h4>Cash</h4>
+                                <p>All cash payments accepted</p>
+                            </div>
+                            <div class="payment-method">
+                                <i class="fas fa-credit-card"></i>
+                                <h4>Credit/Debit Cards</h4>
+                                <p>Visa, MasterCard, American Express</p>
+                            </div>
+                            <div class="payment-method">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>Digital Payments</h4>
+                                <p>Apple Pay, Google Pay, Samsung Pay</p>
+                            </div>
+                            <div class="payment-method">
+                                <i class="fas fa-exchange-alt"></i>
+                                <h4>Trade-Ins</h4>
+                                <p>Pokemon cards & sealed products</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Store Services -->
+                <div class="store-services">
+                    <h2><i class="fas fa-star"></i> In-Store Services</h2>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fas fa-search"></i>
+                            <h4>Card Authentication</h4>
+                            <p>Professional grading and authentication services</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Trade Evaluations</h4>
+                            <p>Expert appraisals for card trades and collections</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Community Events</h4>
+                            <p>Weekly tournaments and trading meetups</p>
+                        </div>
+                        <div class="service-item">
+                            <i class="fas fa-gift"></i>
+                            <h4>Special Orders</h4>
+                            <p>Hard-to-find cards and limited edition products</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Store Benefits -->
+                <div class="store-benefits">
+                    <h2><i class="fas fa-trophy"></i> Why Visit In-Person?</h2>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-eye"></i>
+                            <span>Inspect cards before purchase</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-comments"></i>
+                            <span>Expert advice from TCG specialists</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>Immediate pickup - no shipping delays</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-percent"></i>
+                            <span>Exclusive in-store discounts</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Early access to new releases</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Guaranteed authenticity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>RipPoke</h3>
+                    <p>Your trusted Pokemon TCG destination for authentic cards, competitive prices, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="booster-packs.html">Booster Packs</a></li>
+                        <li><a href="sealed-packs.html">Sealed Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="in-person-payment.html">Visit Store</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with the latest Pokemon TCG releases and exclusive offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 RipPoke. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
