@@ -1,0 +1,1259 @@
+/* ===== MOBILE OPTIMIZATION CSS ===== */
+/* Dedicated mobile styling for RipPoke Pokemon TCG Store */
+/* Focus on index.html and contact.html with slideshow preservation */
+
+/* ===== MOBILE BASE STYLES ===== */
+/* Force hamburger menu visibility on mobile and tablet - HIGHEST PRIORITY */
+@media screen and (max-width: 1024px) {
+    .hamburger-menu-btn,
+    button.hamburger-menu-btn,
+    #hamburger-menu-btn,
+    .header .hamburger-menu-btn,
+    .header button.hamburger-menu-btn,
+    .header #hamburger-menu-btn,
+    .mobile-menu-btn,
+    button.mobile-menu-btn,
+    #mobile-menu-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 99999 !important;
+        background: rgba(192, 132, 252, 0.9) !important;
+        border: 3px solid #c084fc !important;
+        border-radius: 10px !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 4px !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 8px !important;
+    }
+    
+    /* Hide desktop navigation on mobile */
+    .header-center,
+    .nav-menu:not(.mobile-open) {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    /* Prevent horizontal scroll */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+    
+    .container {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+    
+    /* ===== ANNOUNCEMENT BAR MOBILE ===== */
+    .announcement-bar {
+        padding: 10px 0;
+        min-height: 40px;
+        position: relative;
+        z-index: 1001;
+    }
+    
+    .announcement-item {
+        font-size: 0.8rem;
+        gap: 6px;
+        padding: 0 10px;
+    }
+    
+    .announcement-item i {
+        font-size: 14px;
+    }
+    
+    /* ===== HEADER & NAVIGATION MOBILE ===== */
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(15px);
+    }
+    
+    .header-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 15px;
+        position: relative;
+        min-height: 75px;
+    }
+    
+    .header-left {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .logo .tagline {
+        font-size: 0.75rem;
+    }
+    
+    .header-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 5;
+    }
+    
+    .header-center {
+        display: none;
+    }
+    
+    .header-actions {
+        gap: 10px;
+    }
+    
+    .cart-btn, .wishlist-btn {
+        padding: 8px 12px;
+        font-size: 1.1rem;
+    }
+    
+    /* ===== NAVIGATION MOBILE ===== */
+    .navigation {
+        display: block !important;
+        top: 80px;
+        padding: 0;
+        position: sticky;
+    }
+    
+    .nav-container {
+        padding: 0;
+        min-height: 50px;
+    }
+    
+    .hamburger-menu-btn {
+        display: flex !important;
+        position: relative;
+        z-index: 99999 !important;
+        background: rgba(192, 132, 252, 0.5) !important;
+        border: 3px solid rgba(192, 132, 252, 0.8) !important;
+        border-radius: 8px;
+        padding: 8px;
+        width: 48px;
+        height: 48px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        transition: all 0.3s ease;
+        cursor: pointer !important;
+        outline: none;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+    }
+    
+    .hamburger-menu-btn:hover {
+        background: rgba(192, 132, 252, 0.3);
+        border-color: rgba(192, 132, 252, 0.5);
+    }
+    
+    .hamburger-line {
+        width: 22px;
+        height: 3px;
+        background: rgba(255, 255, 255, 1) !important;
+        border-radius: 1px;
+        transition: all 0.3s ease;
+        display: block !important;
+        opacity: 1 !important;
+    }
+    
+    .hamburger-menu-btn.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger-menu-btn.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu-btn.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .nav-menu.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, 
+            rgba(42, 31, 61, 0.98) 0%, 
+            rgba(26, 26, 26, 0.98) 50%, 
+            rgba(15, 15, 15, 0.98) 100%);
+        backdrop-filter: blur(20px);
+        z-index: 1001;
+        padding: 100px 0 60px 0;
+        animation: slideInFromRight 0.4s ease;
+        overflow-y: auto;
+    }
+    
+    @keyframes slideInFromRight {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+    
+    .nav-menu.mobile-open .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 20px;
+        margin: 4px 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(192, 132, 252, 0.2);
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        min-height: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu.mobile-open .nav-link:hover {
+        background: rgba(192, 132, 252, 0.15);
+        border-color: rgba(192, 132, 252, 0.4);
+        transform: translateY(-2px) scale(1.02);
+    }
+    
+    /* Mobile Dropdown Menus */
+    .nav-menu.mobile-open .dropdown {
+        position: relative;
+    }
+    
+    .nav-menu.mobile-open .dropdown > .nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-menu.mobile-open .dropdown > .nav-link::after {
+        content: '▼';
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.7);
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-menu.mobile-open .dropdown.open > .nav-link::after {
+        transform: rotate(180deg);
+    }
+    
+    .nav-menu.mobile-open .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        margin-top: 8px;
+        margin-left: 15px;
+        margin-right: 15px;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(192, 132, 252, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+        animation: slideDown 0.3s ease;
+    }
+    
+    .nav-menu.mobile-open .dropdown.open .dropdown-menu {
+        display: flex;
+    }
+    
+    .nav-menu.mobile-open .dropdown-menu .nav-link {
+        padding: 12px 16px;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(192, 132, 252, 0.1);
+    }
+    
+    .nav-menu.mobile-open .dropdown-menu .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-menu.mobile-open .dropdown-menu .nav-link:hover {
+        background: rgba(192, 132, 252, 0.1);
+        transform: none;
+        scale: none;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            max-height: 0;
+        }
+        to {
+            opacity: 1;
+            max-height: 300px;
+        }
+    }
+    
+    /* ===== INDEX PAGE MOBILE OPTIMIZATION ===== */
+    
+    /* Hero Slideshow Mobile */
+    .hero-slideshow {
+        margin-top: 0;
+        padding: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .slideshow-container {
+        height: 60vh;
+        min-height: 400px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .slide {
+        height: 100% !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .slide-content {
+        flex-direction: column-reverse;
+        padding: 20px 15px;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: flex !important;
+    }
+    
+    .slide-left {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .pokemon-cards {
+        width: 360px;
+        height: 240px;
+        margin: 0 auto;
+    }
+    
+    .card-image {
+        width: 120px;
+        height: 170px;
+        border-radius: 12px;
+    }
+    
+    .card-1 {
+        top: 20px;
+        left: 30px;
+        z-index: 3;
+        transform: rotate(-8deg);
+    }
+    
+    .card-2 {
+        top: 35px;
+        left: 120px;
+        z-index: 2;
+        transform: rotate(3deg);
+    }
+    
+    .card-3 {
+        top: 15px;
+        left: 210px;
+        z-index: 1;
+        transform: rotate(12deg);
+    }
+    
+    .slide-right {
+        width: 100%;
+    }
+    
+    .slide-right h1 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    
+    /* Hide secondary text on mobile to prevent header overlap */
+    .slide-right h2 {
+        display: none;
+    }
+    
+    .slide-right p {
+        display: none;
+    }
+    
+    .promo-text {
+        display: none;
+    }
+    
+    .cta-button {
+        padding: 14px 28px;
+        font-size: 1rem;
+        border-radius: 25px;
+    }
+    
+    .slide-navigation {
+        bottom: 15px;
+    }
+    
+    /* Hide dots on mobile, keep only arrows */
+    .nav-dot {
+        display: none !important;
+    }
+    
+    .slide-control {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+        background: rgba(0, 0, 0, 0.8) !important;
+        border: 2px solid rgba(255, 255, 255, 0.5) !important;
+        color: white !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        opacity: 1 !important;
+        visibility: visible !important;
+        z-index: 100 !important;
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        border-radius: 50% !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .slide-control.prev {
+        left: 15px !important;
+    }
+    
+    .slide-control.next {
+        right: 15px !important;
+    }
+    
+    .slide-control:hover {
+        background: rgba(0, 0, 0, 0.9) !important;
+        border-color: rgba(255, 255, 255, 0.8) !important;
+        transform: translateY(-50%) scale(1.1) !important;
+    }
+    
+    /* Navigation Cards Mobile */
+    .nav-cards {
+        padding: 40px 0;
+    }
+    
+    .nav-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 10px;
+        max-width: 100%;
+    }
+    
+    .nav-card {
+        aspect-ratio: 1;
+        padding: 15px;
+        min-height: 140px;
+    }
+    
+    .nav-card-icon {
+        height: 60%;
+    }
+    
+    .nav-card-icon .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    .nav-card-accent {
+        height: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-card-description {
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.2;
+    }
+    
+    /* New Arrivals Mobile */
+    .new-arrivals-section {
+        padding: 40px 0;
+    }
+    
+    .new-arrivals-section .section-header {
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+    
+    .new-arrivals-section .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .new-arrivals-section .section-header h2::after {
+        right: -30px;
+        font-size: 1.5rem;
+    }
+    
+    .new-arrivals-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .new-arrivals-grid .product-card.featured {
+        margin: 0;
+        border-radius: 12px;
+    }
+    
+    .new-arrivals-grid .product-info {
+        padding: 20px;
+    }
+    
+    .new-arrivals-grid .product-title {
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+    
+    .new-arrivals-grid .product-subtitle::after {
+        right: -20px;
+        font-size: 0.7rem;
+    }
+    
+    .new-arrivals-grid .product-price .current-price {
+        font-size: 1.8rem;
+    }
+    
+    .new-arrivals-grid .btn-add-cart {
+        padding: 14px 20px;
+        font-size: 0.95rem;
+    }
+    
+    /* ===== CONTACT PAGE MOBILE OPTIMIZATION ===== */
+    
+    /* Contact Hero */
+    .contact-hero {
+        padding: 40px 0;
+        text-align: center;
+    }
+    
+    .contact-hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .contact-hero p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+    
+    /* Contact Methods */
+    .contact-methods {
+        padding: 30px 0;
+    }
+    
+    .contact-methods-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 15px;
+    }
+    
+    .contact-method-card {
+        padding: 25px 20px;
+        text-align: center;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(192, 132, 252, 0.3);
+    }
+    
+    .contact-method-card i {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+    }
+    
+    .contact-method-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+    
+    .contact-method-card p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 15px;
+    }
+    
+    .contact-method-card a {
+        display: inline-block;
+        padding: 12px 24px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .contact-method-card a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(192, 132, 252, 0.4);
+    }
+    
+    /* Contact Form */
+    .contact-form-section {
+        padding: 30px 0;
+    }
+    
+    .contact-form {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #ffffff;
+        font-size: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid rgba(192, 132, 252, 0.3);
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.4);
+        color: #ffffff;
+        font-size: 16px; /* Prevents iOS zoom */
+        font-family: inherit;
+        transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.2);
+    }
+    
+    .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+    
+    .form-row {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .form-row .form-group {
+        flex: 1;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 16px 24px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+    }
+    
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(192, 132, 252, 0.4);
+    }
+    
+    /* ===== FOOTER MOBILE ===== */
+    .footer {
+        padding: 30px 0 0;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .footer-section ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .footer-section li {
+        margin-bottom: 0;
+    }
+    
+    .social-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    .footer-bottom {
+        padding: 20px 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* ===== PRODUCT PAGES MOBILE ===== */
+    .page-hero {
+        padding: 40px 0;
+        text-align: center;
+    }
+    
+    .page-hero h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .page-hero p {
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 0 15px;
+    }
+    
+    .products-section {
+        padding: 30px 0;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .product-card {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    
+    .product-image {
+        height: 250px;
+    }
+    
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 15px;
+    }
+    
+    .product-info {
+        padding: 20px;
+    }
+    
+    .product-title {
+        font-size: 1.2rem;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+    
+    .product-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .product-description {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    
+    .product-features ul {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    
+    .product-features li {
+        font-size: 0.85rem;
+        padding: 4px 0;
+    }
+    
+    .product-price {
+        margin: 15px 0;
+        text-align: center;
+    }
+    
+    .product-price .current-price {
+        font-size: 1.8rem;
+    }
+    
+    .product-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .btn-add-cart {
+        flex: 1;
+        padding: 14px 20px;
+        font-size: 1rem;
+        border-radius: 25px;
+    }
+    
+    .btn-wishlist {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+    
+    /* ===== UTILITIES & ANIMATIONS ===== */
+    
+    /* Touch optimizations */
+    button, .btn, a {
+        min-height: 44px;
+        min-width: 44px;
+        touch-action: manipulation;
+    }
+    
+    /* Prevent touch callouts */
+    * {
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Loading states */
+    .loading {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+    
+    /* Animation performance */
+    .slide-content,
+    .nav-card,
+    .product-card {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        will-change: transform;
+    }
+}
+
+/* ===== SMALL MOBILE OPTIMIZATION ===== */
+@media (max-width: 480px) {
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Announcement bar */
+    .announcement-item {
+        font-size: 0.75rem;
+    }
+    
+    /* Header */
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+    
+    .logo .tagline {
+        font-size: 0.65rem;
+    }
+    
+    /* Hero slideshow */
+    .slideshow-container {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .pokemon-cards {
+        width: 320px;
+        height: 200px;
+    }
+    
+    .card-image {
+        width: 100px;
+        height: 140px;
+    }
+    
+    .slide-right h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Keep secondary text hidden on small mobile too */
+    .slide-right h2 {
+        display: none;
+    }
+    
+    .slide-right p {
+        display: none;
+    }
+    
+    .promo-text {
+        display: none;
+    }
+    
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+    
+    /* Navigation cards */
+    .nav-cards-grid {
+        gap: 10px;
+        padding: 0 5px;
+    }
+    
+    .nav-card {
+        min-height: 120px;
+        padding: 10px;
+    }
+    
+    .nav-card-description {
+        font-size: 0.75rem;
+    }
+    
+    /* New arrivals */
+    .new-arrivals-section .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .new-arrivals-section .section-header h2::after {
+        right: -25px;
+        font-size: 1.2rem;
+    }
+    
+    .new-arrivals-grid {
+        padding: 0 5px;
+    }
+    
+    .new-arrivals-grid .product-title {
+        font-size: 1.1rem;
+    }
+    
+    .new-arrivals-grid .product-price .current-price {
+        font-size: 1.6rem;
+    }
+    
+    .new-arrivals-grid .btn-add-cart {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+    
+    /* Contact form */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 14px;
+    }
+    
+    .submit-btn {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    /* Products */
+    .products-grid {
+        padding: 0 10px;
+    }
+    
+    .product-image {
+        height: 200px;
+    }
+    
+    .product-info {
+        padding: 15px;
+    }
+    
+    .product-title {
+        font-size: 1.1rem;
+    }
+    
+    .product-price .current-price {
+        font-size: 1.6rem;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+    
+    .slideshow-container {
+        height: 80vh;
+    }
+    
+    .slide-content {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .slide-left {
+        width: 40%;
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
+    
+    .slide-right {
+        width: 60%;
+        text-align: left;
+    }
+    
+    .pokemon-cards {
+        width: 280px;
+        height: 160px;
+    }
+    
+    .slide-right h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Keep secondary text hidden on landscape mobile too */
+    .slide-right h2 {
+        display: none;
+    }
+    
+    .slide-right p {
+        display: none;
+    }
+    
+    .promo-text {
+        display: none;
+    }
+    
+    .nav-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===== ACCESSIBILITY & PERFORMANCE ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .nav-link,
+    .product-title,
+    .contact-method-card h3 {
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+    }
+    
+    .product-card,
+    .contact-method-card {
+        border-width: 2px;
+    }
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        background: rgba(0, 0, 0, 0.6);
+        border-color: rgba(192, 132, 252, 0.4);
+    }
+}
+
+/* ===== NUCLEAR OPTION - FORCE HAMBURGER VISIBILITY ===== */
+/* This rule must be at the end to override all other styles */
+@media screen and (max-width: 1024px) {
+    body .header .hamburger-menu-btn,
+    body .header button.hamburger-menu-btn,
+    body .header #hamburger-menu-btn,
+    html body .header .hamburger-menu-btn,
+    html body .header button.hamburger-menu-btn,
+    html body .header #hamburger-menu-btn,
+    body .header .mobile-menu-btn,
+    body .header button.mobile-menu-btn,
+    body .header #mobile-menu-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 999999 !important;
+        background: rgba(192, 132, 252, 0.7) !important;
+        border: 3px solid rgba(192, 132, 252, 1) !important;
+        width: 50px !important;
+        height: 50px !important;
+        position: relative !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 3px !important;
+        padding: 8px !important;
+        cursor: pointer !important;
+        border-radius: 8px !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+    }
+    
+    body .header .hamburger-line,
+    body .header #hamburger-menu-btn .hamburger-line,
+    body .header .mobile-menu-btn .hamburger-line {
+        display: block !important;
+        width: 24px !important;
+        height: 3px !important;
+        background: white !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        border-radius: 2px !important;
+    }
+}
+
+/* ===== FORCE HAMBURGER TO STAY VISIBLE - OVERRIDE ANY CONFLICTING STYLES ===== */
+@media screen and (max-width: 1024px) {
+    /* Ensure hamburger stays visible after page load */
+    body.loaded .hamburger-menu-btn,
+    body.loaded button.hamburger-menu-btn,
+    body.loaded #hamburger-menu-btn,
+    html body.loaded .header .hamburger-menu-btn,
+    html body.loaded .header button.hamburger-menu-btn,
+    html body.loaded .header #hamburger-menu-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 999999 !important;
+        position: relative !important;
+        background: rgba(255, 0, 0, 0.8) !important; /* Red background to make it super obvious */
+        border: 4px solid red !important;
+        width: 60px !important;
+        height: 60px !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 4px !important;
+        padding: 10px !important;
+        cursor: pointer !important;
+        border-radius: 12px !important;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+    
+    /* Force hamburger lines to be visible */
+    body.loaded .hamburger-line,
+    body.loaded .hamburger-menu-btn .hamburger-line,
+    body.loaded #hamburger-menu-btn .hamburger-line {
+        display: block !important;
+        width: 30px !important;
+        height: 4px !important;
+        background: white !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        border-radius: 2px !important;
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
+/* ===== MOBILE MENU JAVASCRIPT INJECTION ===== */
+/* Add JavaScript functionality directly in CSS */
+/*
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu functionality
+    function setupMobileMenu() {
+        const mobileBtn = document.querySelector('.hamburger-menu-btn, #hamburger-menu-btn, .mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        console.log('Mobile menu setup:', mobileBtn, navMenu);
+        
+        if (mobileBtn && navMenu) {
+            mobileBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Mobile menu clicked');
+                navMenu.classList.toggle('mobile-open');
+                mobileBtn.classList.toggle('active');
+            });
+            
+            // Setup dropdown functionality in mobile menu
+            const dropdownItems = navMenu.querySelectorAll('.has-dropdown');
+            dropdownItems.forEach(item => {
+                const trigger = item.querySelector('.dropdown-trigger');
+                if (trigger) {
+                    trigger.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        item.classList.toggle('open');
+                    });
+                }
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileBtn.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('mobile-open');
+                    mobileBtn.classList.remove('active');
+                }
+            });
+        }
+    }
+    
+    // Initialize mobile menu
+    setupMobileMenu();
+    
+    // Re-setup on window resize (in case DOM changes)
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(setupMobileMenu, 100);
+    });
+});
+</script>
+*/
