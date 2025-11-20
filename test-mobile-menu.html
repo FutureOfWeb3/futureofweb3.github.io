@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test - RipPoke</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .test-info {
+            background: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        .debug-info {
+            background: #e8f4f8;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        /* Clean Mobile Navigation Styles */
+        @media screen and (min-width: 1025px) {
+            .hamburger-menu-btn {
+                display: none !important;
+            }
+        }
+        
+        @media screen and (max-width: 1024px) {
+            .hamburger-menu-btn {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            
+            .header-center {
+                display: none !important;
+            }
+            
+            .nav-menu:not(.mobile-open) {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <h1>Mobile Menu Test Page</h1>
+        <p>This page tests the mobile hamburger menu functionality.</p>
+        <p><strong>Instructions:</strong> Resize browser to mobile width (&lt;1024px) and test the hamburger menu.</p>
+    </div>
+
+    <!-- Header & Navigation (simplified from index.html) -->
+    <header class="header navigation" id="navigation" style="position: sticky; top: 0; z-index: 1000;">
+        <div class="header-container nav-container">
+            <!-- Left Side - Logo -->
+            <div class="header-left">
+                <a href="#" class="logo">
+                    <img src="https://thumbs2.imgbox.com/40/e2/8r3f174y_t.png" alt="RipPoke Logo" class="logo-img">
+                    <div class="logo-text-container">
+                        <h1>RipPoke</h1>
+                        <span class="tagline">POKEMON TCG STORE</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Center - Navigation Menu -->
+            <div class="header-center">
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item has-dropdown dropdown">
+                        <a href="#" class="nav-link dropdown-trigger">Boxes <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <ul>
+                                    <li><a href="booster-boxes.html" class="nav-link">Booster Boxes</a></li>
+                                    <li><a href="elite-trainer-boxes.html" class="nav-link">Elite Trainer Boxes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tins.html" class="nav-link">Tins</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Side - Cart & Wishlist -->
+            <div class="header-right">
+                <div class="header-actions">
+                    <a href="#" class="wishlist-btn" id="wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </a>
+                    <a href="#" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hamburger Menu Button for Mobile -->
+            <button class="hamburger-menu-btn" id="hamburger-menu-btn" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="debug-info" id="debug-output">
+        <h3>Debug Information:</h3>
+        <div id="debug-messages">Page loaded, waiting for interactions...</div>
+    </div>
+
+    <div style="padding: 40px 20px;">
+        <h2>Test Content</h2>
+        <p>This is test content to verify that the mobile menu works correctly.</p>
+        <p>When you click the hamburger menu on mobile, the navigation should appear as a full-screen overlay.</p>
+        
+        <button onclick="testMenuManually()" style="padding: 10px 20px; margin: 10px;">Test Menu Toggle</button>
+        <button onclick="clearDebug()" style="padding: 10px 20px; margin: 10px;">Clear Debug</button>
+    </div>
+
+    <script>
+        // Debug logging
+        function log(message) {
+            const debugMessages = document.getElementById('debug-messages');
+            const timestamp = new Date().toLocaleTimeString();
+            debugMessages.innerHTML += `<br>[${timestamp}] ${message}`;
+            console.log(message);
+        }
+
+        function clearDebug() {
+            document.getElementById('debug-messages').innerHTML = 'Debug cleared...';
+        }
+
+        function testMenuManually() {
+            const navMenu = document.getElementById('nav-menu');
+            const hamburgerBtn = document.getElementById('hamburger-menu-btn');
+            
+            if (navMenu && hamburgerBtn) {
+                const isOpen = navMenu.classList.contains('mobile-open');
+                log(`Manual test: Menu is currently ${isOpen ? 'open' : 'closed'}`);
+                
+                if (isOpen) {
+                    navMenu.classList.remove('mobile-open');
+                    hamburgerBtn.classList.remove('active');
+                } else {
+                    navMenu.classList.add('mobile-open');
+                    hamburgerBtn.classList.add('active');
+                }
+                
+                log(`Manual test: Menu toggled to ${!isOpen ? 'open' : 'closed'}`);
+            } else {
+                log('Manual test: Elements not found!');
+            }
+        }
+
+        // Load mobile menu script
+        log('Loading mobile menu functionality...');
+        
+        // Simple mobile menu implementation for testing
+        document.addEventListener('DOMContentLoaded', function() {
+            log('DOM loaded, setting up mobile menu...');
+            
+            const hamburgerBtn = document.getElementById('hamburger-menu-btn');
+            const navMenu = document.getElementById('nav-menu');
+            
+            log(`Hamburger button found: ${!!hamburgerBtn}`);
+            log(`Nav menu found: ${!!navMenu}`);
+            
+            if (!hamburgerBtn || !navMenu) {
+                log('ERROR: Mobile menu elements not found!');
+                return;
+            }
+            
+            // Ensure menu starts closed on mobile
+            if (window.innerWidth <= 1024) {
+                navMenu.classList.remove('mobile-open');
+                hamburgerBtn.classList.remove('active');
+                log('Menu initialized as closed on mobile');
+            }
+            
+            // Toggle function
+            function toggleMobileMenu(e) {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                
+                log('Menu toggle triggered');
+                
+                const isCurrentlyOpen = navMenu.classList.contains('mobile-open');
+                log(`Menu currently open: ${isCurrentlyOpen}`);
+                
+                if (isCurrentlyOpen) {
+                    navMenu.classList.remove('mobile-open');
+                    hamburgerBtn.classList.remove('active');
+                    document.body.style.overflow = '';
+                    log('Menu closed');
+                } else {
+                    navMenu.classList.add('mobile-open');
+                    hamburgerBtn.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    log('Menu opened');
+                }
+            }
+            
+            // Add event listeners
+            hamburgerBtn.addEventListener('click', toggleMobileMenu);
+            hamburgerBtn.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                toggleMobileMenu();
+            });
+            
+            log('Mobile menu event listeners added');
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (navMenu.classList.contains('mobile-open')) {
+                    if (!navMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                        toggleMobileMenu();
+                        log('Menu closed by outside click');
+                    }
+                }
+            });
+            
+            // Handle dropdown menus on mobile
+            const dropdownTriggers = navMenu.querySelectorAll('.dropdown-trigger');
+            dropdownTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        const dropdown = trigger.closest('.dropdown');
+                        if (dropdown) {
+                            dropdown.classList.toggle('open');
+                            log('Dropdown toggled');
+                        }
+                    }
+                });
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 1024) {
+                    navMenu.classList.remove('mobile-open');
+                    hamburgerBtn.classList.remove('active');
+                    document.body.style.overflow = '';
+                    log('Menu closed due to resize to desktop');
+                }
+            });
+            
+            log('Mobile menu setup complete!');
+        });
+    </script>
+</body>
+</html>
