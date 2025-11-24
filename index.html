@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- HTML Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RipPoke - Pokemon TCG Store</title>
+    <meta name="description" content="RipPoke - Your ultimate Pokemon TCG destination. Explore our singles, booster packs, sealed products and more!">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://krammerdev.online">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RipPoke">
+    <meta property="og:description" content="RipPoke - Your ultimate Pokemon TCG destination. Explore our singles, booster packs, sealed products and more!">
+    <meta property="og:image" content="https://opengraph.b-cdn.net/production/images/dd76e69d-d787-4715-ae29-9879b0a8a479.png?token=6HNLFJhID-yZ3eCRLQWqsURh-5gyGkKMYU08Me7ODrs&height=500&width=500&expires=33298806226">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="krammerdev.online">
+    <meta property="twitter:url" content="https://krammerdev.online">
+    <meta name="twitter:title" content="RipPoke">
+    <meta name="twitter:description" content="RipPoke - Your ultimate Pokemon TCG destination. Explore our singles, booster packs, sealed products and more!">
+    <meta name="twitter:image" content="https://opengraph.b-cdn.net/production/images/dd76e69d-d787-4715-ae29-9879b0a8a479.png?token=6HNLFJhID-yZ3eCRLQWqsURh-5gyGkKMYU08Me7ODrs&height=500&width=500&expires=33298806226">
+
+    <link rel="stylesheet" href="styles.css?v=20241115asmodeetins">
+    <!-- <link rel="stylesheet" href="mobile.css?v=20241119mobile"> DISABLED - conflicts with simple menu -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- EmailJS for mini contact form functionality -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with error handling
+        window.addEventListener('load', function() {
+            try {
+                if (typeof emailjs !== 'undefined') {
+                    emailjs.init('ll5Uw3IhDTrK-c1WD');
+                    console.log('EmailJS initialized successfully');
+                    window.emailjsReady = true;
+                } else {
+                    console.warn('EmailJS library not loaded');
+                    window.emailjsReady = false;
+                }
+            } catch (error) {
+                console.error('EmailJS initialization error:', error);
+                window.emailjsReady = false;
+            }
+        });
+    </script>
+    <style>
+        /* CLEAN MOBILE MENU SETUP */
+        
+        /* DESKTOP: Hide mobile menu button completely */
+        .mobile-menu-btn {
+            display: none !important;
+        }
+        
+        /* MOBILE ONLY: Show mobile menu button */
+        @media (max-width: 1024px) {
+            .mobile-menu-btn {
+                display: flex !important;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background: rgba(192, 132, 252, 0.9);
+                border: 2px solid #c084fc;
+                border-radius: 8px;
+                z-index: 99999;
+                cursor: pointer;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+                box-shadow: 0 4px 15px rgba(192, 132, 252, 0.3);
+                transition: all 0.3s ease;
+            }
+            
+            .mobile-menu-btn:hover {
+                background: rgba(192, 132, 252, 1);
+                transform: scale(1.05);
+                box-shadow: 0 6px 20px rgba(192, 132, 252, 0.5);
+            }
+            
+            .mobile-menu-btn span {
+                width: 20px;
+                height: 2px;
+                background: white;
+                display: block;
+            }
+            
+            /* Hide desktop navigation on mobile */
+            .header-center { 
+                display: none !important; 
+            }
+        }
+        
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(30, 30, 50, 0.98) 0%, 
+                rgba(50, 30, 80, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            z-index: 99998;
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 80px 30px 40px 30px;
+            overflow-y: auto;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .mobile-overlay.show {
+            display: flex;
+        }
+        
+        .mobile-overlay a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 10px 0;
+            padding: 18px 30px;
+            border: none;
+            border-radius: 25px;
+            width: 85%;
+            max-width: 280px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-overlay a:hover {
+            background: rgba(192, 132, 252, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(192, 132, 252, 0.2);
+        }
+        
+        /* Mobile Dropdown Styles */
+        .mobile-dropdown {
+            width: 85%;
+            max-width: 320px;
+            margin: 8px 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mobile-dropdown-btn {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 18px 30px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-dropdown-btn:hover {
+            background: rgba(192, 132, 252, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(192, 132, 252, 0.2);
+        }
+        
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-dropdown-btn.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .mobile-dropdown-content {
+            display: none;
+            background: linear-gradient(135deg, 
+                rgba(192, 132, 252, 0.15) 0%, 
+                rgba(168, 85, 247, 0.1) 100%);
+            border-radius: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            overflow: visible;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.2);
+            border: 1px solid rgba(192, 132, 252, 0.3);
+            backdrop-filter: blur(15px);
+            position: relative;
+            width: 100%;
+        }
+        
+        @keyframes slideDown {
+            from { 
+                opacity: 0; 
+                transform: translateY(-10px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        .mobile-dropdown-content.show {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        .mobile-dropdown-content a {
+            display: block;
+            width: calc(100% - 10px);
+            margin: 8px 5px;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(192, 132, 252, 0.4);
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mobile-dropdown-content a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(192, 132, 252, 0.2), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .mobile-dropdown-content a:hover::before {
+            left: 100%;
+        }
+        
+        .mobile-dropdown-content a:hover {
+            background: rgba(192, 132, 252, 0.3);
+            border-color: rgba(192, 132, 252, 0.8);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(192, 132, 252, 0.25);
+            color: white;
+        }
+        
+        /* Navigation Cards Mobile Fix */
+        @media (max-width: 768px) {
+            .nav-cards-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+                max-width: 90% !important;
+                margin: 0 auto !important;
+                padding: 0 20px !important;
+            }
+            
+            .nav-card {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 auto !important;
+            }
+        }
+        
+        /* Mini Contact Form Styles */
+        .mini-contact-form {
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .mini-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .mini-form-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .mini-form-row input,
+        .mini-form-row select,
+        .mini-form-row textarea {
+            flex: 1;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(192, 132, 252, 0.3);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .mini-form-row input::placeholder,
+        .mini-form-row select option,
+        .mini-form-row textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .mini-form-row select option {
+            background: #2d1b3d;
+            color: #ffffff;
+        }
+        
+        .mini-form-row input:focus,
+        .mini-form-row select:focus,
+        .mini-form-row textarea:focus {
+            border-color: #c084fc;
+            box-shadow: 0 0 15px rgba(192, 132, 252, 0.3);
+            outline: none;
+        }
+        
+        .mini-form-row textarea {
+            resize: vertical;
+            min-height: 60px;
+            max-height: 100px;
+        }
+        
+        .mini-submit-btn {
+            align-self: flex-start;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #ff6b6b 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .mini-submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(192, 132, 252, 0.4);
+        }
+        
+        .mini-submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .mini-submit-btn i {
+            font-size: 12px;
+        }
+        
+        /* Mini Support Info Styles */
+        .mini-support-info {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .mini-support-info h4 {
+            color: #c084fc;
+            font-size: 1.1rem;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .support-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .support-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .support-bullets li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .support-bullets li i {
+            color: #c084fc;
+            font-size: 0.9rem;
+            margin-top: 2px;
+            min-width: 16px;
+        }
+        
+        .support-bullets li strong {
+            color: #ffffff;
+        }
+        
+        .support-bullets li a {
+            color: #ff77c6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .support-bullets li a:hover {
+            color: #c084fc;
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsive for Mini Form */
+        @media (max-width: 768px) {
+            .mini-contact-form {
+                max-width: 100%;
+            }
+            
+            .mini-form-row {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .mini-form-row input,
+            .mini-form-row select {
+                width: 100%;
+            }
+            
+            .mini-submit-btn {
+                align-self: stretch;
+                justify-content: center;
+            }
+            
+            .mini-contact-actions {
+                text-align: center;
+            }
+            
+            .mini-support-info {
+                margin-top: 20px;
+                padding: 15px;
+            }
+            
+            .mini-support-info h4 {
+                font-size: 1rem;
+                text-align: center;
+                justify-content: center;
+            }
+            
+            .support-bullets li {
+                font-size: 0.85rem;
+                gap: 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .mini-form-row input,
+            .mini-form-row select,
+            .mini-form-row textarea {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+            
+            .mini-submit-btn {
+                font-size: 16px;
+                padding: 15px 24px;
+            }
+        }
+        
+        /* Mini Notification Styles */
+        .mini-notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 10001;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            max-width: 350px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: slideInMiniNotification 0.3s ease;
+            font-size: 14px;
+        }
+        .mini-notification-success {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+        }
+        .mini-notification-error {
+            background: linear-gradient(135deg, #f56565, #e53e3e);
+        }
+        .mini-notification-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .mini-notification-content button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 0;
+            opacity: 0.8;
+        }
+        .mini-notification-content button:hover {
+            opacity: 1;
+        }
+        @keyframes slideInMiniNotification {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @media (max-width: 480px) {
+            .mini-notification {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Accessibility Skip Links -->
+    <div class="skip-links">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <a href="#navigation" class="skip-link">Skip to navigation</a>
+    </div>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-slider">
+            <div class="announcement-item active">
+                <i class="fas fa-shipping-fast"></i>
+                Tracked Shipping To The US for only $15!
+            </div>
+            <div class="announcement-item">
+                <i class="fas fa-coins"></i>
+                🤑 Become a Pokemon Master!
+            </div>
+            <div class="announcement-item">
+                <i class="fas fa-tags"></i>
+                🏷️ Price Match Inquiries!
+            </div>
+        </div>
+    </div>
+
+    <!-- Merged Header & Navigation -->
+    <header class="header navigation" id="navigation" style="position: sticky !important; top: 0 !important; z-index: 1000 !important;">
+        <div class="header-container nav-container">
+            <!-- Left Side - Logo -->
+            <div class="header-left">
+                <a href="#" class="logo">
+                    <img src="https://thumbs2.imgbox.com/40/e2/8r3f174y_t.png" alt="RipPoke Logo" class="logo-img">
+                    <div class="logo-text-container">
+                        <h1>RipPoke</h1>
+                        <span class="tagline">POKEMON TCG STORE</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Center - Navigation Menu -->
+            <div class="header-center">
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item has-dropdown dropdown">
+                        <a href="#" class="nav-link dropdown-trigger">Boxes <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <ul>
+                                    <li><a href="booster-boxes.html" class="nav-link">Booster Boxes</a></li>
+                                    <li><a href="elite-trainer-boxes.html" class="nav-link">Elite Trainer Boxes</a></li>
+                                    <li><a href="premium-collections.html" class="nav-link">Premium Collection Boxes</a></li>
+                                    <li><a href="collection-boxes.html" class="nav-link">Collection Boxes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item has-dropdown dropdown">
+                        <a href="#" class="nav-link dropdown-trigger">Sealed Packs <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <ul>
+                                    <li><a href="booster-bundles.html" class="nav-link">Booster Bundles</a></li>
+                                    <li><a href="sleeved-booster-packs.html" class="nav-link">Sleeved Booster Packs</a></li>
+                                    <li><a href="booster-packs.html" class="nav-link">Booster Packs</a></li>
+                                    <li><a href="blister-packs.html" class="nav-link">Blister Packs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tins.html" class="nav-link">Tins</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="whatnot.html" class="nav-link">WhatNot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Side - Cart & Wishlist -->
+            <div class="header-right">
+                <div class="header-actions">
+                    <a href="#" class="wishlist-btn" id="wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">0</span>
+                    </a>
+                    <a href="#" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- Clean Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <a href="index.html">Home</a>
+        
+        <!-- Boxes Dropdown -->
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-btn" onclick="toggleDropdown('boxes')">
+                Boxes <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="mobile-dropdown-content" id="boxes">
+                <a href="booster-boxes.html">Booster Boxes</a>
+                <a href="elite-trainer-boxes.html">Elite Trainer Boxes</a>
+                <a href="collection-boxes.html">Collection Boxes</a>
+            </div>
+        </div>
+        
+        <!-- Sealed Packs Dropdown -->
+        <div class="mobile-dropdown">
+            <button class="mobile-dropdown-btn" onclick="toggleDropdown('packs')">
+                Sealed Packs <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="mobile-dropdown-content" id="packs">
+                <a href="booster-packs.html">Booster Packs</a>
+                <a href="booster-bundles.html">Booster Bundles</a>
+                <a href="sleeved-booster-packs.html">Sleeved Booster Packs</a>
+                <a href="blister-packs.html">Blister Packs</a>
+            </div>
+        </div>
+        
+        <a href="premium-collections.html">Premium Collections</a>
+        <a href="tins.html">Tins</a>
+        <a href="japanese.html">Japanese</a>
+        <a href="miscellaneous.html">Miscellaneous</a>
+        <a href="whatnot.html">Whatnot</a>
+        <a href="in-person-payment.html">In-Person Payment</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Hero Slideshow -->
+        <section class="hero-slideshow">
+            <div class="slideshow-container">
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <div class="slide-content">
+                        <div class="slide-left">
+                            <div class="pokemon-cards">
+                                <img src="https://www.evolutioncardstcg.com/cdn/shop/files/caab05d3-adc3-4818-8506-02fe1f34e789.webp?v=1756932186" alt="Pokemon Card 1" class="card-image card-1">
+                                <img src="https://www.stompinggroundstcg.com/cdn/shop/files/Blooming_Waters_Premium_Collection.webp?v=1736882606" alt="Pokemon Card 2" class="card-image card-2">
+                                <img src="https://gongaii.com/cdn/shop/files/s-l1600_1d17cc24-7edc-4ab2-a5c4-52e633a7adf3.png?v=1692996505&width=1000" alt="Pokemon Card 3" class="card-image card-3">
+                            </div>
+                        </div>
+                        <div class="slide-right">
+                            <h2>NEW!</h2>
+                            <h1>PREMIUM COLLECTIONS</h1>
+                            <p>GET <span class="highlight">10% OFF</span></p>
+                            <p class="promo-text">YOUR FIRST PREMIUM ORDER WITH CODE <span class="promo-code">GOLDRIP</span></p>
+                            <button class="cta-button">SHOP PREMIUM</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-left">
+                            <div class="pokemon-cards">
+                                <img src="https://www.hobby-addicts.com/cdn/shop/files/Pokemon_TCG_Scarlet_Violet_151_Ultra-Premium_Collection.png?v=1686972224&width=3786" alt="Booster Pack 1" class="card-image card-1">
+                                <img src="https://media.gamestop.com/i/gamestop/20022609?w=768&h=768&fmt=auto" alt="Booster Pack 2" class="card-image card-2">
+                                <img src="https://media.gamestop.com/i/gamestop/20015487_ALT02/Pokemon-Trading-Card-Game-Ogerpon-ex-Premium-Collection?$pdp$?w=1256&h=664&fmt=auto" alt="Booster Pack 3" class="card-image card-3">
+                            </div>
+                        </div>
+                        <div class="slide-right">
+                            <h2>FRESH!</h2>
+                            <h1>PRE ORDERS</h1>
+                            <p>SECURE <span class="highlight">YOUR COPY</span></p>
+                            <p class="promo-text">GET THE LATEST RELEASES BEFORE <span class="promo-code">ANYONE ELSE</span></p>
+                            <button class="cta-button" onclick="window.location.href='contact.html'">PRE ORDER NOW</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-left">
+                            <div class="pokemon-cards">
+                                <img src="https://tcgtower.com/cdn/shop/files/151-bp.png?v=1695920306&width=2048" alt="ETB 1" class="card-image card-1">
+                                <img src="https://unboxunbored.com/cdn/shop/files/pokemon-tcg-paradox-wisdom-premium-collection-334230.png?v=1746870936" alt="ETB 2" class="card-image card-2">
+                                <img src="https://images2.imgbox.com/72/d0/ckVQJPDd_o.png" alt="ETB 3" class="card-image card-3">
+                            </div>
+                        </div>
+                        <div class="slide-right">
+                            <h2>LIVE!</h2>
+                            <h1>EXCLUSIVE WHATNOT DEALS</h1>
+                            <p>GET <span class="highlight">LIVE CODES</span></p>
+                            <p class="promo-text">FOLLOW OUR WHATNOT FOR <span class="promo-code">EXCLUSIVE DISCOUNTS</span></p>
+                            <button class="cta-button" onclick="window.location.href='whatnot.html'">JOIN WHATNOT</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Dots -->
+                <div class="slide-navigation">
+                    <button class="nav-dot active" data-slide="0"></button>
+                    <button class="nav-dot" data-slide="1"></button>
+                    <button class="nav-dot" data-slide="2"></button>
+                </div>
+
+                <!-- Slide Controls -->
+                <button class="slide-control prev" onclick="changeSlide(-1)">&#8249;</button>
+                <button class="slide-control next" onclick="changeSlide(1)">&#8250;</button>
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section class="new-arrivals-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>✨ New Arrivals</h2>
+                    <p>Get the latest Pokemon TCG releases from the RipPoke Team!</p>
+                </div>
+                <div class="new-arrivals-grid">
+                    <!-- Phantasmal Flames Elite Trainer Box -->
+                    <div class="product-card featured" data-category="elite-trainer-box">
+                        <div class="product-image">
+                            <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2024/sv07-elite-trainer-box/sv07-elite-trainer-box-169-en.png" alt="Phantasmal Flames Elite Trainer Box" onerror="this.src='https://images.pokemontcg.io/sv7/logo.png'">
+                            <div class="product-badge new">✨ NEW</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Phantasmal Flames Elite Trainer Box</h3>
+                            <p class="product-subtitle">Elite Trainer Box</p>
+                            <div class="product-price">
+                                <span class="current-price">$58.99</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart" data-product="phantasmal-flames-etb" data-price="58.99">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="btn-wishlist" data-product="phantasmal-flames-etb">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Snorlax ex & Blissey ex Special Collection Box -->
+                    <div class="product-card featured" data-category="special-collection">
+                        <div class="product-image">
+                            <img src="https://images.stockx.com/images/Pokemon-Snorlax-Blissey-ex-Special-Collection-Box.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1753161278" alt="Snorlax ex & Blissey ex Special Collection Box" onerror="this.src='https://images.pokemontcg.io/sv-promo/logo.png'">
+                            <div class="product-badge new">✨ NEW</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Snorlax ex & Blissey ex Special Collection Box</h3>
+                            <p class="product-subtitle">Special Collection</p>
+                            <div class="product-price">
+                                <span class="current-price">$34.99</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart" data-product="snorlax-blissey-collection" data-price="34.99">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="btn-wishlist" data-product="snorlax-blissey-collection">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Greninja ex & Kingdra ex Special Collection Box -->
+                    <div class="product-card featured" data-category="special-collection">
+                        <div class="product-image">
+                            <img src="https://pbs.twimg.com/media/Gu9SRvtXYAA83Zm.jpg" alt="Greninja ex & Kingdra ex Special Collection Box" onerror="this.src='https://images.pokemontcg.io/sv-promo/logo.png'">
+                            <div class="product-badge new">✨ NEW</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Greninja ex & Kingdra ex Special Collection Box</h3>
+                            <p class="product-subtitle">Special Collection</p>
+                            <div class="product-price">
+                                <span class="current-price">$34.99</span>
+                            </div>
+                            <div class="product-actions">
+                                <button class="btn-add-cart" data-product="greninja-kingdra-collection" data-price="34.99">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="btn-wishlist" data-product="greninja-kingdra-collection">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mini Contact Section -->
+        <section class="mini-contact-section">
+            <div class="container">
+                <div class="mini-contact-wrapper">
+                    <div class="mini-contact-content">
+                        <div class="mini-contact-header">
+                            <h3>Got Questions? We're Here to Help!</h3>
+                            <p>Need assistance with your order or have questions about our Pokemon TCG products?</p>
+                        </div>
+                        <div class="mini-contact-actions">
+                            <!-- Mini Contact Form -->
+                            <div class="mini-contact-form">
+                                <form class="mini-form" id="mini-contact-form">
+                                    <div class="mini-form-row">
+                                        <input type="text" id="mini-name" name="name" placeholder="Your Name" required>
+                                        <input type="email" id="mini-email" name="email" placeholder="Email Address" required>
+                                    </div>
+                                    <div class="mini-form-row">
+                                        <select id="mini-subject" name="subject" required>
+                                            <option value="">Quick Question</option>
+                                            <option value="product">Product Info</option>
+                                            <option value="order">Order Help</option>
+                                            <option value="shipping">Shipping</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="mini-form-row">
+                                        <textarea id="mini-message" name="message" rows="2" placeholder="Your message..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="mini-submit-btn">
+                                        <i class="fas fa-paper-plane"></i> Send Message
+                                    </button>
+                                </form>
+                            </div>
+                            
+                            <!-- Support Information Bullets -->
+                            <div class="mini-support-info">
+                                <h4><i class="fas fa-info-circle"></i> Quick Support Info</h4>
+                                <ul class="support-bullets">
+                                    <li><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:Support@rippoke.com">Support@rippoke.com</a> - We respond within 24 hours</li>
+                                    <li><i class="fas fa-clock"></i> <strong>Support Hours:</strong> Mon-Fri: 9 AM - 6 PM EST, Sat: 10 AM - 4 PM EST</li>
+                                    <li><i class="fas fa-shipping-fast"></i> <strong>Order Tracking:</strong> Get shipping updates and delivery info</li>
+                                    <li><i class="fas fa-shield-alt"></i> <strong>Secure Shopping:</strong> Powered by Shopify - Your data is protected</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mini-contact-visual">
+                        <div class="contact-pokemon-cards">
+                            <img src="https://images.pokemontcg.io/sv-promo/promo-cards-1.png" alt="Pokemon Promo" class="contact-card floating-1" onerror="this.style.display='none'">
+                            <img src="https://images.pokemontcg.io/sv-promo/promo-cards-2.png" alt="Pokemon Promo" class="contact-card floating-2" onerror="this.style.display='none'">
+                            <div class="contact-sparkles">
+                                <span class="sparkle">✨</span>
+                                <span class="sparkle">⭐</span>
+                                <span class="sparkle">💫</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section-left">
+                    <div class="footer-buttons">
+                        <div class="social-links">
+                            <a href="#" class="social-btn"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-signature">
+                    <div class="signature-content">
+                        <p class="signature-text">At RipPoke, we are dedicated to enhancing your Pokémon TCG experience. We offer a curated selection of high-quality cards and products, combined with outstanding customer service, all at unbeatable value.</p>
+                        <p class="signature-contact">Our team is here to assist you. Reach out to us at:</p>
+                        <p class="signature-email"><a href="contact.html"><strong>support@rippoke.com</strong></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Card Vault. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- First Time Visitor Popup -->
+    <div id="welcome-popup" class="welcome-popup">
+        <div class="welcome-popup-overlay"></div>
+        <div class="welcome-popup-content">
+            <button class="welcome-popup-close" id="welcome-close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="welcome-popup-header">
+                <div class="welcome-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h2>Welcome to RipPoke!</h2>
+                <p class="welcome-subtitle">New trainers get exclusive rewards!</p>
+            </div>
+            <div class="welcome-popup-body">
+                <div class="discount-offer">
+                    <div class="discount-badge">
+                        <span class="discount-percent">10%</span>
+                        <span class="discount-text">OFF</span>
+                    </div>
+                    <div class="offer-details">
+                        <h3>First Purchase Discount!</h3>
+                        <p>Use code <strong class="promo-code">NEWTRAINER10</strong> at checkout</p>
+                        <ul class="offer-benefits">
+                            <li><i class="fas fa-check"></i> Valid on all Booster Packs</li>
+                            <li><i class="fas fa-check"></i> Valid on Elite Trainer Boxes</li>
+                            <li><i class="fas fa-check"></i> Valid on Sealed Products</li>
+                            <li><i class="fas fa-check"></i> Free shipping on orders $50+</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="welcome-actions">
+                    <button class="btn-claim-discount" id="claim-discount-btn">
+                        <i class="fas fa-shopping-bag"></i> Start Shopping & Save!
+                    </button>
+                    <button class="btn-copy-code" id="copy-code-btn">
+                        <i class="fas fa-copy"></i> Copy Code: NEWTRAINER10
+                    </button>
+                </div>
+                <div class="popup-footer">
+                    <p><i class="fas fa-clock"></i> Limited time offer for new customers only</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div id="wishlist-modal" class="wishlist-modal">
+        <div class="wishlist-modal-overlay"></div>
+        <div class="wishlist-modal-content">
+            <div class="wishlist-modal-header">
+                <button class="wishlist-modal-close" id="wishlist-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2><i class="fas fa-heart"></i> My Wishlist</h2>
+                <p class="wishlist-subtitle">Your favorited Pokemon cards</p>
+            </div>
+            <div class="wishlist-modal-body" id="wishlist-items">
+                <div class="empty-wishlist" id="empty-wishlist">
+                    <div class="empty-wishlist-icon">
+                        <i class="far fa-heart"></i>
+                    </div>
+                    <h3>Your wishlist is empty</h3>
+                    <p>Add some Pokemon cards to your wishlist to see them here!</p>
+                    <button class="btn-browse-cards" onclick="closeWishlistModal()">
+                        <i class="fas fa-search"></i> Browse Cards
+                    </button>
+                </div>
+            </div>
+            <div class="wishlist-modal-footer" id="wishlist-footer" style="display: none;">
+                <button class="btn-add-all-to-cart" id="add-all-to-cart-btn">
+                    <i class="fas fa-shopping-cart"></i> Add All to Cart
+                </button>
+                <button class="btn-clear-wishlist" id="clear-wishlist-btn">
+                    <i class="fas fa-trash"></i> Clear Wishlist
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Notice -->
+    <div class="cookie-notice" id="cookie-notice">
+        <div class="cookie-content">
+            <p>Our shop uses cookies. By clicking on Accept you are agreeing to our terms of service and <a href="#">privacy policy</a>.</p>
+            <div class="cookie-actions">
+                <button class="cookie-btn decline">Decline</button>
+                <button class="cookie-btn accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=20241113b"></script>
+    <!-- Mini Contact Form Handler -->
+    <script>
+        // Mini Contact Form Handling
+        document.getElementById('mini-contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                showMiniNotification('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showMiniNotification('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            const submitBtn = this.querySelector('.mini-submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Format subject text for display
+            const subjectText = {
+                'product': 'Product Info',
+                'order': 'Order Help',
+                'shipping': 'Shipping',
+                'other': 'Other'
+            };
+            
+            // Create formatted email content
+            const emailContent = `
+🎯 MINI CONTACT FORM SUBMISSION - RipPoke
+═══════════════════════════════════════
+
+📋 CUSTOMER INFORMATION:
+──────────────────────────
+• Name: ${name}
+• Email: ${email}
+• Subject Category: ${subjectText[subject] || subject}
+
+💬 CUSTOMER MESSAGE:
+──────────────────────────
+${message}
+
+📊 SUBMISSION DETAILS:
+──────────────────────────
+• Date: ${new Date().toLocaleDateString('en-US', { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+})}
+• Time: ${new Date().toLocaleTimeString('en-US')}
+• Form Source: RipPoke Homepage Mini Contact
+• Form Type: Quick Contact Form
+
+⚠️ RESPONSE REQUIRED:
+Please respond to customer within 24 hours at: ${email}
+
+═══════════════════════════════════════
+This is an automated message from RipPoke Homepage Mini Contact Form
+            `.trim();
+            
+            // Send email using EmailJS with fallback
+            if (window.emailjsReady && typeof emailjs !== 'undefined') {
+                try {
+                    await emailjs.send(
+                        'service_zcj2vor', // EmailJS service ID
+                        'template_tcqdrn6', // Contact form template ID
+                        {
+                            to_email: 'support@rippoke.com',
+                            from_name: name,
+                            from_email: email,
+                            subject: `RipPoke Homepage: ${subjectText[subject] || subject} - ${name}`,
+                            message: emailContent,
+                            reply_to: email
+                        }
+                    );
+                    
+                    showMiniNotification('✅ Message sent successfully! We\'ll respond within 24 hours.', 'success');
+                    this.reset();
+                    
+                    // Send confirmation email to customer
+                    try {
+                        await emailjs.send(
+                            'service_zcj2vor',
+                            'template_tcqdrn6',
+                            {
+                                to_email: email,
+                                customer_name: name,
+                                subject: `RipPoke - We received your ${subjectText[subject] || subject} inquiry`,
+                                message: `
+Hi ${name},
+
+Thank you for reaching out to RipPoke! We've received your quick inquiry regarding "${subjectText[subject] || subject}".
+
+Here's what you submitted:
+─────────────────────────────
+${message}
+─────────────────────────────
+
+Our Pokemon TCG experts will review your message and respond within 24 hours. You can also reach us directly at support@rippoke.com.
+
+Thanks for choosing RipPoke!
+
+Best regards,
+The RipPoke Team
+🎯 Your Ultimate Pokemon TCG Destination
+                                `.trim()
+                            }
+                        );
+                    } catch (confirmError) {
+                        console.warn('Confirmation email failed:', confirmError);
+                    }
+                    
+                } catch (error) {
+                    console.error('EmailJS send error:', error);
+                    showMiniNotification('⚠️ Message saved locally. Please email us directly at support@rippoke.com', 'warning');
+                    this.reset();
+                }
+            } else {
+                // Fallback when EmailJS is not available
+                console.warn('EmailJS not available, using fallback');
+                showMiniNotification('⚠️ Email service unavailable. Please contact us directly at support@rippoke.com', 'warning');
+                this.reset();
+            }
+            
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+        });
+        
+        // Mini notification system for the contact form
+        function showMiniNotification(message, type = 'success') {
+            // Remove existing notifications
+            const existing = document.querySelectorAll('.mini-notification');
+            existing.forEach(n => n.remove());
+            
+            const notification = document.createElement('div');
+            notification.className = `mini-notification mini-notification-${type}`;
+            notification.innerHTML = `
+                <div class="mini-notification-content">
+                    <span>${message}</span>
+                    <button onclick="this.parentElement.parentElement.remove()">✕</button>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+    </script>
+    <!-- MOBILE MENU WITH DROPDOWNS -->
+    <script>
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            if (overlay.classList.contains('show')) {
+                overlay.classList.remove('show');
+                // Close all dropdowns when menu closes
+                closeAllDropdowns();
+                console.log('Menu closed');
+            } else {
+                overlay.classList.add('show');
+                console.log('Menu opened');
+            }
+        }
+        
+        function toggleDropdown(dropdownId) {
+            console.log('Toggling dropdown:', dropdownId);
+            
+            const dropdown = document.getElementById(dropdownId);
+            if (!dropdown) {
+                console.error('Dropdown not found:', dropdownId);
+                return;
+            }
+            
+            // Find the button that controls this dropdown
+            const button = dropdown.parentElement.querySelector('.mobile-dropdown-btn');
+            if (!button) {
+                console.error('Button not found for dropdown:', dropdownId);
+                return;
+            }
+            
+            // Close other dropdowns first
+            const allDropdowns = document.querySelectorAll('.mobile-dropdown-content');
+            const allButtons = document.querySelectorAll('.mobile-dropdown-btn');
+            
+            allDropdowns.forEach(dd => {
+                if (dd.id !== dropdownId) {
+                    dd.classList.remove('show');
+                }
+            });
+            
+            allButtons.forEach(btn => {
+                if (btn !== button) {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('show');
+            button.classList.toggle('active');
+            
+            console.log('Dropdown toggled successfully:', dropdownId, 'Show:', dropdown.classList.contains('show'));
+        }
+        
+        function closeAllDropdowns() {
+            document.querySelectorAll('.mobile-dropdown-content').forEach(dd => {
+                dd.classList.remove('show');
+            });
+            document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+        }
+        
+        // Close menu when clicking on overlay
+        document.getElementById('mobileOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleMobileMenu();
+            }
+        });
+        
+        console.log('✅ Beautiful mobile menu loaded - dropdowns fixed!');
+    </script>
+</body>
+</html>
