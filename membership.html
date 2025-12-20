@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Membership Plans | Exclusive Spa Benefits | GripGod Spa</title>
+    <meta name="description" content="Join GripGod Spa VIP membership for exclusive benefits, discounts on massages and facials, priority booking, and special perks. Standard and VIP tiers available.">
+    <meta name="keywords" content="spa membership, VIP spa membership, massage membership, facial membership, spa benefits, recurring spa services">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gripgod.com/membership.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="VIP Membership Plans | GripGod Spa">
+    <meta property="og:description" content="Exclusive membership benefits with discounts and priority booking.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gripgod.com/membership.html">
+    <meta property="og:image" content="https://images2.imgbox.com/28/7d/zQAbIEzn_o.png">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-optimizations.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://images2.imgbox.com/28/7d/zQAbIEzn_o.png" alt="GripGod Spa" style="height: 50px; width: auto;">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="massages.html" class="nav-link">Massages</a></li>
+                <li><a href="facials.html" class="nav-link">Facials</a></li>
+                <li><a href="customorder.html" class="nav-link">Custom Order</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="membership-hero">
+        <div class="container">
+            <h1>GripGod Membership</h1>
+            <p>Choose the plan that's right for you and start saving today</p>
+        </div>
+    </section>
+
+    <section class="membership-plans">
+        <div class="container">
+            <div class="plans-grid">
+                <!-- Standard Membership -->
+                <div class="membership-card standard">
+                    <div class="card-header">
+                        <h2>Standard Membership</h2>
+                        <div class="price">
+                            <span class="amount">$250</span>
+                            <span class="period">12 months upfront</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Monthly Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>1st month:</strong> 60min massage or facial - $85
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Come in 2nd month:</strong> 60min - $50
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>1st month:</strong> 90min massage or facial - $115
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Come in 2x in a month:</strong> Massage or facial - $75
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>1st month:</strong> 120min massage - $150
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Come in 2x a month:</strong> $100
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button class="membership-btn" onclick="cart.addItem('Standard Membership', '12 months', 250)">Select Standard</button>
+                    </div>
+                </div>
+
+                <!-- VIP Membership -->
+                <div class="membership-card vip">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-header">
+                        <h2>VIP Membership</h2>
+                        <div class="price">
+                            <span class="amount">$375</span>
+                            <span class="period">12 months upfront</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Monthly Benefits:</h3>
+                        <ul class="benefits-list">
+                            <li>
+                                <i class="fas fa-crown"></i>
+                                <div>
+                                    <strong>1st month:</strong> 60min massage or facial - $75
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-crown"></i>
+                                <div>
+                                    <strong>Come in 2x a month:</strong> Massage or facial - $37.50
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-crown"></i>
+                                <div>
+                                    <strong>1st month:</strong> 90min massage or facial - $105
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-crown"></i>
+                                <div>
+                                    <strong>Come in 2x a month:</strong> $52.50
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-crown"></i>
+                                <div>
+                                    <strong>1st month:</strong> 120min massage - $140
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-crown"></i>
+                                <div>
+                                    <strong>Come in 2x a month:</strong> $90
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button class="membership-btn vip-btn" onclick="cart.addItem('VIP Membership', '12 months', 375)">Select VIP</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Free Add-ons Section -->
+            <div class="free-addons-section">
+                <h2>Free Add-ons with Every Membership</h2>
+                <div class="addons-grid">
+                    <div class="addon-item">
+                        <i class="fas fa-wind"></i>
+                        <span>Steam</span>
+                    </div>
+                    <div class="addon-item">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cool Mist</span>
+                    </div>
+                    <div class="addon-item">
+                        <i class="fas fa-fire"></i>
+                        <span>Hot Stones</span>
+                    </div>
+                    <div class="addon-item">
+                        <i class="fas fa-spa"></i>
+                        <span>Sonic Scalp Massage</span>
+                    </div>
+                    <div class="addon-item">
+                        <i class="fas fa-hands"></i>
+                        <span>Supine Electric Massage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="membership-faq">
+        <div class="container">
+            <h2>Membership FAQ</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How does the membership work?</h3>
+                    <p>Pay upfront for 12 months and enjoy discounted rates on all services. The more you visit, the more you save!</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I share my membership?</h3>
+                    <p>Memberships are non-transferable and for individual use only.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if I need to cancel?</h3>
+                    <p>Contact us at least 24 hours before your appointment. Membership fees are non-refundable.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do unused sessions roll over?</h3>
+                    <p>Sessions must be used within the membership period and do not roll over.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GripGod Spa</h3>
+                    <p>Premium massage and facial services</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="massages.html">Massages</a></li>
+                        <li><a href="facials.html">Facials</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: Admin@gripgodbodywork.com</p>
+                    <p>Phone: (618) 910-2799</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GripGod Spa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Book Your Appointment | GripGod Bodywork & Facial Spa</title>
+    <meta name="description" content="Contact GripGod Spa to book your massage or facial appointment. Get in touch for pricing, availability, and special requests. $50 deposit required for all services.">
+    <meta name="keywords" content="contact spa, book massage, book facial, spa appointment, massage booking, facial booking">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gripgod.com/contact.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact GripGod Spa | Book Your Appointment">
+    <meta property="og:description" content="Contact us to book your luxury spa experience. Massage and facial appointments available.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gripgod.com/contact.html">
+    <meta property="og:image" content="https://images2.imgbox.com/28/7d/zQAbIEzn_o.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact GripGod Spa">
+    <meta name="twitter:description" content="Book your massage or facial appointment today.">
+    <meta name="twitter:image" content="https://images2.imgbox.com/28/7d/zQAbIEzn_o.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-optimizations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://images2.imgbox.com/28/7d/zQAbIEzn_o.png" alt="GripGod Spa" style="height: 50px; width: auto;">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="massages.html" class="nav-link">Massages</a></li>
+                <li><a href="facials.html" class="nav-link">Facials</a></li>
+                <li><a href="customorder.html" class="nav-link">Custom Order</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Owner</h3>
+                            <p>Juan<br>Jax FL and Surrounding areas</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>(618) 910-2799</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>Admin@gripgodbodywork.com<br>Book Now</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Hours</h3>
+                            <p>Monday - Friday: 9am - 9pm<br>
+                            Saturday - Sunday: 10am - 8pm<br>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceInterest">Service Interest</label>
+                            <select id="serviceInterest" name="serviceInterest">
+                                <option value="">Select a service (optional)</option>
+                                <option value="massage">Massage Therapy</option>
+                                <option value="facial">Facial Treatment</option>
+                                <option value="custom">Custom Package</option>
+                                <option value="general">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Date</label>
+                            <input type="date" id="preferredDate" name="preferredDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fa fa-hands"></i> Send Message
+                        </button>
+                    </form>
+                    <div class="form-success" id="formSuccess" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Thank you for your message! We'll get back to you within 24 hours.</p>
+                    </div>
+                    <div class="form-error" id="formError" style="display: none;">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p>Sorry, there was an error sending your message. Please try again or call us directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Do I need an appointment?</h3>
+                    <p>Yes, we require appointments for all services to ensure you receive the best attention.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> What should I arrive early?</h3>
+                    <p>Please arrive 15 minutes early to complete paperwork and relax before your treatment begins.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> What is your cancellation policy?</h3>
+                    <p>We require 24 hour notice for cancellations. Late cancellations may incur a fee.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Do you offer gift certificates?</h3>
+                    <p>Yes! Gift certificates are available for any amount or specific services. Perfect for any occasion.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> What payment methods do you accept?</h3>
+                    <p>We accept cash, all major credit cards, and digital payment methods including Apple Pay and Google Pay & Cash App.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Have A Question Not Listed?</h3>
+                    <p>Please send a message using the contact form and I will respond to you within 24 Hours. Thank you - Juan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://images2.imgbox.com/28/7d/zQAbIEzn_o.png" alt="GripGod Spa" style="height: 60px; width: auto; margin-bottom: 15px;">
+                    <p>Luxury bodywork and facial treatments for ultimate relaxation and rejuvenation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="massages.html">Massages</a></li>
+                        <li><a href="facials.html">Facials</a></li>
+                        <li><a href="customorder.html">Custom Order</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> (618) 910-2799</p>
+                    <p><i class="fas fa-envelope"></i> Admin@gripgodbodywork.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sun: 9am - 9pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GripGod Bodywork & Facial Spa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Square Web Payments SDK -->
+    <script type="text/javascript" src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+    
+    <!-- EmailJS Configuration and Contact Form Handler -->
+    <script>
+        // Initialize EmailJS with your public key
+        (function(){
+            emailjs.init({
+                publicKey: "YOUR_PUBLIC_KEY_HERE", // Replace with your EmailJS public key
+            });
+        })();
+
+        // Contact form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formSuccess = document.getElementById('formSuccess');
+            const formError = document.getElementById('formError');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            // Hide previous messages
+            formSuccess.style.display = 'none';
+            formError.style.display = 'none';
+            
+            // Send email using EmailJS
+            emailjs.sendForm(
+                'YOUR_SERVICE_ID',      // Replace with your EmailJS service ID
+                'YOUR_TEMPLATE_ID',     // Replace with your EmailJS template ID
+                this
+            ).then(
+                function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    formSuccess.style.display = 'block';
+                    
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                    
+                    // Scroll to success message
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                },
+                function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    formError.style.display = 'block';
+                    
+                    // Scroll to error message
+                    formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }
+            );
+        });
+    </script>
+    
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

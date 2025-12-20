@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Services | Custom Facials, Hydrafacials & Skin Treatments | GripGod Spa</title>
+    <meta name="description" content="Premium facial treatments at GripGod Spa. Custom facials, Hydrafacials, back facials, acne treatments, and anti-aging solutions. Professional skin care services. $50 deposit required.">
+    <meta name="keywords" content="facial treatments, custom facial, hydrafacial, skin care, anti-aging facial, acne treatment, back facial, microdermabrasion, chemical peel">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gripgod.com/facials.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Premium Facial Services | GripGod Spa">
+    <meta property="og:description" content="Custom facials, Hydrafacials, and professional skin treatments. Transform your skin with expert care.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gripgod.com/facials.html">
+    <meta property="og:image" content="https://images2.imgbox.com/28/7d/zQAbIEzn_o.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Premium Facial Services | GripGod Spa">
+    <meta name="twitter:description" content="Custom facials and Hydrafacials. Professional skin care treatments.">
+    <meta name="twitter:image" content="https://images2.imgbox.com/28/7d/zQAbIEzn_o.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-optimizations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://images2.imgbox.com/28/7d/zQAbIEzn_o.png" alt="GripGod Spa" style="height: 50px; width: auto;">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="massages.html" class="nav-link">Massages</a></li>
+                <li><a href="facials.html" class="nav-link active">Facials</a></li>
+                <li><a href="customorder.html" class="nav-link">Custom Order</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="services-section">
+        <div class="container">
+            <div class="info-banner" style="background: linear-gradient(135deg, rgba(60,60,60,0.95) 0%, rgba(40,40,40,0.98) 100%); color: white; padding: 20px; border-radius: 10px; margin-bottom: 30px; text-align: center; border: 1px solid rgba(255,255,255,0.15);">
+                <h3 style="margin: 0 0 10px 0; color: rgba(255,255,255,0.95);"><i class="fas fa-info-circle"></i> Deposit Required</h3>
+                <p style="margin: 0; font-size: 18px; color: rgba(255,255,255,0.9);">All services require a <strong>$50 deposit</strong> to secure your appointment</p>
+            </div>
+            <div class="services-list">
+                <!-- Introduction Cleanse -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://celestolite.com/wp-content/uploads/double-cleansing.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="service-info">
+                        <h3>Introduction Cleanse</h3>
+                        <div class="starting-price">Starting at</div>
+                        <div class="price-display">$80</div>
+                    </div>
+                    <div class="service-pricing">
+                        <button class="info-btn" data-modal="intro-cleanse-modal" style="width: 100%; padding: 0.85rem 2rem; background: linear-gradient(135deg, rgba(80,80,80,0.9) 0%, rgba(60,60,60,0.95) 100%); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle"></i> More Info
+                        </button>
+                    </div>
+                </div>
+                <!-- Back Facial -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://bodybalancehoboken.com/cdn/shop/files/Hoboken_Back_Facials.png?v=1700509471&width=1500'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="service-info">
+                        <h3>Back Facial</h3>
+                        <div class="starting-price">Starting at</div>
+                        <div class="price-display">$100</div>
+                    </div>
+                    <div class="service-pricing">
+                        <button class="info-btn" data-modal="back-facial-modal" style="width: 100%; padding: 0.85rem 2rem; background: linear-gradient(135deg, rgba(80,80,80,0.9) 0%, rgba(60,60,60,0.95) 100%); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle"></i> More Info
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Acne Cleanse -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/articles/health_tools/slideshow_celebrity_makeup_artist_top_10_tips_women_of_color_eczema/1800ss_getty_rf_washing_face.jpg?resize=750px:*&output-quality=75'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="service-info">
+                        <h3>Acne Cleanse</h3>
+                        <div class="starting-price">Starting at</div>
+                        <div class="price-display">$110</div>
+                    </div>
+                    <div class="service-pricing">
+                        <button class="info-btn" data-modal="acne-cleanse-modal" style="width: 100%; padding: 0.85rem 2rem; background: linear-gradient(135deg, rgba(80,80,80,0.9) 0%, rgba(60,60,60,0.95) 100%); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle"></i> More Info
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hyperpigmentation Facial -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://cdn.shopify.com/s/files/1/0024/7719/5363/files/pigmentation-before-and-after_480x480.jpg?v=1686734184'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="service-info">
+                        <h3>Hyperpigmentation Facial</h3>
+                        <div class="starting-price">Starting at</div>
+                        <div class="price-display">$120</div>
+                    </div>
+                    <div class="service-pricing">
+                        <button class="info-btn" data-modal="hyperpigmentation-modal" style="width: 100%; padding: 0.85rem 2rem; background: linear-gradient(135deg, rgba(80,80,80,0.9) 0%, rgba(60,60,60,0.95) 100%); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle"></i> More Info
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Microdermabrasion -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://skinsciencebeauty.com/cdn/shop/files/Microdermabrasion-1.jpg?v=1735600299'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="service-info">
+                        <h3>Microdermabrasion</h3>
+                        <div class="starting-price">Pricing</div>
+                        <div class="price-display">$110</div>
+                    </div>
+                    <div class="service-pricing">
+                        <button class="info-btn" data-modal="microdermabrasion-modal" style="width: 100%; padding: 0.85rem 2rem; background: linear-gradient(135deg, rgba(80,80,80,0.9) 0%, rgba(60,60,60,0.95) 100%); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle"></i> More Info
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Nano Infusion -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://36011e7349181a087410.cdn6.editmysite.com/uploads/b/36011e7349181a08741081eedfd4fe9a919f33f98790cf031b58a6f8b503a71c/Best%20Nano%20Infusion_1731661613.jpg?width=2400&optimize=medium'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="service-info">
+                        <h3>Nano Infusion</h3>
+                        <div class="starting-price">Pricing</div>
+                        <div class="price-display">$130</div>
+                    </div>
+                    <div class="service-pricing">
+                        <button class="info-btn" data-modal="nano-infusion-modal" style="width: 100%; padding: 0.85rem 2rem; background: linear-gradient(135deg, rgba(80,80,80,0.9) 0%, rgba(60,60,60,0.95) 100%); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle"></i> More Info
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hydrafacial Signature -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://store.bluewaterspa.com/cdn/shop/products/face-treatments-signature-hydrafacial-737666_300x.jpg?v=1707857449'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="service-info">
+                        <h3>Hydrafacial Signature</h3>
+                        <div class="starting-price">Pricing</div>
+                        <div class="price-display">$165</div>
+                    </div>
+                    <div class="service-pricing">
+                        <button class="info-btn" data-modal="hydrafacial-signature-modal" style="width: 100%; padding: 0.85rem 2rem; background: linear-gradient(135deg, rgba(80,80,80,0.9) 0%, rgba(60,60,60,0.95) 100%); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle"></i> More Info
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hydrafacial Deluxe -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://cdn.prod.website-files.com/6420fb597894bf1586344cad/64dab641d5c09cc32e4799eb_signature-hydrafacial.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="service-info">
+                        <h3>Hydrafacial Deluxe</h3>
+                        <div class="starting-price">Pricing</div>
+                        <div class="price-display">$190</div>
+                    </div>
+                    <div class="service-pricing">
+                        <button class="info-btn" data-modal="hydrafacial-deluxe-modal" style="width: 100%; padding: 0.85rem 2rem; background: linear-gradient(135deg, rgba(80,80,80,0.9) 0%, rgba(60,60,60,0.95) 100%); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle"></i> More Info
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hydrafacial Platinum -->
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoSttzU_G3MvqPjbRM9xAWqxWZXstU9jlSZQ&s'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="service-info">
+                        <h3>Hydrafacial Platinum</h3>
+                        <div class="starting-price">Pricing</div>
+                        <div class="price-display">$220</div>
+                    </div>
+                    <div class="service-pricing">
+                        <button class="info-btn" data-modal="hydrafacial-platinum-modal" style="width: 100%; padding: 0.85rem 2rem; background: linear-gradient(135deg, rgba(80,80,80,0.9) 0%, rgba(60,60,60,0.95) 100%); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; cursor: pointer; transition: all 0.3s; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle"></i> More Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Service Info Modals -->
+    <div id="intro-cleanse-modal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Introduction Cleanse</h2>
+            <p class="modal-description">Perfect first-time facial experience with gentle cleansing and basic skincare treatment.</p>
+            <h3>Pricing Options</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">60 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$80</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Introduction Cleanse" data-duration="60 min" data-price="80" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 60min
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="back-facial-modal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Back Facial</h2>
+            <p class="modal-description">Complete back treatment with deep cleansing, exfoliation, extractions, and mask.</p>
+            <h3>Pricing Options</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">60 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$100</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Back Facial" data-duration="60 min" data-price="100" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 60min
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">60 min + Exfoliating Mask</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$125</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Back Facial with Exfoliating Mask" data-duration="60 min" data-price="125" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book + Mask
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="acne-cleanse-modal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Acne Cleanse</h2>
+            <p class="modal-description">Targeted treatment for acne-prone skin with deep cleansing, extractions, and healing treatments.</p>
+            <h3>Pricing Options</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">60 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$110</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Acne Cleanse" data-duration="60 min" data-price="110" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 60min
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">60 min + Exfoliating Mask</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$135</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Acne Cleanse with Exfoliating Mask" data-duration="60 min" data-price="135" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book + Mask
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">90 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$150</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Acne Cleanse" data-duration="90 min" data-price="150" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 90min
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">90 min + Exfoliating Mask</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$175</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Acne Cleanse with Exfoliating Mask" data-duration="90 min" data-price="175" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 90min+Mask
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="hyperpigmentation-modal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Hyperpigmentation Facial</h2>
+            <p class="modal-description">Illuminating treatment targeting dark spots, hyperpigmentation, and dull skin.</p>
+            <h3>Pricing Options</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">60 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$120</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Hyperpigmentation Facial" data-duration="60 min" data-price="120" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 60min
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">90 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$160</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Hyperpigmentation Facial" data-duration="90 min" data-price="160" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 90min
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="microdermabrasion-modal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Microdermabrasion</h2>
+            <p class="modal-description">Professional exfoliation treatment that removes dead skin cells and promotes new cell growth.</p>
+            <h3>Pricing Options</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">60 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$110</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Microdermabrasion" data-duration="60 min" data-price="110" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 60min
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="nano-infusion-modal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Nano Infusion</h2>
+            <p class="modal-description">Advanced facial treatment using nano-technology to infuse serums deep into the skin.</p>
+            <h3>Pricing Options</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">60 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$130</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Nano Infusion" data-duration="60 min" data-price="130" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 60min
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="hydrafacial-signature-modal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Hydrafacial Signature</h2>
+            <p class="modal-description">Premium 3-in-1 facial treatment: cleanse, extract, and hydrate with patented technology.</p>
+            <h3>Pricing Options</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">30 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$165</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Hydrafacial Signature" data-duration="30 min" data-price="165" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 30min
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="hydrafacial-deluxe-modal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Hydrafacial Deluxe</h2>
+            <p class="modal-description">Enhanced Hydrafacial with additional boosters and LED light therapy for specific skin concerns.</p>
+            <h3>Pricing Options</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">45 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$190</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Hydrafacial Deluxe" data-duration="45 min" data-price="190" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 45min
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="hydrafacial-platinum-modal" class="service-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Hydrafacial Platinum</h2>
+            <p class="modal-description">The ultimate Hydrafacial experience! Includes lymphatic drainage, boosters, LED therapy, and extended treatment time.</p>
+            <h3>Pricing Options</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+                    <div>
+                        <span style="color: rgba(255,255,255,0.9); font-weight: 600; display: block;">60 minutes</span>
+                        <span style="color: rgba(255,255,255,0.95); font-size: 1.3rem; font-weight: bold;">$220</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-service="Hydrafacial Platinum" data-duration="60 min" data-price="220" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">
+                        <i class="fas fa-cart-plus"></i> Book 60min
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://images2.imgbox.com/28/7d/zQAbIEzn_o.png" alt="GripGod Spa" style="height: 60px; width: auto; margin-bottom: 15px;">
+                    <p>Luxury bodywork and facial treatments for ultimate relaxation and rejuvenation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="massages.html">Massages</a></li>
+                        <li><a href="facials.html">Facials</a></li>
+                        <li><a href="customorder.html">Custom Order</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> (618) 910-2799</p>
+                    <p><i class="fas fa-envelope"></i> Admin@gripgodbodywork.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sun: 9am - 9pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GripGod Bodywork & Facial Spa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Add-ons Selection Modal -->
+    <div id="addons-modal" class="addons-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; overflow-y: auto;">
+        <div class="addons-modal-content" style="background: linear-gradient(135deg, rgba(30,30,30,0.98) 0%, rgba(15,15,15,0.98) 100%); border: 2px solid rgba(255,255,255,0.1); max-width: 700px; margin: 50px auto; border-radius: 20px; padding: 40px; position: relative; animation: slideIn 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+            <button class="close-addons-modal" style="position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 2rem; cursor: pointer; color: rgba(255,255,255,0.8);">&times;</button>
+            <div id="addons-modal-body"></div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .addon-checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.02);
+        }
+        .addon-checkbox-item:hover {
+            border-color: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.05);
+        }
+        .addon-checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .addon-checkbox-item.selected {
+            border-color: rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.1);
+        }
+        @media (max-width: 768px) {
+            .addons-modal-content {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+    <script>
+        // Add-ons data (for facial treatments)
+        const addonsData = [
+            { id: 'microdermabrasion', name: 'Microdermabrasion', price: 100, icon: '✨' },
+            { id: 'retinol-peel', name: 'Retinol Extraction Peel', price: 30, icon: '🌟' },
+            { id: 'chemical-peel', name: 'Medium Light Chemical Peel', price: 75, icon: '💫' },
+            { id: 'led-therapy', name: 'LED Light Therapy', price: 40, icon: '💡' },
+            { id: 'eye-treatment', name: 'Eye Treatment', price: 25, icon: '👁️' },
+            { id: 'lip-treatment', name: 'Lip Treatment', price: 20, icon: '💋' },
+            { id: 'neck-decollete', name: 'Neck & Décolleté Treatment', price: 35, icon: '💆' },
+            { id: 'hand-treatment', name: 'Hand Treatment', price: 15, icon: '✋' },
+            { id: 'aromatherapy', name: 'Aromatherapy', price: 10, icon: '🌸' }
+        ];
+
+        let selectedService = null;
+        const addonsModal = document.getElementById('addons-modal');
+        const addonsModalBody = document.getElementById('addons-modal-body');
+        const closeAddonsBtn = document.querySelector('.close-addons-modal');
+
+        // Intercept all "Add to Cart" button clicks (but not modal trigger buttons)
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('add-to-cart-btn') || e.target.closest('.add-to-cart-btn')) {
+                const button = e.target.classList.contains('add-to-cart-btn') ? e.target : e.target.closest('.add-to-cart-btn');
+                
+                // Skip if this is a modal trigger button (More Info)
+                if (button.getAttribute('data-modal')) {
+                    return;
+                }
+                
+                // Only handle booking buttons with service data
+                const serviceName = button.getAttribute('data-service');
+                const duration = button.getAttribute('data-duration');
+                const price = button.getAttribute('data-price');
+                
+                if (serviceName && price) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    selectedService = { name: serviceName, duration: duration, price: parseFloat(price) };
+                    openAddonsModal();
+                }
+            }
+        });
+
+        function openAddonsModal() {
+            let selectedAddons = [];
+            
+            addonsModalBody.innerHTML = `
+                <div style="margin-bottom: 25px;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 8px; color: rgba(255,255,255,0.95); font-weight: 500;">
+                        Enhance Your Experience
+                    </h2>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin: 0;">Select optional add-ons for ${selectedService.name}</p>
+                </div>
+                <div style="max-height: 380px; overflow-y: auto; margin-bottom: 20px; padding-right: 5px;">
+                    ${addonsData.map(addon => `
+                        <div class="addon-checkbox-item" data-addon-id="${addon.id}">
+                            <input type="checkbox" id="addon-${addon.id}" value="${addon.id}">
+                            <label for="addon-${addon.id}" style="flex: 1; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 1rem; color: rgba(255,255,255,0.95);">
+                                    <span style="font-size: 1.3rem; margin-right: 8px;">${addon.icon}</span>
+                                    ${addon.name}
+                                </span>
+                                <span style="font-size: 1.1rem; font-weight: bold; color: rgba(255,255,255,0.9);">$${addon.price}</span>
+                            </label>
+                        </div>
+                    `).join('')}
+                </div>
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 18px; border-radius: 10px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                        <div style="flex: 1; min-width: 200px;">
+                            <p style="margin: 0; color: rgba(255,255,255,0.95); font-size: 0.95rem;">Service: ${selectedService.name}</p>
+                            <p style="margin: 2px 0 0 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">${selectedService.duration}</p>
+                            <p id="selected-addons-text" style="margin: 5px 0 0 0; color: rgba(255,255,255,0.5); font-size: 0.85rem;">No add-ons selected</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 0.85rem;">Total:</p>
+                            <p id="modal-total" style="margin: 2px 0 0 0; font-size: 1.6rem; font-weight: bold; color: rgba(255,255,255,0.95);">$${selectedService.price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button onclick="skipAddons()" style="flex: 1; min-width: 140px; padding: 12px 20px; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                        Skip Add-ons
+                    </button>
+                    <button onclick="continueToCart()" style="flex: 1; min-width: 140px; padding: 12px 20px; background: linear-gradient(135deg, rgba(80,80,80,0.9) 0%, rgba(60,60,60,0.95) 100%); color: rgba(255,255,255,0.95); font-weight: 600; border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease;">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            `;
+
+            // Add checkbox change listeners
+            document.querySelectorAll('.addon-checkbox-item input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', updateModalTotal);
+            });
+
+            // Add click on item to toggle checkbox
+            document.querySelectorAll('.addon-checkbox-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL') {
+                        const checkbox = this.querySelector('input[type="checkbox"]');
+                        checkbox.checked = !checkbox.checked;
+                        updateModalTotal();
+                    }
+                });
+            });
+
+            addonsModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateModalTotal() {
+            const checkboxes = document.querySelectorAll('.addon-checkbox-item input[type="checkbox"]');
+            let addonsTotal = 0;
+            let selectedCount = 0;
+            let selectedNames = [];
+
+            checkboxes.forEach(checkbox => {
+                const item = checkbox.closest('.addon-checkbox-item');
+                if (checkbox.checked) {
+                    item.classList.add('selected');
+                    const addonId = checkbox.value;
+                    const addon = addonsData.find(a => a.id === addonId);
+                    if (addon) {
+                        addonsTotal += addon.price;
+                        selectedCount++;
+                        selectedNames.push(addon.name);
+                    }
+                } else {
+                    item.classList.remove('selected');
+                }
+            });
+
+            const total = selectedService.price + addonsTotal;
+            document.getElementById('modal-total').textContent = `$${total.toFixed(2)}`;
+            
+            const addonsText = document.getElementById('selected-addons-text');
+            if (selectedCount > 0) {
+                addonsText.textContent = `+ ${selectedCount} add-on${selectedCount > 1 ? 's' : ''} selected`;
+                addonsText.style.color = 'rgba(255,255,255,0.9)';
+            } else {
+                addonsText.textContent = 'No add-ons selected';
+                addonsText.style.color = 'rgba(255,255,255,0.5)';
+            }
+        }
+
+        function skipAddons() {
+            // Add only the service to cart
+            if (window.cart) {
+                window.cart.addItem(selectedService.name, selectedService.duration, selectedService.price);
+            }
+            closeAddonsModal();
+            // Close all service info modals
+            document.querySelectorAll('.service-modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        }
+
+        function continueToCart() {
+            const checkboxes = document.querySelectorAll('.addon-checkbox-item input[type="checkbox"]:checked');
+            const selectedAddons = [];
+            let addonsTotal = 0;
+
+            checkboxes.forEach(checkbox => {
+                const addonId = checkbox.value;
+                const addon = addonsData.find(a => a.id === addonId);
+                if (addon) {
+                    selectedAddons.push(addon);
+                    addonsTotal += addon.price;
+                }
+            });
+
+            if (window.cart) {
+                const total = selectedService.price + addonsTotal;
+                
+                // Add the main service with add-ons description
+                let serviceName = selectedService.name;
+                if (selectedAddons.length > 0) {
+                    serviceName += ` + ${selectedAddons.length} add-on${selectedAddons.length > 1 ? 's' : ''}`;
+                }
+                
+                window.cart.addItem(serviceName, selectedService.duration, total);
+                
+                // Show notification with details
+                if (selectedAddons.length > 0) {
+                    setTimeout(() => {
+                        const addonsList = selectedAddons.map(a => a.name).join(', ');
+                        window.cart.showNotification(`Add-ons included: ${addonsList}`);
+                    }, 500);
+                }
+            }
+            
+            closeAddonsModal();
+            // Close all service info modals
+            document.querySelectorAll('.service-modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeAddonsModal() {
+            addonsModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            selectedService = null;
+        }
+
+        closeAddonsBtn.addEventListener('click', closeAddonsModal);
+        addonsModal.addEventListener('click', function(e) {
+            if (e.target === addonsModal) {
+                closeAddonsModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && addonsModal.style.display === 'block') {
+                closeAddonsModal();
+            }
+        });
+
+        // Service Info Modal Functionality
+        const infoButtons = document.querySelectorAll('.info-btn');
+        const serviceModals = document.querySelectorAll('.service-modal');
+        const closeModalBtns = document.querySelectorAll('.close-modal');
+
+        // Open modal when info button is clicked
+        infoButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const modalId = this.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close modal when X is clicked
+        closeModalBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const modal = this.closest('.service-modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Close modal when clicking outside
+        serviceModals.forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                serviceModals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Square Web Payments SDK -->
+    <script type="text/javascript" src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+    
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
