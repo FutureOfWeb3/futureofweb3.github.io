@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fireworks Emporium - Light Up Your Celebration!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://images2.imgbox.com/87/d8/wMfDVqKz_o.png" alt="Fireworks" class="logo-image">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="dropdown">
+                    <a href="products.html" class="nav-link">Products <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products.html" class="dropdown-link">All Products</a></li>
+                        <li><a href="products.html?filter=assortments" class="dropdown-link">Assortments</a></li>
+                        <li><a href="products.html?filter=fountains" class="dropdown-link">Fountains</a></li>
+                        <li><a href="products.html?filter=repeaters" class="dropdown-link">Repeaters</a></li>
+                        <li><a href="products.html?filter=mortars" class="dropdown-link">Mortars</a></li>
+                        <li><a href="products.html?filter=romancandles" class="dropdown-link">Roman Candles</a></li>
+                        <li><a href="products.html?filter=firecrackers" class="dropdown-link">Firecrackers</a></li>
+                        <li><a href="products.html?filter=bottlerockets" class="dropdown-link">Bottle Rockets</a></li>
+                        <li><a href="products.html?filter=sparklers" class="dropdown-link">Sparklers</a></li>
+                        <li><a href="products.html?filter=misc" class="dropdown-link">Misc</a></li>
+                        <li><a href="products.html?filter=extras" class="dropdown-link">Extras</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="cart-icon" onclick="toggleCart()" aria-label="Shopping Cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cartCount" class="cart-count">0</span>
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="fireworks-animation"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Light Up Your Celebration</h1>
+            <p class="hero-subtitle">Premium Fireworks for Every Occasion</p>
+            <div class="hero-buttons">
+                <a href="products.html" class="btn btn-primary">Shop Now</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Licensed & Legal</h3>
+                    <p>All products meet safety standards and legal requirements</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-boxes-stacked"></i>
+                    </div>
+                    <h3>Wide Selection</h3>
+                    <p>From sparklers to aerial displays - we have it all</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3>Safety First</h3>
+                    <p>Expert advice and safety guidelines with every purchase</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Great Prices</h3>
+                    <p>Competitive pricing on all your favorite fireworks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Light Up the Sky?</h2>
+            <p>Browse our full selection of premium fireworks</p>
+            <a href="products.html" class="btn btn-light">Shop All Products</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3><i class="fas fa-burst"></i> Fireworks Emporium</h3>
+                    <p>Your trusted source for celebration fireworks</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Safety First</h4>
+                    <ul>
+                        <li><a href="#safety">Safety Guidelines</a></li>
+                        <li><a href="#legal">Legal Information</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@fireworksemporium.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fireworks Emporium. All rights reserved. | Please use fireworks responsibly.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+            <button class="cart-close" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-empty" id="emptyCart">
+            <i class="fas fa-cart-shopping"></i>
+            <p>Your cart is empty</p>
+            <a href="products.html" class="btn btn-primary">Shop Now</a>
+        </div>
+        
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be rendered here -->
+            </div>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-amount" id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()">
+                <i class="fas fa-credit-card"></i> Checkout
+            </button>
+            <button class="btn btn-secondary btn-block" onclick="clearCart()">
+                <i class="fas fa-trash"></i> Clear Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Checkout Form Modal -->
+    <div class="checkout-overlay" id="checkoutOverlay" onclick="closeCheckoutForm()"></div>
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-header">
+            <h2><i class="fas fa-clipboard-check"></i> Checkout</h2>
+            <button class="checkout-close" onclick="closeCheckoutForm()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <form id="checkoutForm" class="checkout-form">
+            <div class="form-group">
+                <label for="customerName">
+                    <i class="fas fa-user"></i> Your Name
+                </label>
+                <input type="text" id="customerName" name="customerName" required placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <i class="fas fa-truck"></i> Fulfillment Method
+                </label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="fulfillmentMethod" value="pickup" checked>
+                        <span class="radio-label">
+                            <i class="fas fa-store"></i>
+                            <strong>Pickup</strong>
+                            <small>Pick up at our location</small>
+                        </span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="fulfillmentMethod" value="delivery">
+                        <span class="radio-label">
+                            <i class="fas fa-shipping-fast"></i>
+                            <strong>Delivery</strong>
+                            <small>We'll deliver to you</small>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="checkout-summary">
+                <h3>Order Summary</h3>
+                <div id="checkoutItems" class="checkout-items-list">
+                    <!-- Items will be populated here -->
+                </div>
+                <div class="checkout-total">
+                    <span>Total:</span>
+                    <span id="checkoutTotal">$0.00</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-check-circle"></i> Complete Order
+            </button>
+        </form>
+
+        <div class="checkout-success" id="checkoutSuccess" style="display: none;">
+            <i class="fas fa-check-circle"></i>
+            <h3>Order Submitted!</h3>
+            <p>Thank you! We've received your order and will contact you shortly.</p>
+            <button class="btn btn-primary" onclick="closeCheckoutForm(); clearCart();">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
