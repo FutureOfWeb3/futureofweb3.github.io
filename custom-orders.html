@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your perfect custom cup or jar with Stick & Spice. Personalized designs tailored to your vision.">
+    <title>Custom Orders | Stick & Spice</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://rawcdn.githack.com/FutureOfWeb3/futureofweb3.github.io/d1d02834161232e2d854d46c72098396e4bb9169/3849038703247904023.png" alt="Stick & Spice Logo">
+                Stick & Spice
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="jars.html" class="nav-link">Jars</a></li>
+                <li><a href="holiday-collections.html" class="nav-link">Holiday Collections</a></li>
+                <li><a href="about.html" class="nav-link">FAQ</a></li>
+                <li><a href="custom-orders.html" class="nav-link active">Custom Orders</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Interactive Cup Builder -->
+    <section class="custom-order-section" style="background: var(--light-gradient); padding: 4rem 0;">
+        <div class="container">
+            <h1 class="calculator-heading">BUILD YOUR OWN CUP</h1>
+            <div class="cup-builder-wrapper">
+                <!-- Left Side: Cup Preview -->
+                <div class="cup-preview-container">
+                    <div class="cup-visual" id="cupVisual">
+                        <div class="cup-body" id="cupBody">
+                            <div class="cup-art" id="cupArt"></div>
+                        </div>
+                        <div class="cup-lid" id="cupLid">
+                            <div class="lid-design" id="lidDesign"></div>
+                        </div>
+                        <div class="cup-straw" id="cupStraw">
+                            <div class="straw-charm" id="strawCharm"></div>
+                        </div>
+                    </div>
+                    <div class="price-display" id="priceDisplay">
+                        <div class="price-label">Your Cup:</div>
+                        <div class="price-amount">$<span id="totalPrice">0</span></div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Step-by-Step Builder -->
+                <div class="builder-steps" id="builderSteps">
+                    <!-- Step 0: Welcome -->
+                    <div class="builder-step active" id="step0">
+                        <div class="step-header">
+                            <h2>START HERE</h2>
+                            <p>Make selections to make a masterpiece you can take home</p>
+                        </div>
+                        <button class="builder-btn builder-btn-start" onclick="startBuilder()">
+                            Customize Yours <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Step 1: Cup Size -->
+                    <div class="builder-step" id="step1">
+                        <div class="step-header">
+                            <div class="step-number">Step 1</div>
+                            <h2>Choose Your Cup Size</h2>
+                        </div>
+                        <div class="choice-grid">
+                            <div class="choice-card" onclick="selectChoice(event, 'size', '12oz', 15)">
+                                <h3>12 oz</h3>
+                                <p class="choice-price">$15</p>
+                                <p class="choice-desc">Perfect for coffee</p>
+                            </div>
+                            <div class="choice-card" onclick="selectChoice(event, 'size', '16oz', 18)">
+                                <h3>16 oz</h3>
+                                <p class="choice-price">$18</p>
+                                <p class="choice-desc">Most popular!</p>
+                            </div>
+                            <div class="choice-card" onclick="selectChoice(event, 'size', '20oz', 20)">
+                                <h3>20 oz</h3>
+                                <p class="choice-price">$20</p>
+                                <p class="choice-desc">Extra large</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Straw Color -->
+                    <div class="builder-step" id="step2">
+                        <div class="step-header">
+                            <div class="step-number">Step 2</div>
+                            <h2>Pick Your Straw Color</h2>
+                        </div>
+                        <div class="choice-grid">
+                            <div class="choice-card color-card" onclick="selectChoice(event, 'straw', 'Pink', 0, '#ff6b9d')">
+                                <div class="color-swatch" style="background: #ff6b9d;"></div>
+                                <h3>Pink</h3>
+                            </div>
+                            <div class="choice-card color-card" onclick="selectChoice(event, 'straw', 'Blue', 0, '#4a90e2')">
+                                <div class="color-swatch" style="background: #4a90e2;"></div>
+                                <h3>Blue</h3>
+                            </div>
+                            <div class="choice-card color-card" onclick="selectChoice(event, 'straw', 'Purple', 0, '#9b59b6')">
+                                <div class="color-swatch" style="background: #9b59b6;"></div>
+                                <h3>Purple</h3>
+                            </div>
+                            <div class="choice-card color-card" onclick="selectChoice(event, 'straw', 'Green', 0, '#2ecc71')">
+                                <div class="color-swatch" style="background: #2ecc71;"></div>
+                                <h3>Green</h3>
+                            </div>
+                            <div class="choice-card color-card" onclick="selectChoice(event, 'straw', 'Black', 0, '#2c3e50')">
+                                <div class="color-swatch" style="background: #2c3e50;"></div>
+                                <h3>Black</h3>
+                            </div>
+                            <div class="choice-card color-card" onclick="selectChoice(event, 'straw', 'Metal Straw', 4, 'linear-gradient(135deg, #e0e0e0, #9e9e9e)')">
+                                <div class="color-swatch" style="background: linear-gradient(135deg, #e0e0e0, #9e9e9e);"></div>
+                                <h3>Metal Straw</h3>
+                                <p class="choice-price">+$4</p>
+                            </div>
+                        </div>
+                        <button class="builder-btn builder-btn-back" onclick="previousStep()">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                    </div>
+
+                    <!-- Step 3: Lid Type -->
+                    <div class="builder-step" id="step3">
+                        <div class="step-header">
+                            <div class="step-number">Step 3</div>
+                            <h2>Select Your Lid Type</h2>
+                        </div>
+                        <div class="choice-grid">
+                            <div class="choice-card" onclick="selectChoice(event, 'lid', 'Standard', 0)">
+                                <h3>Standard Lid</h3>
+                                <p class="choice-desc">Classic clear lid</p>
+                            </div>
+                            <div class="choice-card" onclick="selectChoice(event, 'lid', 'Bamboo', 1)">
+                                <h3>Bamboo Lid</h3>
+                                <p class="choice-price">+$1</p>
+                                <p class="choice-desc">Eco-friendly option</p>
+                            </div>
+                            <div class="choice-card" onclick="selectChoice(event, 'lid', 'Metal', 3)">
+                                <h3>Metal Lid</h3>
+                                <p class="choice-price">+$3</p>
+                                <p class="choice-desc">Sleek & modern</p>
+                            </div>
+                        </div>
+                        <button class="builder-btn builder-btn-back" onclick="previousStep()">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                    </div>
+
+                    <!-- Step 4: Design Print -->
+                    <div class="builder-step" id="step4">
+                        <div class="step-header">
+                            <div class="step-number">Step 4</div>
+                            <h2>Choose Your Design Print</h2>
+                        </div>
+                        <div class="choice-grid">
+                            <div class="choice-card" onclick="selectChoice(event, 'art', 'Autumn Pumpkin', 0, '')">
+                                <h3>Autumn Pumpkin</h3>
+                                <p class="choice-desc">Hand-painted fall design</p>
+                            </div>
+                            <div class="choice-card" onclick="selectChoice(event, 'art', 'Succulent Garden', 0, '')">
+                                <h3>Succulent Garden</h3>
+                                <p class="choice-desc">Botanical artwork</p>
+                            </div>
+                            <div class="choice-card" onclick="selectChoice(event, 'art', 'Holiday Christmas', 0, '')">
+                                <h3>Holiday Christmas</h3>
+                                <p class="choice-desc">Festive holiday design</p>
+                            </div>
+                            <div class="choice-card" onclick="selectChoice(event, 'art', 'Ocean Wave', 0, '')">
+                                <h3>Ocean Wave</h3>
+                                <p class="choice-desc">Beach-themed artwork</p>
+                            </div>
+                            <div class="choice-card" onclick="selectChoice(event, 'art', 'Seasonal Collection', 0, '')">
+                                <h3>Seasonal Collection</h3>
+                                <p class="choice-desc">Designs for every season</p>
+                            </div>
+                            <div class="choice-card" onclick="selectChoice(event, 'art', 'Personalized Name', 0, '')">
+                                <h3>Personalized Name</h3>
+                                <p class="choice-desc">Custom with your name</p>
+                            </div>
+                        </div>
+                        <button class="builder-btn builder-btn-back" onclick="previousStep()">
+                            <i class="fas fa-arrow-left"></i> Previous
+                        </button>
+                    </div>
+
+                    <!-- Step 5: Add-ons -->
+                    <div class="builder-step" id="step5">
+                        <div class="step-header">
+                            <div class="step-number">Step 5</div>
+                            <h2>Want to Add Extras?</h2>
+                        </div>
+                        <div class="choice-grid addon-grid">
+                            <div class="choice-card addon-card" onclick="toggleAddon(event, 'charm', 1)">
+                                <h3>Straw Charm</h3>
+                                <p class="choice-price">+$1</p>
+                                <p class="choice-desc">Cute charm accessory</p>
+                                <div class="addon-checkbox" id="charmCheck"></div>
+                            </div>
+                            <div class="choice-card addon-card" onclick="toggleAddon(event, 'lidDesign', 10)">
+                                <h3>Lid Design</h3>
+                                <p class="choice-price">+$10</p>
+                                <p class="choice-desc">Custom lid artwork</p>
+                                <div class="addon-checkbox" id="lidDesignCheck"></div>
+                            </div>
+                        </div>
+                        <div class="builder-nav-buttons">
+                            <button class="builder-btn builder-btn-back" onclick="previousStep()">
+                                <i class="fas fa-arrow-left"></i> Previous
+                            </button>
+                            <button class="builder-btn builder-btn-finish" onclick="finishBuilder()">
+                                See My Cup! <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Summary -->
+                    <div class="builder-step" id="step6">
+                        <div class="step-header">
+                            <h2>Your Custom Cup is Ready!</h2>
+                        </div>
+                        <div class="summary-box" id="summaryBox"></div>
+                        <div class="summary-actions">
+                            <button class="builder-btn builder-btn-primary" onclick="addToCart()">
+                                Add to Cart <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="builder-btn builder-btn-secondary" onclick="restartBuilder()">
+                                Start Over <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Calculator Heading */
+        .calculator-heading {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 6px rgba(204, 86, 126, 0.4);
+            font-family: 'Fredoka', 'Poppins', sans-serif;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: bounceIn 1s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .calculator-heading {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .cup-builder-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Cup Preview Styles */
+        .cup-preview-container {
+            position: sticky;
+            top: 100px;
+            background: var(--card-gradient);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            border: 2px solid rgba(204, 86, 126, 0.3);
+        }
+
+        .cup-visual {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            margin: 0 auto 2rem;
+        }
+
+        .cup-body {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 200px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+            border: 3px solid #ddd;
+            border-radius: 10px 10px 20px 20px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .cup-art {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .cup-art.active {
+            opacity: 1;
+            animation: popIn 0.5s ease;
+        }
+
+        .cup-lid {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 130px;
+            height: 25px;
+            background: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .lid-design {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .lid-design.active {
+            opacity: 1;
+        }
+
+        .cup-straw {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 150px;
+            background: #ccc;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .straw-charm {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .straw-charm.active {
+            opacity: 1;
+            animation: swing 2s ease-in-out infinite;
+        }
+
+        .price-display {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .price-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Builder Steps */
+        .builder-steps {
+            background: var(--card-gradient);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            min-height: 400px;
+            border: 2px solid rgba(204, 86, 126, 0.3);
+        }
+
+        .builder-step {
+            display: none;
+            animation: slideIn 0.5s ease;
+        }
+
+        .builder-step.active {
+            display: block;
+        }
+
+        .step-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .step-header h2 {
+            color: var(--dark-color);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Choice Cards */
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .addon-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .choice-card {
+            background: var(--card-gradient);
+            border: 2px solid rgba(204, 86, 126, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .choice-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .choice-card.selected {
+            border-color: var(--primary-color);
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.2), rgba(204, 86, 126, 0.2));
+            transform: scale(1.05);
+        }
+
+        .choice-card h3 {
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .choice-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .choice-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Color Cards */
+        .color-card {
+            padding: 1rem;
+        }
+
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 0.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Addon Cards */
+        .addon-card {
+            position: relative;
+        }
+
+        .addon-checkbox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 25px;
+            height: 25px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .addon-checkbox::after {
+            content: '✓';
+            color: white;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .addon-card.selected .addon-checkbox {
+            background: var(--primary-color);
+        }
+
+        .addon-card.selected .addon-checkbox::after {
+            opacity: 1;
+        }
+
+        /* Buttons */
+        .builder-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .builder-btn-start {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .builder-btn-start:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .builder-btn-finish {
+            background: var(--accent-gradient);
+            color: white;
+            margin-top: 1rem;
+        }
+
+        .builder-btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .builder-btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .builder-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .builder-btn-back {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            margin-top: 1rem;
+        }
+
+        .builder-nav-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Summary */
+        .summary-box {
+            background: var(--light-gradient);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(204, 86, 126, 0.2);
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .summary-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes popIn {
+            0% { transform: translate(-50%, -50%) scale(0); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: translateX(-50%) rotate(-5deg); }
+            50% { transform: translateX(-50%) rotate(5deg); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .cup-builder-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .cup-preview-container {
+                position: relative;
+                top: 0;
+            }
+
+            .choice-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .summary-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .builder-nav-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Builder State
+        const cupConfig = {
+            size: null,
+            sizePrice: 0,
+            straw: null,
+            strawPrice: 0,
+            strawColor: '#ccc',
+            lid: null,
+            lidPrice: 0,
+            art: null,
+            artEmoji: '',
+            addons: {
+                charm: false,
+                lidDesign: false
+            },
+            addonPrices: {
+                charm: 0,
+                lidDesign: 0
+            }
+        };
+
+        let currentStep = 0;
+
+        function startBuilder() {
+            currentStep = 1;
+            showStep(currentStep);
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.builder-step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        function selectChoice(event, type, value, price, extra = null) {
+            // Animate selection
+            const card = event.currentTarget;
+            card.classList.add('selected');
+            
+            setTimeout(() => {
+                card.classList.remove('selected');
+                
+                // Update configuration
+                if (type === 'size') {
+                    cupConfig.size = value;
+                    cupConfig.sizePrice = price;
+                    updateCupSize(value);
+                } else if (type === 'straw') {
+                    cupConfig.straw = value;
+                    cupConfig.strawPrice = price;
+                    cupConfig.strawColor = extra;
+                    updateStrawColor(extra);
+                } else if (type === 'lid') {
+                    cupConfig.lid = value;
+                    cupConfig.lidPrice = price;
+                    updateLidType(value);
+                } else if (type === 'art') {
+                    cupConfig.art = value;
+                    cupConfig.artEmoji = extra;
+                    updateArtStyle(extra);
+                }
+
+                updatePrice();
+                
+                // Move to next step
+                setTimeout(() => {
+                    currentStep++;
+                    showStep(currentStep);
+                }, 300);
+            }, 500);
+        }
+
+        function toggleAddon(event, type, price) {
+            cupConfig.addons[type] = !cupConfig.addons[type];
+            cupConfig.addonPrices[type] = cupConfig.addons[type] ? price : 0;
+            
+            event.currentTarget.classList.toggle('selected');
+            
+            if (type === 'charm') {
+                document.getElementById('strawCharm').classList.toggle('active');
+            } else if (type === 'lidDesign') {
+                document.getElementById('lidDesign').classList.toggle('active');
+            }
+            
+            updatePrice();
+        }
+
+        function updateCupSize(size) {
+            const cupBody = document.getElementById('cupBody');
+            if (size === '12oz') {
+                cupBody.style.height = '180px';
+                cupBody.style.width = '110px';
+            } else if (size === '16oz') {
+                cupBody.style.height = '200px';
+                cupBody.style.width = '120px';
+            } else if (size === '20oz') {
+                cupBody.style.height = '220px';
+                cupBody.style.width = '130px';
+            }
+        }
+
+        function updateStrawColor(color) {
+            document.getElementById('cupStraw').style.background = color;
+        }
+
+        function updateLidType(type) {
+            const lid = document.getElementById('cupLid');
+            if (type === 'Bamboo') {
+                lid.style.background = '#d4a574';
+            } else if (type === 'Metal') {
+                lid.style.background = 'linear-gradient(180deg, #e0e0e0, #b0b0b0)';
+            } else {
+                lid.style.background = '#f0f0f0';
+            }
+        }
+
+        function updateArtStyle(artName) {
+            const art = document.getElementById('cupArt');
+            // Show art type as text or leave empty for visual simplicity
+            art.textContent = ''; // Can add artName here if desired
+            art.classList.add('active');
+        }
+
+        function updatePrice() {
+            const total = cupConfig.sizePrice + 
+                         cupConfig.strawPrice +
+                         cupConfig.lidPrice +
+                         cupConfig.addonPrices.charm + 
+                         cupConfig.addonPrices.lidDesign;
+            document.getElementById('totalPrice').textContent = total;
+        }
+
+        function finishBuilder() {
+            currentStep = 6;
+            showStep(currentStep);
+            displaySummary();
+        }
+
+        function displaySummary() {
+            const summaryBox = document.getElementById('summaryBox');
+            const total = cupConfig.sizePrice + 
+                         cupConfig.strawPrice +
+                         cupConfig.lidPrice +
+                         cupConfig.addonPrices.charm + 
+                         cupConfig.addonPrices.lidDesign;
+            
+            let html = `
+                <div class="summary-item">
+                    <span>Cup Size:</span>
+                    <span><strong>${cupConfig.size}</strong></span>
+                </div>
+                <div class="summary-item">
+                    <span>Straw:</span>
+                    <span><strong>${cupConfig.straw}${cupConfig.strawPrice > 0 ? ' (+$' + cupConfig.strawPrice + ')' : ''}</strong></span>
+                </div>
+                <div class="summary-item">
+                    <span>Lid Type:</span>
+                    <span><strong>${cupConfig.lid}${cupConfig.lidPrice > 0 ? ' (+$' + cupConfig.lidPrice + ')' : ''}</strong></span>
+                </div>
+                <div class="summary-item">
+                    <span>Design Print:</span>
+                    <span><strong>${cupConfig.art}</strong></span>
+                </div>
+            `;
+            
+            if (cupConfig.addons.charm) {
+                html += `
+                    <div class="summary-item">
+                        <span>Straw Charm:</span>
+                        <span><strong>+$1</strong></span>
+                    </div>
+                `;
+            }
+            
+            if (cupConfig.addons.lidDesign) {
+                html += `
+                    <div class="summary-item">
+                        <span>Lid Design:</span>
+                        <span><strong>+$10</strong></span>
+                    </div>
+                `;
+            }
+            
+            html += `
+                <div class="summary-item">
+                    <span>Total Price:</span>
+                    <span>$${total}</span>
+                </div>
+            `;
+            
+            summaryBox.innerHTML = html;
+        }
+
+        function addToCart() {
+            alert('🎉 Your custom cup has been added to cart!\n\nYou can continue shopping or proceed to checkout.');
+            // Here you would integrate with your actual cart system
+        }
+
+        function restartBuilder() {
+            // Reset configuration
+            cupConfig.size = null;
+            cupConfig.sizePrice = 0;
+            cupConfig.straw = null;
+            cupConfig.strawPrice = 0;
+            cupConfig.strawColor = '#ccc';
+            cupConfig.lid = null;
+            cupConfig.lidPrice = 0;
+            cupConfig.art = null;
+            cupConfig.artEmoji = '';
+            cupConfig.addons = { charm: false, lidDesign: false };
+            cupConfig.addonPrices = { charm: 0, lidDesign: 0 };
+            
+            // Reset visuals
+            const cupArt = document.getElementById('cupArt');
+            cupArt.classList.remove('active');
+            cupArt.textContent = '';
+            
+            const lidDesign = document.getElementById('lidDesign');
+            lidDesign.classList.remove('active');
+            lidDesign.textContent = '';
+            
+            const strawCharm = document.getElementById('strawCharm');
+            strawCharm.classList.remove('active');
+            strawCharm.textContent = '';
+            
+            document.getElementById('cupStraw').style.background = '#ccc';
+            document.getElementById('cupLid').style.background = '#f0f0f0';
+            document.getElementById('cupBody').style.height = '200px';
+            document.getElementById('cupBody').style.width = '120px';
+            
+            // Remove selected states from addon cards
+            document.querySelectorAll('.addon-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Reset price
+            document.getElementById('totalPrice').textContent = '0';
+            
+            // Go back to start
+            currentStep = 0;
+            showStep(currentStep);
+        }
+    </script>
+
+    <!-- Custom Order Form -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Have A Different Idea?</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; color: var(--text-light); font-size: 1.1rem;">
+                Fill out the form below with as much detail as possible. I will get back to you within 24-48 hours with a design mockup and pricing.
+            </p>
+            
+            <form class="contact-form" id="customOrderForm">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="itemType">What would you like customized? *</label>
+                    <select id="itemType" name="itemType" required>
+                        <option value="">Select an option</option>
+                        <option value="cup">Cup</option>
+                        <option value="jar">Jar</option>
+                        <option value="set">Set (Multiple Items)</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity Needed *</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="designIdea">Design Idea / Theme *</label>
+                    <textarea id="designIdea" name="designIdea" required placeholder="Describe your design vision, theme, or inspiration. Include any specific details like colors, imagery, or text you'd like included."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="personalization">Personalization Details</label>
+                    <textarea id="personalization" name="personalization" placeholder="Names, dates, quotes, or special text you'd like added (if any)"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="timeline">When do you need this by?</label>
+                    <input type="date" id="timeline" name="timeline">
+                </div>
+                
+                <div class="form-group">
+                    <label for="additionalInfo">Additional Information</label>
+                    <textarea id="additionalInfo" name="additionalInfo" placeholder="Any other details, questions, or special requests?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem;">Submit Custom Order Request</button>
+                
+                <p style="text-align: center; margin-top: 1rem; color: var(--text-light); font-size: 0.9rem;">
+                    * Required fields. May have delayed response on weekends and holidays.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Stick & Spice</h3>
+                <p>Handcrafted spice jars and kitchen essentials, designed with family in mind to hold the flavors and moments of your everyday life.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="jars.html">Jars</a>
+                <a href="holiday-collections.html">Holiday Collections</a>
+                <a href="custom-orders.html">Custom Orders</a>
+                <a href="about.html">FAQ</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns & Exchanges</a>
+                <a href="#">FAQs</a>
+                <a href="#">Care Instructions</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to our newsletter for updates, new designs, and special offers!</p>
+                <form style="margin-top: 1rem;">
+                    <input type="email" placeholder="Your email" style="width: 100%; padding: 0.75rem; border-radius: 5px; border: none; margin-bottom: 0.5rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Stick & Spice. All rights reserved. | Handcrafted with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <!-- EmailJS Form Handler -->
+    <script>
+        // Initialize EmailJS with your Public Key
+        (function(){
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+
+        // Handle Custom Order Form Submission
+        document.getElementById('customOrderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Send email using EmailJS
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    alert('🎉 Thank you for your custom order request! I will get back to you within 24-48 hours with a design mockup and pricing.');
+                    
+                    // Reset form
+                    document.getElementById('customOrderForm').reset();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    alert('❌ Sorry, there was an error sending your request. Please try again or contact us directly at your-email@example.com');
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+</body>
+</html>
