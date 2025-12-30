@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently asked questions about Stick & Spice handcrafted cups and jars. Care instructions, ordering, shipping, and more.">
+    <title>FAQ - Frequently Asked Questions | Stick & Spice</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* FAQ Card Grid */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .faq-card {
+            background: var(--card-gradient);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(204, 86, 126, 0.2);
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+        
+        .faq-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .faq-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Modal Styles */
+        .faq-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        
+        .faq-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .faq-modal-content {
+            background: var(--card-gradient);
+            border-radius: 15px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+            border: 2px solid rgba(204, 86, 126, 0.3);
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .faq-modal-header {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px 15px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .faq-modal-header h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .faq-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-modal-close:hover {
+            transform: scale(1.2) rotate(90deg);
+        }
+        
+        .faq-modal-body {
+            padding: 2rem;
+            background: var(--light-gradient);
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .faq-modal-body h3 {
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .faq-modal-body h3:first-child {
+            margin-top: 0;
+        }
+        
+        .faq-modal-body p {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-modal-body a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-modal {
+                padding: 1rem;
+            }
+            
+            .faq-modal-content {
+                max-height: 95vh;
+            }
+            
+            .faq-modal-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://rawcdn.githack.com/FutureOfWeb3/futureofweb3.github.io/d1d02834161232e2d854d46c72098396e4bb9169/3849038703247904023.png" alt="Stick & Spice Logo">
+                Stick & Spice
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="jars.html" class="nav-link">Jars</a></li>
+                <li><a href="holiday-collections.html" class="nav-link">Holiday Collections</a></li>
+                <li><a href="about.html" class="nav-link active">FAQ</a></li>
+                <li><a href="custom-orders.html" class="nav-link">Custom Orders</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Frequently Asked Questions</h1>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.95;">
+                Click any card below to learn more about our products and services
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Cards -->
+    <section class="section">
+        <div class="container">
+            <div class="faq-grid">
+                <!-- Card 1 -->
+                <div class="faq-card" onclick="openModal('modal1')">
+                    <div class="faq-card-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>Ordering & Payment</h3>
+                    <p>Learn about placing orders and payment options</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="faq-card" onclick="openModal('modal2')">
+                    <div class="faq-card-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <h3>Shipping & Delivery</h3>
+                    <p>Shipping times, costs, and tracking info</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="faq-card" onclick="openModal('modal3')">
+                    <div class="faq-card-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h3>Product Care & Use</h3>
+                    <p>How to care for your handcrafted items</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="faq-card" onclick="openModal('modal4')">
+                    <div class="faq-card-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Custom Orders</h3>
+                    <p>Create your own unique design</p>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="faq-card" onclick="openModal('modal5')">
+                    <div class="faq-card-icon"><i class="fas fa-undo"></i></div>
+                    <h3>Returns & Exchanges</h3>
+                    <p>Our return policy and procedures</p>
+                </div>
+                
+                <!-- Card 6 -->
+                <div class="faq-card" onclick="openModal('modal6')">
+                    <div class="faq-card-icon"><i class="fas fa-info-circle"></i></div>
+                    <h3>Product Details</h3>
+                    <p>Sizes, materials, and specifications</p>
+                </div>
+                
+                <!-- Card 7 -->
+                <div class="faq-card" onclick="openModal('modal7')">
+                    <div class="faq-card-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Contact & Support</h3>
+                    <p>Get in touch with our team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="modal1" class="faq-modal" onclick="closeModalOnOutsideClick(event, 'modal1')">
+        <div class="faq-modal-content">
+            <div class="faq-modal-header">
+                <h2>Ordering & Payment</h2>
+                <button class="faq-modal-close" onclick="closeModal('modal1')">&times;</button>
+            </div>
+            <div class="faq-modal-body">
+                <h3>How do I place an order?</h3>
+                <p>Browse our products, click "Buy Now" on any item, and you'll be directed to our secure checkout. You can pay with any major credit card, debit card, or digital wallet.</p>
+                
+                <h3>What payment methods do you accept?</h3>
+                <p>We accept all major credit cards (Visa, Mastercard, American Express, Discover), debit cards, Apple Pay, Google Pay, and other digital wallets through our secure payment processor.</p>
+                
+                <h3>Is my payment information secure?</h3>
+                <p>Absolutely! We use industry-standard encryption and never store your payment information. All transactions are processed through secure, PCI-compliant payment gateways.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="faq-modal" onclick="closeModalOnOutsideClick(event, 'modal2')">
+        <div class="faq-modal-content">
+            <div class="faq-modal-header">
+                <h2>Shipping & Delivery</h2>
+                <button class="faq-modal-close" onclick="closeModal('modal2')">&times;</button>
+            </div>
+            <div class="faq-modal-body">
+                <h3>How long does shipping take?</h3>
+                <p>Standard shipping takes 5-7 business days. Express shipping (2-3 business days) is available at checkout. Custom orders may take an additional 3-5 business days for creation before shipping.</p>
+                
+                <h3>Do you ship internationally?</h3>
+                <p>Currently, we ship within the United States only. We're working on expanding international shipping in the future. Stay tuned!</p>
+                
+                <h3>How much does shipping cost?</h3>
+                <p>Standard shipping is $6.99 per order. Express shipping is $14.99. We offer FREE standard shipping on orders over $50!</p>
+                
+                <h3>Will I receive tracking information?</h3>
+                <p>Yes! Once your order ships, you'll receive an email with tracking information so you can follow your package every step of the way.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="faq-modal" onclick="closeModalOnOutsideClick(event, 'modal3')">
+        <div class="faq-modal-content">
+            <div class="faq-modal-header">
+                <h2>Product Care & Use</h2>
+                <button class="faq-modal-close" onclick="closeModal('modal3')">&times;</button>
+            </div>
+            <div class="faq-modal-body">
+                <h3>Are your cups and jars dishwasher safe?</h3>
+                <p>No, Unfortunately our products are not dishwasher safe. However, we recommend hand washing to extend the life of the design and maintain the vibrant colors.</p>
+                
+                <h3>Can I microwave them?</h3>
+                <p>The glass cups and jars are microwave safe, but please remove any wooden or bamboo lids first. Heat in 30-second intervals and use caution when removing.</p>
+                
+                <h3>Are they food-safe?</h3>
+                <p>Yes! We use only food-safe, non-toxic materials and finishes. All our products are safe for beverages, food storage, and everyday use.</p>
+                
+                <h3>How do I care for my handcrafted items?</h3>
+                <p>Hand wash with mild soap and warm water for best results. Avoid abrasive scrubbers. Allow wooden lids to air dry completely before storing. With proper care, your items will last for years!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal4" class="faq-modal" onclick="closeModalOnOutsideClick(event, 'modal4')">
+        <div class="faq-modal-content">
+            <div class="faq-modal-header">
+                <h2>Custom Orders</h2>
+                <button class="faq-modal-close" onclick="closeModal('modal4')">&times;</button>
+            </div>
+            <div class="faq-modal-body">
+                <h3>Can I request a custom design?</h3>
+                <p>Absolutely! Visit our <a href="custom-orders.html" style="color: var(--primary-color); text-decoration: underline;">Custom Orders page</a> to submit your ideas. We love bringing your vision to life!</p>
+                
+                <h3>How long do custom orders take?</h3>
+                <p>Custom orders typically take 3-5 business days to create, plus shipping time. During busy seasons (holidays), allow an extra 2-3 days. We'll keep you updated throughout the process!</p>
+                
+                <h3>Can I see the design before you make it?</h3>
+                <p>For custom orders, we'll send you a design preview for approval before we begin crafting your item.</p>
+                
+                <h3>Do you do bulk orders for events?</h3>
+                <p>Yes! We offer bulk pricing for weddings, corporate events, parties, and more. Contact us at hello@stickandspice.com with your requirements for a custom quote.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal5" class="faq-modal" onclick="closeModalOnOutsideClick(event, 'modal5')">
+        <div class="faq-modal-content">
+            <div class="faq-modal-header">
+                <h2>Returns & Exchanges</h2>
+                <button class="faq-modal-close" onclick="closeModal('modal5')">&times;</button>
+            </div>
+            <div class="faq-modal-body">
+                <h3>What's your return policy?</h3>
+                <p>We want you to love your purchase! If you're not completely satisfied, you can return unused items within 14 days of delivery for a full refund. Custom orders are non-refundable unless there's a defect.</p>
+                
+                <h3>What if my item arrives damaged?</h3>
+                <p>We carefully package everything, but accidents happen. If your item arrives damaged, contact us within 48 hours with photos and we'll send a replacement right away at no cost.</p>
+                
+                <h3>Can I exchange for a different design?</h3>
+                <p>Yes! Contact us within 14 days of delivery. You'll be responsible for return shipping, and we'll send your new item once we receive the original (unused and in perfect condition).</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal6" class="faq-modal" onclick="closeModalOnOutsideClick(event, 'modal6')">
+        <div class="faq-modal-content">
+            <div class="faq-modal-header">
+                <h2>Product Details</h2>
+                <button class="faq-modal-close" onclick="closeModal('modal6')">&times;</button>
+            </div>
+            <div class="faq-modal-body">
+                <h3>What sizes do your cups come in?</h3>
+                <p>Our standard cups are 16oz (perfect for coffee, tea, or smoothies). We also offer 12oz and 20oz options on select designs. Check each product page for specific dimensions.</p>
+                
+                <h3>What materials are they made from?</h3>
+                <p>Our cups and jars are made from high-quality borosilicate glass (durable and heat-resistant). Lids are made from natural bamboo or food-grade silicone. All materials are BPA-free and eco-friendly.</p>
+                
+                <h3>Do the designs fade or peel?</h3>
+                <p>Not with proper care! We use professional-grade, permanent application methods. Your designs will stay vibrant through hundreds of uses and washes. We stand behind our quality!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal7" class="faq-modal" onclick="closeModalOnOutsideClick(event, 'modal7')">
+        <div class="faq-modal-content">
+            <div class="faq-modal-header">
+                <h2>Contact & Support</h2>
+                <button class="faq-modal-close" onclick="closeModal('modal7')">&times;</button>
+            </div>
+            <div class="faq-modal-body">
+                <h3>How can I contact you?</h3>
+                <p>Email us at hello@stickandspice.com or use our <a href="contact.html" style="color: var(--primary-color); text-decoration: underline;">Contact page</a>. We respond within 24 hours (usually much faster!).</p>
+                
+                <h3>Do you have a physical store?</h3>
+                <p>We're currently online only, but we do attend local craft markets and fairs! Follow us on Instagram and Facebook for updates on where you can find us in person.</p>
+                
+                <h3>Can I pick up my order locally?</h3>
+                <p>Local pickup may be available depending on your location. Contact us to inquire and we'll let you know if it's possible for your order!</p>
+            </div>
+        </div>
+    </div>
+
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="jars.html">Jars</a>
+                <a href="holiday-collections.html">Holiday Collections</a>
+                <a href="custom-orders.html">Custom Orders</a>
+                <a href="about.html">FAQ</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <a href="contact.html">Contact Us</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns & Exchanges</a>
+                <a href="#">FAQs</a>
+                <a href="#">Care Instructions</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to our newsletter for updates, new designs, and special offers!</p>
+                <form style="margin-top: 1rem;">
+                    <input type="email" placeholder="Your email" style="width: 100%; padding: 0.75rem; border-radius: 5px; border: none; margin-bottom: 0.5rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Stick & Spice. All rights reserved. | Handcrafted with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <script>
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function closeModalOnOutsideClick(event, modalId) {
+            if (event.target.classList.contains('faq-modal')) {
+                closeModal(modalId);
+            }
+        }
+        
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.querySelectorAll('.faq-modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
