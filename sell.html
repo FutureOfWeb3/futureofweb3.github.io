@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your iPhone - Get Instant Cash Quote | Mobile Franchise</title>
+    <meta name="description" content="Sell your iPhone 11-17 Pro Max for top dollar. Get an instant quote based on your device condition.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile Franchise</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="sell.html" class="nav-link active">Sell to Me</a></li>
+                <li><a href="repair.html" class="nav-link">Fix Your Device</a></li>
+                <li><a href="buy.html" class="nav-link">Buy a Device</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-dollar-sign"></i> Sell Your iPhone</h1>
+            <p>Get an instant cash offer for your iPhone 11-17 Pro Max. Answer a few questions and receive your quote immediately.</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h2>iPhone Value Calculator</h2>
+                    <p>Complete all fields to get your instant quote</p>
+                </div>
+
+                <form id="calculatorForm" class="calculator-form">
+                    <!-- iPhone Model -->
+                    <div class="form-group">
+                        <label for="model"><i class="fas fa-mobile-alt"></i> iPhone Model *</label>
+                        <select id="model" name="model" required>
+                            <option value="">Select your iPhone model...</option>
+                            <option value="iPhone 11">iPhone 11</option>
+                            <option value="iPhone 11 Pro">iPhone 11 Pro</option>
+                            <option value="iPhone 11 Pro Max">iPhone 11 Pro Max</option>
+                            <option value="iPhone 12">iPhone 12</option>
+                            <option value="iPhone 12 Mini">iPhone 12 Mini</option>
+                            <option value="iPhone 12 Pro">iPhone 12 Pro</option>
+                            <option value="iPhone 12 Pro Max">iPhone 12 Pro Max</option>
+                            <option value="iPhone 13">iPhone 13</option>
+                            <option value="iPhone 13 Mini">iPhone 13 Mini</option>
+                            <option value="iPhone 13 Pro">iPhone 13 Pro</option>
+                            <option value="iPhone 13 Pro Max">iPhone 13 Pro Max</option>
+                            <option value="iPhone 14">iPhone 14</option>
+                            <option value="iPhone 14 Plus">iPhone 14 Plus</option>
+                            <option value="iPhone 14 Pro">iPhone 14 Pro</option>
+                            <option value="iPhone 14 Pro Max">iPhone 14 Pro Max</option>
+                            <option value="iPhone 15">iPhone 15</option>
+                            <option value="iPhone 15 Plus">iPhone 15 Plus</option>
+                            <option value="iPhone 15 Pro">iPhone 15 Pro</option>
+                            <option value="iPhone 15 Pro Max">iPhone 15 Pro Max</option>
+                            <option value="iPhone 16">iPhone 16</option>
+                            <option value="iPhone 16 Plus">iPhone 16 Plus</option>
+                            <option value="iPhone 16 Pro">iPhone 16 Pro</option>
+                            <option value="iPhone 16 Pro Max">iPhone 16 Pro Max</option>
+                            <option value="iPhone 17 Pro Max">iPhone 17 Pro Max</option>
+                        </select>
+                    </div>
+
+                    <!-- Storage Capacity -->
+                    <div class="form-group">
+                        <label for="storage"><i class="fas fa-hdd"></i> Storage Capacity *</label>
+                        <select id="storage" name="storage" required>
+                            <option value="">Select storage...</option>
+                            <option value="64GB">64GB</option>
+                            <option value="128GB">128GB</option>
+                            <option value="256GB">256GB</option>
+                            <option value="512GB">512GB</option>
+                            <option value="1TB">1TB</option>
+                        </select>
+                    </div>
+
+                    <!-- Carrier Status -->
+                    <div class="form-group">
+                        <label><i class="fas fa-unlock"></i> Carrier Status *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="unlocked" value="Unlocked" required>
+                                <span>Unlocked</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="unlocked" value="Locked">
+                                <span>Locked to Carrier</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Physical Condition -->
+                    <div class="form-group">
+                        <label for="condition"><i class="fas fa-star"></i> Physical Condition *</label>
+                        <select id="condition" name="condition" required>
+                            <option value="">Select condition...</option>
+                            <option value="Excellent">Excellent - Like new, no scratches or dents</option>
+                            <option value="Good">Good - Minor wear, light scratches</option>
+                            <option value="Fair">Fair - Visible scratches or small dents</option>
+                            <option value="Poor">Poor - Heavy scratches, dents, or cracks</option>
+                        </select>
+                    </div>
+
+                    <!-- Screen Condition -->
+                    <div class="form-group">
+                        <label><i class="fas fa-tv"></i> Screen Condition *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="screenCracked" id="screenCracked">
+                                <span>Screen is cracked or damaged</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="screenScratches" id="screenScratches">
+                                <span>Screen has scratches</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Body Damage -->
+                    <div class="form-group">
+                        <label><i class="fas fa-exclamation-triangle"></i> Body Damage</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="dents" id="dents">
+                                <span>Has dents or dings</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="backCracked" id="backCracked">
+                                <span>Back glass is cracked</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Functionality -->
+                    <div class="form-group">
+                        <label><i class="fas fa-check-circle"></i> Functionality *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="charges" id="charges" required>
+                                <span>Device charges properly</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="turnsOn" id="turnsOn" required>
+                                <span>Device turns on</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="touchWorks" id="touchWorks" required>
+                                <span>Touch screen works</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Non-Apple Parts -->
+                    <div class="form-group">
+                        <label><i class="fas fa-tools"></i> Repairs & Parts</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="nonAppleParts" id="nonAppleParts">
+                                <span>Has non-Apple replacement parts</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="batteryReplaced" id="batteryReplaced">
+                                <span>Battery has been replaced</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info-section">
+                        <h3>Your Contact Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user"></i> Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone"><i class="fas fa-phone"></i> Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city"><i class="fas fa-map-marker-alt"></i> City in Florida *</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                        <i class="fas fa-calculator"></i> Get My Instant Quote
+                    </button>
+                </form>
+
+                <!-- Quote Result -->
+                <div id="quoteResult" class="quote-result" style="display: none;">
+                    <div class="quote-success">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Your Estimated Quote</h3>
+                        <div class="quote-amount" id="quoteAmount">$0</div>
+                        <p class="quote-message">This is an estimated value based on the information provided. Final offer may vary upon physical inspection.</p>
+                        <p class="quote-next-steps">We've sent your quote to <strong id="emailSent"></strong>. We'll contact you within 24 hours to finalize the details!</p>
+                        <button onclick="location.reload()" class="btn btn-secondary">
+                            <i class="fas fa-redo"></i> Calculate Another Device
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Safe & Secure</h4>
+                    <p>Your information is protected and never shared</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Instant Quote</h4>
+                    <p>Get your offer in seconds, not days</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>No Obligation</h4>
+                    <p>Free quote with no commitment required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-mobile-alt"></i> Mobile Franchise</h3>
+                <p>Florida's trusted iPhone buyer, seller, and repair specialist.</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope"></i> mobilefranchise952@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Serving all of Florida</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="sell.html">Sell Your iPhone</a>
+                <a href="repair.html">Repair Services</a>
+                <a href="buy.html">Buy a Device</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>We Buy</h4>
+                <p>iPhone 11 Series</p>
+                <p>iPhone 12 Series</p>
+                <p>iPhone 13 Series</p>
+                <p>iPhone 14 Series</p>
+                <p>iPhone 15 Series</p>
+                <p>iPhone 16 & 17 Pro Max</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mobile Franchise. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="calculator.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

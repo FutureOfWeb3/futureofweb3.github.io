@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Mobile Franchise Florida</title>
+    <meta name="description" content="Get in touch with Mobile Franchise. We're here to answer your questions about buying, selling, or repairing iPhones.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile Franchise</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="sell.html" class="nav-link">Sell to Me</a></li>
+                <li><a href="repair.html" class="nav-link">Fix Your Device</a></li>
+                <li><a href="buy.html" class="nav-link">Buy a Device</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+            <p>Have questions? We're here to help. Reach out and we'll get back to you as soon as possible.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info-box">
+                    <h2>Get In Touch</h2>
+                    <p>Whether you're looking to sell your iPhone, need a repair, or want to buy a device, we're here to help!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Email Us</h4>
+                                <a href="mailto:mobilefranchise952@gmail.com">mobilefranchise952@gmail.com</a>
+                                <p>We typically respond within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Service Area</h4>
+                                <p>Serving all of Florida</p>
+                                <p>Statewide iPhone buying service</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Response Time</h4>
+                                <p>Monday - Saturday: 9 AM - 7 PM</p>
+                                <p>Sunday: 10 AM - 5 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-links-box">
+                        <h4>Quick Links</h4>
+                        <a href="sell.html" class="quick-link-btn">
+                            <i class="fas fa-calculator"></i> Get Instant Quote
+                        </a>
+                        <a href="repair.html" class="quick-link-btn">
+                            <i class="fas fa-tools"></i> View Repair Services
+                        </a>
+                        <a href="buy.html" class="quick-link-btn">
+                            <i class="fas fa-shopping-cart"></i> Browse Inventory
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-box">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject"><i class="fas fa-tag"></i> Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject...</option>
+                                <option value="Selling iPhone">I want to sell my iPhone</option>
+                                <option value="Repair Service">I need a repair</option>
+                                <option value="Buying iPhone">I want to buy an iPhone</option>
+                                <option value="General Question">General question</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+
+                    <div id="formSuccess" class="form-message success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Thank you! Your message has been sent successfully. We'll get back to you soon.</p>
+                    </div>
+
+                    <div id="formError" class="form-message error-message" style="display: none;">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p>Oops! There was an error sending your message. Please try again or email us directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> How quickly do you respond?</h4>
+                    <p>We typically respond to all inquiries within 24 hours during business days.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> Do you offer in-person meetings?</h4>
+                    <p>Yes! We can arrange safe meetups throughout Florida for device transactions.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> What payment methods do you accept?</h4>
+                    <p>We accept cash, Venmo, Zelle, and PayPal for device purchases.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> Do you ship devices?</h4>
+                    <p>Yes, we can ship devices anywhere in Florida with tracking and insurance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-mobile-alt"></i> Mobile Franchise</h3>
+                <p>Florida's trusted iPhone buyer, seller, and repair specialist.</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-envelope"></i> mobilefranchise952@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Serving all of Florida</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="sell.html">Sell Your iPhone</a>
+                <a href="repair.html">Repair Services</a>
+                <a href="buy.html">Buy a Device</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>We Buy</h4>
+                <p>iPhone 11 Series</p>
+                <p>iPhone 12 Series</p>
+                <p>iPhone 13 Series</p>
+                <p>iPhone 14 Series</p>
+                <p>iPhone 15 Series</p>
+                <p>iPhone 16 & 17 Pro Max</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mobile Franchise. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="contact.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
