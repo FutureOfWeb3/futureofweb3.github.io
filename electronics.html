@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Electronics - Mobile Franchise</title>
+    <meta name="description" content="Buy, sell, and repair tablets, smart watches, game consoles, and Android smartphones. Samsung, Google Pixel, PlayStation, Xbox, and more.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://rawcdn.githack.com/FutureOfWeb3/futureofweb3.github.io/170223dbc189cbc85497f855a35f3b0dca9ca945/B60D9EE8-06BB-4B9B-8377-32F2A62A55EE.PNG" alt="Mobile Franchise Logo" class="logo-img">
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="sell.html" class="nav-link">Sell</a></li>
+                <li><a href="repair.html" class="nav-link">Repair</a></li>
+                <li><a href="buy.html" class="nav-link">Buy</a></li>
+                <li><a href="electronics.html" class="nav-link active">Electronics</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Electronics Hero Section -->
+    <section class="inventory-section">
+        <div class="container">
+            <div class="inventory-intro">
+                <h2>Other Electronics</h2>
+                <p>We buy, sell, and repair tablets, smart watches, game consoles, and Android smartphones. Get top dollar for your devices or shop our quality pre-owned inventory.</p>
+            </div>
+
+            <!-- Category Tabs/Sections -->
+            <div class="electronics-categories">
+                
+                <!-- Tablets Section -->
+                <div class="category-section">
+                    <h3 class="category-title"><i class="fas fa-tablet-alt"></i> Tablets</h3>
+                    <div class="selector-form">
+                        <div class="form-group">
+                            <label for="tablet-select"><i class="fas fa-tablet-alt"></i> Select Tablet Model</label>
+                            <select id="tablet-select" name="tablet" class="electronics-select">
+                                <option value="">Choose a tablet...</option>
+                                <option value="iPad Pro 12.9\"">iPad Pro 12.9"</option>
+                                <option value="iPad Pro 11\"">iPad Pro 11"</option>
+                                <option value="iPad Air">iPad Air</option>
+                                <option value="iPad (Standard)">iPad (Standard)</option>
+                                <option value="iPad Mini">iPad Mini</option>
+                                <option value="Samsung Galaxy Tab S9 Ultra">Samsung Galaxy Tab S9 Ultra</option>
+                                <option value="Samsung Galaxy Tab S9+">Samsung Galaxy Tab S9+</option>
+                                <option value="Samsung Galaxy Tab S9">Samsung Galaxy Tab S9</option>
+                                <option value="Samsung Galaxy Tab S8">Samsung Galaxy Tab S8</option>
+                                <option value="Samsung Galaxy Tab A">Samsung Galaxy Tab A</option>
+                                <option value="Microsoft Surface Pro">Microsoft Surface Pro</option>
+                                <option value="Microsoft Surface Go">Microsoft Surface Go</option>
+                                <option value="other">Other / Not Listed</option>
+                            </select>
+                        </div>
+                        <div class="form-group custom-input-group" id="tablet-custom" style="display: none;">
+                            <label for="tablet-custom-input"><i class="fas fa-edit"></i> Please specify your tablet</label>
+                            <input type="text" id="tablet-custom-input" placeholder="Enter tablet model...">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-large inquiry-btn" data-category="Tablet">
+                            <i class="fas fa-paper-plane"></i> Get Quote for Tablet
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Smart Watches Section -->
+                <div class="category-section">
+                    <h3 class="category-title"><i class="fas fa-clock"></i> Smart Watches</h3>
+                    <div class="selector-form">
+                        <div class="form-group">
+                            <label for="watch-select"><i class="fas fa-clock"></i> Select Smart Watch Model</label>
+                            <select id="watch-select" name="watch" class="electronics-select">
+                                <option value="">Choose a smart watch...</option>
+                                <option value="Apple Watch Series 9">Apple Watch Series 9</option>
+                                <option value="Apple Watch Ultra 2">Apple Watch Ultra 2</option>
+                                <option value="Apple Watch SE">Apple Watch SE</option>
+                                <option value="Apple Watch Series 8">Apple Watch Series 8</option>
+                                <option value="Apple Watch Series 7">Apple Watch Series 7</option>
+                                <option value="Samsung Galaxy Watch 6">Samsung Galaxy Watch 6</option>
+                                <option value="Samsung Galaxy Watch 5">Samsung Galaxy Watch 5</option>
+                                <option value="Samsung Galaxy Watch 4">Samsung Galaxy Watch 4</option>
+                                <option value="Fitbit Sense 2">Fitbit Sense 2</option>
+                                <option value="Fitbit Versa 4">Fitbit Versa 4</option>
+                                <option value="Fitbit Charge 6">Fitbit Charge 6</option>
+                                <option value="Garmin Forerunner">Garmin Forerunner</option>
+                                <option value="Garmin Fenix">Garmin Fenix</option>
+                                <option value="other">Other / Not Listed</option>
+                            </select>
+                        </div>
+                        <div class="form-group custom-input-group" id="watch-custom" style="display: none;">
+                            <label for="watch-custom-input"><i class="fas fa-edit"></i> Please specify your smart watch</label>
+                            <input type="text" id="watch-custom-input" placeholder="Enter smart watch model...">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-large inquiry-btn" data-category="Smart Watch">
+                            <i class="fas fa-paper-plane"></i> Get Quote for Smart Watch
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Consoles Section -->
+                <div class="category-section">
+                    <h3 class="category-title"><i class="fas fa-gamepad"></i> Game Consoles</h3>
+                    <div class="selector-form">
+                        <div class="form-group">
+                            <label for="console-select"><i class="fas fa-gamepad"></i> Select Game Console</label>
+                            <select id="console-select" name="console" class="electronics-select">
+                                <option value="">Choose a console...</option>
+                                <option value="PlayStation 5 (Standard)">PlayStation 5 (Standard)</option>
+                                <option value="PlayStation 5 (Digital)">PlayStation 5 (Digital)</option>
+                                <option value="PlayStation 4 Pro">PlayStation 4 Pro</option>
+                                <option value="PlayStation 4">PlayStation 4</option>
+                                <option value="Xbox Series X">Xbox Series X</option>
+                                <option value="Xbox Series S">Xbox Series S</option>
+                                <option value="Xbox One X">Xbox One X</option>
+                                <option value="Xbox One">Xbox One</option>
+                                <option value="Nintendo Switch OLED">Nintendo Switch OLED</option>
+                                <option value="Nintendo Switch">Nintendo Switch</option>
+                                <option value="Nintendo Switch Lite">Nintendo Switch Lite</option>
+                                <option value="Steam Deck">Steam Deck</option>
+                                <option value="other">Other / Not Listed</option>
+                            </select>
+                        </div>
+                        <div class="form-group custom-input-group" id="console-custom" style="display: none;">
+                            <label for="console-custom-input"><i class="fas fa-edit"></i> Please specify your console</label>
+                            <input type="text" id="console-custom-input" placeholder="Enter console model...">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-large inquiry-btn" data-category="Game Console">
+                            <i class="fas fa-paper-plane"></i> Get Quote for Console
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Android Smartphones Section -->
+                <div class="category-section">
+                    <h3 class="category-title"><i class="fas fa-mobile-alt"></i> Android Smartphones</h3>
+                    <div class="selector-form">
+                        <div class="form-group">
+                            <label for="android-select"><i class="fas fa-mobile-alt"></i> Select Android Phone</label>
+                            <select id="android-select" name="android" class="electronics-select">
+                                <option value="">Choose an Android phone...</option>
+                                <option value="Samsung Galaxy S24 Ultra">Samsung Galaxy S24 Ultra</option>
+                                <option value="Samsung Galaxy S24+">Samsung Galaxy S24+</option>
+                                <option value="Samsung Galaxy S24">Samsung Galaxy S24</option>
+                                <option value="Samsung Galaxy S23 Ultra">Samsung Galaxy S23 Ultra</option>
+                                <option value="Samsung Galaxy S23+">Samsung Galaxy S23+</option>
+                                <option value="Samsung Galaxy S23">Samsung Galaxy S23</option>
+                                <option value="Samsung Galaxy S22 Ultra">Samsung Galaxy S22 Ultra</option>
+                                <option value="Samsung Galaxy Z Fold 5">Samsung Galaxy Z Fold 5</option>
+                                <option value="Samsung Galaxy Z Flip 5">Samsung Galaxy Z Flip 5</option>
+                                <option value="Samsung Galaxy Z Fold 4">Samsung Galaxy Z Fold 4</option>
+                                <option value="Samsung Galaxy Z Flip 4">Samsung Galaxy Z Flip 4</option>
+                                <option value="Google Pixel 8 Pro">Google Pixel 8 Pro</option>
+                                <option value="Google Pixel 8">Google Pixel 8</option>
+                                <option value="Google Pixel 7 Pro">Google Pixel 7 Pro</option>
+                                <option value="Google Pixel 7">Google Pixel 7</option>
+                                <option value="OnePlus 12">OnePlus 12</option>
+                                <option value="OnePlus 11">OnePlus 11</option>
+                                <option value="OnePlus Nord">OnePlus Nord</option>
+                                <option value="other">Other / Not Listed</option>
+                            </select>
+                        </div>
+                        <div class="form-group custom-input-group" id="android-custom" style="display: none;">
+                            <label for="android-custom-input"><i class="fas fa-edit"></i> Please specify your Android phone</label>
+                            <input type="text" id="android-custom-input" placeholder="Enter phone model...">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-large inquiry-btn" data-category="Android Phone">
+                            <i class="fas fa-paper-plane"></i> Get Quote for Android Phone
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="inventory-note">
+                <p><i class="fas fa-info-circle"></i> <strong>Inventory changes daily.</strong> Contact us for current availability, pricing, and specific models. We also accept trade-ins and offer repair services for all listed devices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><img src="logo-footer.png" alt="Mobile Franchise Logo" class="footer-logo-img"> Mobile Franchise LLC</h3>
+                <p>BUY, SELL, & REPAIR all devices with top-tier customer service since 2019.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="sell.html">Sell Your Device</a>
+                <a href="repair.html">Repair Services</a>
+                <a href="buy.html">Buy iPhones</a>
+                <a href="electronics.html">Other Electronics</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> mobilefranchise952@gmail.com</p>
+                <p><i class="fas fa-phone"></i> 904-738-0321</p>
+                <p><i class="fas fa-map-marker-alt"></i> 623 N Grandview Ave., Suite 296<br>Daytona Beach, FL 32118</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>We Buy</h4>
+                <p>iPhone SE (All Generations)</p>
+                <p>iPhone 11 Series</p>
+                <p>iPhone 12 Series & Mini</p>
+                <p>iPhone 13 Series & Mini</p>
+                <p>iPhone 14 Series</p>
+                <p>iPhone 15 Series</p>
+                <p>iPhone 16 & 17 Pro Max</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mobile Franchise. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="electronics.js"></script>
+</body>
+</html>
