@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earnings & Results - GK Hosting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="GK Hosting" class="logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="properties.html" class="nav-link">Properties</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="earnings.html" class="nav-link active">Earnings</a></li>
+                    <li><a href="transformation.html" class="nav-link">Transformation</a></li>
+                    <li><a href="trust.html" class="nav-link">Trust</a></li>
+                    <li><a href="why.html" class="nav-link">Why Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="results-section">
+
+            <div class="examples-section">
+                <h2>Trust The Process:</h2>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="example-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Clients earn up to 3x more than traditional renting</h3>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="example-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Average occupancy increase: 40%+</h3>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="example-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </div>
+                        <h3>Hands-off income with full transparency</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculator-section">
+                <div class="calculator-content">
+                    <h2>Calculate Your Potential Earnings</h2>
+                    <p class="calculator-subtitle">Even if you don't have real data yet, position it like:</p>
+                    <p class="calculator-note">"Potential earnings based on market data in your area"</p>
+
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label for="bedrooms">Number of Bedrooms</label>
+                            <select id="bedrooms" class="form-input">
+                                <option value="">Select bedrooms</option>
+                                <option value="1">1 Bedroom</option>
+                                <option value="2">2 Bedrooms</option>
+                                <option value="3">3 Bedrooms</option>
+                                <option value="4">4+ Bedrooms</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Property Location</label>
+                            <input type="text" id="location" class="form-input" placeholder="Enter city or zip code">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="current-rent">Current Monthly Rent (if applicable)</label>
+                            <input type="number" id="current-rent" class="form-input" placeholder="$0">
+                        </div>
+
+                        <button class="calculate-btn" onclick="calculateEarnings()">Calculate My Potential</button>
+                    </div>
+
+                    <div class="results-display" id="results-display" style="display: none;">
+                        <div class="result-stat">
+                            <h3>Estimated Monthly Income</h3>
+                            <p class="stat-value" id="monthly-income">$0</p>
+                        </div>
+                        <div class="result-stat">
+                            <h3>Potential Annual Revenue</h3>
+                            <p class="stat-value" id="annual-income">$0</p>
+                        </div>
+                        <div class="result-stat">
+                            <h3>Increase vs Traditional Rent</h3>
+                            <p class="stat-value gold" id="increase-percent">0%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="logo.png" alt="GK Hosting" class="logo">
+            </div>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="earnings.html">Earnings</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: info@goldenkeyhosting.org</li>
+                        <li>Phone: 904 955 2324</li>
+                        <li>Secondary: 904 923 0513</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">FB</a>
+                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="Twitter">TW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GK Hosting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html>

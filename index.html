@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GK Hosting : Premium Airbnb Properties</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="GK Hosting" class="logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="properties.html" class="nav-link">Properties</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="earnings.html" class="nav-link">Earnings</a></li>
+                    <li><a href="transformation.html" class="nav-link">Transformation</a></li>
+                    <li><a href="trust.html" class="nav-link">Trust</a></li>
+                    <li><a href="why.html" class="nav-link">Why Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="slideshow">
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" alt="Luxury Modern Living Room">
+            <div class="slide-content">
+                <h1>Unlock Your Property's Full Potential</h1>
+                <p>From listing to guest experience, we handle everything while you collect the income</p>
+                <div class="slide-buttons">
+                    <a href="#analysis" class="slide-cta primary">Get a Free Property Analysis</a>
+                    <a href="#calculator" class="slide-cta secondary">See How Much You Could Earn</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1920&q=80" alt="Luxury Bedroom Suite">
+            <div class="slide-content">
+                <h1>We Turn Your Property Into Passive Income</h1>
+                <p>Premium management that maximizes your returns with zero stress</p>
+                <div class="slide-buttons">
+                    <a href="#analysis" class="slide-cta primary">Get a Free Property Analysis</a>
+                    <a href="#calculator" class="slide-cta secondary">See How Much You Could Earn</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="https://thumbs2.imgbox.com/c1/56/pIn0t3bO_t.jpg" alt="Luxury Kitchen Interior">
+            <div class="slide-content">
+                <h1>Golden Key Hosting : Stress Free Airbnb Management</h1>
+                <p>Hands off income from your property starts here</p>
+                <div class="slide-buttons">
+                    <a href="#analysis" class="slide-cta primary">Get a Free Property Analysis</a>
+                    <a href="#calculator" class="slide-cta secondary">See How Much You Could Earn</a>
+                </div>
+            </div>
+        </div>
+        <button class="slide-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="slide-btn next" onclick="changeSlide(1)">&#10095;</button>
+        <div class="slide-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <section class="cards-section">
+        <div class="container">
+            <h2 class="section-title">Explore Our Collection</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Our Properties</h3>
+                    <p>Browse our exclusive collection of premium vacation rentals</p>
+                    <a href="properties.html" class="card-btn">View Properties</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <h3>Amenities</h3>
+                    <p>Discover the luxury features and services we provide</p>
+                    <a href="amenities.html" class="card-btn">Learn More</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Locations</h3>
+                    <p>Explore our properties in prime destinations</p>
+                    <a href="locations.html" class="card-btn">Explore</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3>About Us</h3>
+                    <p>Learn about our commitment to exceptional hospitality</p>
+                    <a href="about.html" class="card-btn">Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="logo.png" alt="GK Hosting" class="logo">
+            </div>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: info@goldenkeyhosting.org</li>
+                        <li>Phone: 904 955 2324</li>
+                        <li>Secondary: 904 923 0513</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">FB</a>
+                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="Twitter">TW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GK Hosting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
